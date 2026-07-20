@@ -18,6 +18,13 @@ def _julian_day(dt_utc: datetime) -> float:
     return int(365.25 * (y + 4716)) + int(30.6001 * (m + 1)) + d + b - 1524.5
 
 def solar_elevation_deg(dt_utc: datetime, lat: float, lon: float) -> float:
+    if dt_utc.tzinfo is None or dt_utc.utcoffset() is None:
+        raise ValueError(
+            "solar_elevation_deg requires a timezone-aware datetime (dt_utc); "
+            "got a naive datetime, which Python would silently interpret in the "
+            "local system timezone. Pass a datetime with tzinfo set (e.g. "
+            "datetime(..., tzinfo=timezone.utc))."
+        )
     jd = _julian_day(dt_utc)
     t = (jd - 2451545.0) / 36525.0  # Julian centuries
     # Geometric mean longitude & anomaly of the sun (deg)

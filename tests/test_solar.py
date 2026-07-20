@@ -1,5 +1,7 @@
 from datetime import datetime, timezone
 
+import pytest
+
 from pipeline import solar
 
 
@@ -22,3 +24,8 @@ def test_clear_sky_zero_below_horizon():
 
 def test_clear_sky_positive_high_sun():
     assert solar.clear_sky_ghi(60) > 700.0
+
+
+def test_naive_datetime_rejected():
+    with pytest.raises(ValueError):
+        solar.solar_elevation_deg(datetime(2026, 6, 21, 18, 0), 45.0, -93.4)

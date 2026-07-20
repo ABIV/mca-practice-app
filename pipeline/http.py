@@ -8,9 +8,8 @@ class SourceError(Exception):
     pass
 
 def _headers(extra):
-    h = {"User-Agent": USER_AGENT}
-    if extra:
-        h.update(extra)
+    h = dict(extra or {})
+    h["User-Agent"] = USER_AGENT
     return h
 
 def get_json(url, params=None, headers=None, timeout=15):

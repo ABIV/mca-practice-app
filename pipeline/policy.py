@@ -6,7 +6,7 @@ Plus the MVBT-local combined-stress rule (stricter than MCA).
 from pipeline.models import GO, CAUTION, CANCELLED, UNKNOWN
 
 RULESET_VERSION = "MCA-2025"
-_ORDER = {GO: 0, CAUTION: 1, CANCELLED: 2, UNKNOWN: 3}
+_ORDER = {GO: 0, CAUTION: 1, UNKNOWN: 2, CANCELLED: 3}
 
 def _worse(a, b):
     return a if _ORDER[a] >= _ORDER[b] else b

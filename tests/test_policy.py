@@ -49,8 +49,17 @@ def test_smoke_event_2026_07_19_cancels():
     assert r["status"] == CANCELLED
     assert any("AQI Red (>150)" in x["detail"] for x in r["reasons"])
 
-def test_benign_forecast_aqi_does_not_override(monkeypatch):
-    # Forecast AQI is never passed into evaluate() as current 'aqi'; ensure a
-    # benign forecast value cannot flip a CANCELLED current reading.
+def test_benign_forecast_aqi_does_not_override():
+    # Forecast AQI is never passed to evaluate() as current 'aqi'; the current/forecast
+    # separation is enforced in the build orchestrator (Task 16), not here.
     r = policy.evaluate(base(aqi=187))          # current authoritative
     assert r["status"] == CANCELLED             # forecast 76 is display-only, not here
+
+def test_severe_warning_beats_unknown():
+    # A definite CANCEL trigger must not be masked to UNKNOWN by a missing signal.
+    r = policy.evaluate(base(severe_warnings=["Tornado Warning"], aqi_known=False))
+    assert r["status"] == CANCELLED
+
+def test_unknown_still_caps_go_and_caution():
+    assert policy.evaluate(base(aqi_known=False))["status"] == UNKNOWN          # heat GO
+    assert policy.evaluate(base(wbgt=83.0, aqi_known=False))["status"] == UNKNOWN  # heat CAUTION

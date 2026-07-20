@@ -1,0 +1,44 @@
+name: fetch-conditions
+on:
+  schedule:
+    - cron: "*/15 * * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: fetch-conditions
+  cancel-in-progress: false
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - run: pip install -r requirements.txt
+      - name: Build conditions.json
+        env:
+          AIRNOW_KEY: ${{ secrets.AIRNOW_KEY }}
+          PURPLEAIR_KEY: ${{ secrets.PURPLEAIR_KEY }}
+        run: python -m pipeline.build
+      - name: Publish to data branch
+        run: |
+          set -e
+          git config user.name "mvbt-bot"
+          git config user.email "bot@users.noreply.github.com"
+          mkdir -p /tmp/out && cp conditions.json /tmp/out/
+          git fetch origin data || true
+          if git show-ref --verify --quiet refs/remotes/origin/data; then
+            git checkout data
+          else
+            git checkout --orphan data
+            git rm -rf . >/dev/null 2>&1 || true
+          fi
+          cp /tmp/out/conditions.json conditions.json
+          git add conditions.json
+          git commit -m "data: conditions $(date -u +%FT%TZ)" || echo "no change"
+          git push origin data

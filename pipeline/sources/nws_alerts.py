@@ -11,6 +11,8 @@ def fetch(lat: float, lon: float) -> dict:
     cancel, flags = [], []
     for f in data.get("features", []):
         ev = f.get("properties", {}).get("event", "")
+        if not ev:
+            continue
         (cancel if ev in _CANCEL else flags).append(ev)
     return {"cancel": cancel, "flags": flags,
             "fetched_at": datetime.now(CENTRAL).isoformat(timespec="seconds")}

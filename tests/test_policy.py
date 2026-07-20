@@ -63,3 +63,9 @@ def test_severe_warning_beats_unknown():
 def test_unknown_still_caps_go_and_caution():
     assert policy.evaluate(base(aqi_known=False))["status"] == UNKNOWN          # heat GO
     assert policy.evaluate(base(wbgt=83.0, aqi_known=False))["status"] == UNKNOWN  # heat CAUTION
+
+def test_alerts_unknown_caps_status():
+    assert policy.evaluate(base(alerts_known=False))["status"] == UNKNOWN
+
+def test_alerts_known_defaults_true():
+    assert policy.evaluate(base())["status"] == GO  # omitting alerts_known keeps prior behavior

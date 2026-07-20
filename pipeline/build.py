@@ -31,6 +31,7 @@ def build_venue(venue, keys, now, schedule_events):
     om, om_unknown = _try(lambda: openmeteo.fetch(lat, lon), "Open-Meteo HRRR")
     fc, fc_unknown = _try(lambda: nws_forecast.fetch(lat, lon), "NWS forecast")
     al, _ = _try(lambda: nws_alerts.fetch(lat, lon), "NWS alerts")
+    alerts_known = al is not None
     an, an_unknown = _try(lambda: airnow.fetch_current(lat, lon, keys["airnow"]), "AirNow")
     anf, _ = _try(lambda: airnow.fetch_forecast(lat, lon, keys["airnow"]), "AirNow forecast")
     pa, _ = _try(lambda: purpleair.fetch_nearest(lat, lon, keys["purpleair"]), "PurpleAir")
@@ -38,10 +39,15 @@ def build_venue(venue, keys, now, schedule_events):
     alerts = al or {"cancel": [], "flags": []}
     vc.alerts = alerts.get("cancel", [])
     vc.flags = alerts.get("flags", [])
+    if not alerts_known:
+        vc.flags.append("⚠️ Severe-weather alert check failed — verify manually before practice")
+    if fc is None:
+        vc.flags.append("⚠️ NWS hourly forecast unavailable — forecast temp/wind from HRRR model; storm flags unavailable")
 
     # ---- current WBGT ----
     cur_wbgt = None
     cur_wbgt_known = False
+    cur_suspect = None
     if cur_metar and om and om["hours"]:
         h0 = om["hours"][0]
         elev = solar.solar_elevation_deg(now.astimezone(ZoneInfo("UTC")), lat, lon)
@@ -63,7 +69,9 @@ def build_venue(venue, keys, now, schedule_events):
                  if cur_metar else Signal.unknown("METAR failed", "METAR").to_dict()),
         "ghi": (Signal(om["hours"][0].get("ghi"), "ok", "Open-Meteo HRRR", None, None, om["fetched_at"]).to_dict()
                 if om else Signal.unknown("HRRR failed", "Open-Meteo HRRR").to_dict()),
-        "wbgt": (Signal(cur_wbgt, "ok", "computed").to_dict() if cur_wbgt_known
+        "wbgt": (Signal(cur_wbgt, "ok", "computed",
+                        extra=({"wbgt_suspect": cur_suspect} if cur_suspect is not None else {})).to_dict()
+                 if cur_wbgt_known
                  else Signal.unknown("WBGT inputs missing", "computed").to_dict()),
         "aqi": (Signal(an["aqi"], "ok", "AirNow", an["reporting_area"], an["distance_mi"], an["fetched_at"],
                        extra={"pollutant": an["pollutant"], "category": an["category"]}).to_dict()
@@ -85,6 +93,7 @@ def build_venue(venue, keys, now, schedule_events):
     cur_eval = policy.evaluate({
         "wbgt": cur_wbgt, "wbgt_known": cur_wbgt_known,
         "aqi": cur_aqi, "aqi_known": cur_aqi_known,
+        "alerts_known": alerts_known,
         "severe_warnings": alerts.get("cancel", []),
         "storm_forecast": False,
     })
@@ -99,31 +108,46 @@ def build_venue(venue, keys, now, schedule_events):
     # and the source of storm_forecast) would never be found.
     fc_hours = {h["time_iso"][:13]: h for h in (fc["hours"] if fc else [])}
     hours_out = []
-    for i, omh in enumerate(om["hours"][1:13] if om else []):
-        t_iso = omh["time_iso"]
-        utc = datetime.datetime.fromisoformat(t_iso).replace(tzinfo=CENTRAL).astimezone(ZoneInfo("UTC"))
-        elev = solar.solar_elevation_deg(utc, lat, lon)
-        # temp/RH/wind from NWS (driver); fall back to HRRR only if NWS hour missing
-        nwsh = fc_hours.get(t_iso[:13])
-        temp = (nwsh or omh).get("temp_f")
-        rh = (nwsh or omh).get("rh_pct")
-        wind = (nwsh or omh).get("wind_mph")
-        ghi = omh.get("ghi") or 0.0
-        known = temp is not None and rh is not None and wind is not None
-        wv, ws = (_wbgt_for(temp, rh, wind, ghi, omh.get("cloud_pct"), elev) if known else (None, None))
-        is_storm = bool(nwsh and nwsh.get("is_storm"))
-        ev = policy.evaluate({
-            "wbgt": wv, "wbgt_known": known,
-            "aqi": cur_aqi, "aqi_known": cur_aqi_known,   # current AQI applies; forecast AQI never drives
-            "severe_warnings": alerts.get("cancel", []),
-            "storm_forecast": is_storm,
-        })
-        hours_out.append(HourPoint(
-            time_iso=t_iso, wbgt_f=wv, wbgt_suspect=ws,
-            aqi_forecast=(anf.get("aqi") if anf else None),
-            precip_pct=(nwsh or omh).get("precip_pct"),
-            weather_code=(nwsh.get("short") if nwsh else str(omh.get("weather_code"))),
-            status=ev["status"], reasons=ev["reasons"]).to_dict())
+    if om:
+        for i, omh in enumerate(om["hours"][1:13]):
+            t_iso = omh["time_iso"]
+            utc = datetime.datetime.fromisoformat(t_iso).replace(tzinfo=CENTRAL).astimezone(ZoneInfo("UTC"))
+            elev = solar.solar_elevation_deg(utc, lat, lon)
+            # temp/RH/wind from NWS (driver); fall back to HRRR only if NWS hour missing
+            nwsh = fc_hours.get(t_iso[:13])
+            temp = (nwsh or omh).get("temp_f")
+            rh = (nwsh or omh).get("rh_pct")
+            wind = (nwsh or omh).get("wind_mph")
+            ghi = omh.get("ghi") or 0.0
+            known = temp is not None and rh is not None and wind is not None
+            wv, ws = (_wbgt_for(temp, rh, wind, ghi, omh.get("cloud_pct"), elev) if known else (None, None))
+            is_storm = bool(nwsh and nwsh.get("is_storm"))
+            ev = policy.evaluate({
+                "wbgt": wv, "wbgt_known": known,
+                "aqi": cur_aqi, "aqi_known": cur_aqi_known,   # current AQI applies; forecast AQI never drives
+                "alerts_known": alerts_known,
+                "severe_warnings": alerts.get("cancel", []),
+                "storm_forecast": is_storm,
+            })
+            hours_out.append(HourPoint(
+                time_iso=t_iso, wbgt_f=wv, wbgt_suspect=ws,
+                aqi_forecast=(anf.get("aqi") if anf else None),
+                precip_pct=(nwsh or omh).get("precip_pct"),
+                weather_code=(nwsh.get("short") if nwsh else str(omh.get("weather_code"))),
+                status=ev["status"], reasons=ev["reasons"]).to_dict())
+    elif fc:
+        for nwsh in fc["hours"][:12]:
+            ev = policy.evaluate({"wbgt": None, "wbgt_known": False,
+                                  "aqi": cur_aqi, "aqi_known": cur_aqi_known,
+                                  "alerts_known": alerts_known,
+                                  "severe_warnings": alerts.get("cancel", []),
+                                  "storm_forecast": bool(nwsh.get("is_storm"))})
+            hours_out.append(HourPoint(time_iso=nwsh["time_iso"], wbgt_f=None,
+                                       aqi_forecast=(anf.get("aqi") if anf else None),
+                                       precip_pct=nwsh.get("precip_pct"),
+                                       weather_code=nwsh.get("short"),
+                                       status=ev["status"], reasons=ev["reasons"]).to_dict())
+    # if both om and fc are None, hours_out stays [] (current status already UNKNOWN)
     vc.hours = hours_out
 
     # ---- practice hour ----

@@ -15,10 +15,15 @@ def _stub_sources(monkeypatch, *, airnow_aqi=40, fail=()):
     monkeypatch.setattr(build.metar, "fetch_current",
         lambda s: (_ for _ in ()).throw(build.http.SourceError("x")) if "metar" in fail
         else {"temp_f":85.0,"rh_pct":40.0,"wind_mph":6.0,"station":s,"fetched_at":"t"})
-    monkeypatch.setattr(build.openmeteo, "fetch", lambda a,b: {"hours":hours,"fetched_at":"t"})
+    monkeypatch.setattr(build.openmeteo, "fetch",
+        lambda a,b: (_ for _ in ()).throw(build.http.SourceError("x")) if "openmeteo" in fail
+        else {"hours":hours,"fetched_at":"t"})
     monkeypatch.setattr(build.nws_forecast, "fetch",
-        lambda a,b: {"hours":[{**h,"short":"Sunny","is_storm":False} for h in hours[1:]],"fetched_at":"t"})
-    monkeypatch.setattr(build.nws_alerts, "fetch", lambda a,b: {"cancel":[],"flags":[],"fetched_at":"t"})
+        lambda a,b: (_ for _ in ()).throw(build.http.SourceError("x")) if "nws" in fail
+        else {"hours":[{**h,"short":"Sunny","is_storm":False} for h in hours[1:]],"fetched_at":"t"})
+    monkeypatch.setattr(build.nws_alerts, "fetch",
+        lambda a,b: (_ for _ in ()).throw(build.http.SourceError("x")) if "alerts" in fail
+        else {"cancel":[],"flags":[],"fetched_at":"t"})
     monkeypatch.setattr(build.airnow, "fetch_current",
         lambda a,b,k,**kw: (_ for _ in ()).throw(build.http.SourceError("x")) if "airnow" in fail
         else {"aqi":airnow_aqi,"pollutant":"PM2.5","reporting_area":"A","distance_mi":5.0,"category":"Good","fetched_at":"t"})
@@ -44,6 +49,24 @@ def test_build_venue_smoke_cancels(monkeypatch):
     out = build.build_venue(VENUE, {"airnow":"K","purpleair":"K"}, now, [])
     assert out["status"] == CANCELLED
     assert any("AQI Red (>150)" in r["detail"] for r in out["reasons"])
+
+def test_alerts_failure_caps_unknown_and_flags(monkeypatch):
+    now = _stub_sources(monkeypatch, fail=("alerts",))
+    out = build.build_venue(VENUE, {"airnow": "K", "purpleair": "K"}, now, [])
+    assert out["status"] == UNKNOWN
+    assert any("alert check failed" in f for f in out["flags"])
+
+def test_nws_forecast_failure_flags_hrrr_fallback(monkeypatch):
+    now = _stub_sources(monkeypatch, fail=("nws",))
+    out = build.build_venue(VENUE, {"airnow": "K", "purpleair": "K"}, now, [])
+    assert len(out["hours"]) == 12  # still full strip from HRRR
+    assert any("NWS hourly forecast unavailable" in f for f in out["flags"])
+
+def test_openmeteo_failure_yields_unknown_hours(monkeypatch):
+    now = _stub_sources(monkeypatch, fail=("openmeteo",))
+    out = build.build_venue(VENUE, {"airnow": "K", "purpleair": "K"}, now, [])
+    assert len(out["hours"]) == 12
+    assert all(h["status"] == UNKNOWN for h in out["hours"])
 
 def test_build_venue_nws_cross_format_hour_match(monkeypatch):
     """Open-Meteo returns time_iso with no seconds/offset ("...T11:00"); NWS

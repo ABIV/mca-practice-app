@@ -41,7 +41,8 @@ def evaluate(signals: dict) -> dict:
     status = GO
 
     # Safety-critical UNKNOWN capping
-    unknown = (not signals.get("wbgt_known", False)) or (not signals.get("aqi_known", False))
+    unknown = ((not signals.get("wbgt_known", False)) or (not signals.get("aqi_known", False))
+               or (not signals.get("alerts_known", True)))
 
     if signals.get("wbgt_known") and signals.get("wbgt") is not None:
         hs, hr = _heat(signals["wbgt"])
@@ -80,6 +81,8 @@ def evaluate(signals: dict) -> dict:
             missing.append("WBGT")
         if not signals.get("aqi_known"):
             missing.append("current AQI")
+        if not signals.get("alerts_known", True):
+            missing.append("severe-weather alerts")
         reasons.append({"rule": "unknown",
                         "detail": f"Missing safety-critical signal(s): {', '.join(missing)} — status capped at UNKNOWN"})
 

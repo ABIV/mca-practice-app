@@ -1,0 +1,90 @@
+{
+  "generated_at": "2026-07-20T14:00:00-05:00",
+  "ruleset": "MCA-2025",
+  "schedule": [
+    {
+      "title": "MVBT Practice",
+      "location": "Elm Creek Park Reserve, Maple Grove, MN",
+      "start_iso": "2026-07-20T15:00:00-05:00",
+      "venue_id": "elm-creek"
+    }
+  ],
+  "venues": [
+    {
+      "venue_id": "elm-creek",
+      "name": "Elm Creek Park Reserve",
+      "status": "GO",
+      "reasons": [],
+      "practice_hour_iso": "2026-07-20T15:00:00-05:00",
+      "practice_status": "GO",
+      "practice_reasons": [],
+      "current": {
+        "temp": {"value": 84.6, "status": "ok", "source": "METAR", "station_or_monitor": "KMIC", "distance_mi": null, "fetched_at": "2026-07-20T14:00:00-05:00"},
+        "rh": {"value": 58, "status": "ok", "source": "METAR", "station_or_monitor": "KMIC", "distance_mi": null, "fetched_at": "2026-07-20T14:00:00-05:00"},
+        "wind": {"value": 7.2, "status": "ok", "source": "METAR", "station_or_monitor": "KMIC", "distance_mi": null, "fetched_at": "2026-07-20T14:00:00-05:00"},
+        "ghi": {"value": 610.5, "status": "ok", "source": "Open-Meteo HRRR", "station_or_monitor": null, "distance_mi": null, "fetched_at": "2026-07-20T14:00:03-05:00"},
+        "wbgt": {"value": 79.5, "status": "ok", "source": "computed", "station_or_monitor": null, "distance_mi": null, "fetched_at": null},
+        "aqi": {"value": 42, "status": "ok", "source": "AirNow", "station_or_monitor": "Minneapolis-St. Paul", "distance_mi": 6.4, "fetched_at": "2026-07-20T14:00:05-05:00", "extra": {"pollutant": "PM2.5", "category": "Good"}},
+        "aqi_purpleair": {"value": 39, "status": "ok", "source": "PurpleAir (EPA-corrected)", "station_or_monitor": "sensor 41213", "distance_mi": 1.2, "fetched_at": "2026-07-20T14:00:06-05:00", "extra": {"pm25_corrected": 9.8}},
+        "aqi_forecast": {"value": 48, "status": "ok", "source": "AirNow forecast", "station_or_monitor": null, "distance_mi": null, "fetched_at": "2026-07-20T14:00:05-05:00", "extra": {"label": "forecast — verify with current reading"}}
+      },
+      "hours": [
+        {"time_iso": "2026-07-20T15:00", "wbgt_f": 79.5, "wbgt_suspect": null, "aqi_forecast": 48, "precip_pct": 5, "weather_code": "Sunny", "status": "GO", "reasons": []},
+        {"time_iso": "2026-07-20T16:00", "wbgt_f": 80.8, "wbgt_suspect": null, "aqi_forecast": 48, "precip_pct": 5, "weather_code": "Mostly Sunny", "status": "GO", "reasons": []},
+        {"time_iso": "2026-07-20T17:00", "wbgt_f": 82.3, "wbgt_suspect": null, "aqi_forecast": 48, "precip_pct": 10, "weather_code": "Partly Cloudy", "status": "CAUTION", "reasons": [{"rule": "heat", "detail": "Heat WBGT 82-85F: 2-hour max activity, decrease intensity/duration, provide rest breaks"}]},
+        {"time_iso": "2026-07-20T18:00", "wbgt_f": 81.0, "wbgt_suspect": null, "aqi_forecast": 48, "precip_pct": 10, "weather_code": "Partly Cloudy", "status": "GO", "reasons": []},
+        {"time_iso": "2026-07-20T19:00", "wbgt_f": 78.6, "wbgt_suspect": null, "aqi_forecast": 48, "precip_pct": 15, "weather_code": "Partly Cloudy", "status": "GO", "reasons": []},
+        {"time_iso": "2026-07-20T20:00", "wbgt_f": 75.2, "wbgt_suspect": null, "aqi_forecast": 48, "precip_pct": 20, "weather_code": "Chance Showers", "status": "GO", "reasons": []},
+        {"time_iso": "2026-07-20T21:00", "wbgt_f": 71.4, "wbgt_suspect": null, "aqi_forecast": 48, "precip_pct": 15, "weather_code": "Partly Cloudy", "status": "GO", "reasons": []},
+        {"time_iso": "2026-07-20T22:00", "wbgt_f": 68.9, "wbgt_suspect": null, "aqi_forecast": 48, "precip_pct": 10, "weather_code": "Clear", "status": "GO", "reasons": []},
+        {"time_iso": "2026-07-20T23:00", "wbgt_f": 66.1, "wbgt_suspect": null, "aqi_forecast": 48, "precip_pct": 5, "weather_code": "Clear", "status": "GO", "reasons": []},
+        {"time_iso": "2026-07-21T00:00", "wbgt_f": 64.0, "wbgt_suspect": null, "aqi_forecast": 48, "precip_pct": 0, "weather_code": "Clear", "status": "GO", "reasons": []},
+        {"time_iso": "2026-07-21T01:00", "wbgt_f": 62.5, "wbgt_suspect": null, "aqi_forecast": 48, "precip_pct": 0, "weather_code": "Clear", "status": "GO", "reasons": []},
+        {"time_iso": "2026-07-21T02:00", "wbgt_f": 61.0, "wbgt_suspect": null, "aqi_forecast": 48, "precip_pct": 0, "weather_code": "Clear", "status": "GO", "reasons": []}
+      ],
+      "alerts": [],
+      "flags": []
+    },
+    {
+      "venue_id": "wolly",
+      "name": "Woolly Trails",
+      "status": "CANCELLED",
+      "reasons": [
+        {"rule": "air_quality", "detail": "AQI Red (>150): practice cancelled"},
+        {"rule": "heat", "detail": "Heat WBGT 82-85F: 2-hour max activity, decrease intensity/duration, provide rest breaks"},
+        {"rule": "mvbt_combined_stress", "detail": "MVBT — stricter than MCA policy: AQI>100 and WBGT>80 simultaneously → escalated one level (combined heat + smoke stress)"}
+      ],
+      "practice_hour_iso": null,
+      "practice_status": "UNKNOWN",
+      "practice_reasons": [],
+      "current": {
+        "temp": {"value": 88.1, "status": "ok", "source": "METAR", "station_or_monitor": "KOEO", "distance_mi": null, "fetched_at": "2026-07-20T14:00:00-05:00"},
+        "rh": {"value": 62, "status": "ok", "source": "METAR", "station_or_monitor": "KOEO", "distance_mi": null, "fetched_at": "2026-07-20T14:00:00-05:00"},
+        "wind": {"value": 5.4, "status": "ok", "source": "METAR", "station_or_monitor": "KOEO", "distance_mi": null, "fetched_at": "2026-07-20T14:00:00-05:00"},
+        "ghi": {"value": 705.2, "status": "ok", "source": "Open-Meteo HRRR", "station_or_monitor": null, "distance_mi": null, "fetched_at": "2026-07-20T14:00:03-05:00"},
+        "wbgt": {"value": 83.4, "status": "ok", "source": "computed", "station_or_monitor": null, "distance_mi": null, "fetched_at": null},
+        "aqi": {"value": 187, "status": "ok", "source": "AirNow", "station_or_monitor": "St. Croix Falls", "distance_mi": 4.2, "fetched_at": "2026-07-20T14:00:05-05:00", "extra": {"pollutant": "PM2.5", "category": "Unhealthy"}},
+        "aqi_purpleair": {"value": 245, "status": "ok", "source": "PurpleAir (EPA-corrected)", "station_or_monitor": "sensor 88421", "distance_mi": 1.8, "fetched_at": "2026-07-20T14:00:06-05:00", "extra": {"pm25_corrected": 152.3}},
+        "aqi_forecast": {"value": 178, "status": "ok", "source": "AirNow forecast", "station_or_monitor": null, "distance_mi": null, "fetched_at": "2026-07-20T14:00:05-05:00", "extra": {"label": "forecast — verify with current reading"}}
+      },
+      "hours": [
+        {"time_iso": "2026-07-20T15:00", "wbgt_f": 85.5, "wbgt_suspect": null, "aqi_forecast": 178, "precip_pct": 5, "weather_code": "Sunny", "status": "CANCELLED", "reasons": [{"rule": "air_quality", "detail": "AQI Red (>150): practice cancelled"}, {"rule": "heat", "detail": "Heat WBGT 85.1-87.1F: 1-hour max activity, significantly increase rest breaks"}, {"rule": "mvbt_combined_stress", "detail": "MVBT — stricter than MCA policy: AQI>100 and WBGT>80 simultaneously → escalated one level (combined heat + smoke stress)"}]},
+        {"time_iso": "2026-07-20T16:00", "wbgt_f": 84.0, "wbgt_suspect": null, "aqi_forecast": 178, "precip_pct": 5, "weather_code": "Sunny", "status": "CANCELLED", "reasons": [{"rule": "air_quality", "detail": "AQI Red (>150): practice cancelled"}, {"rule": "heat", "detail": "Heat WBGT 82-85F: 2-hour max activity, decrease intensity/duration, provide rest breaks"}, {"rule": "mvbt_combined_stress", "detail": "MVBT — stricter than MCA policy: AQI>100 and WBGT>80 simultaneously → escalated one level (combined heat + smoke stress)"}]},
+        {"time_iso": "2026-07-20T17:00", "wbgt_f": 82.5, "wbgt_suspect": null, "aqi_forecast": 178, "precip_pct": 10, "weather_code": "Partly Cloudy", "status": "CANCELLED", "reasons": [{"rule": "air_quality", "detail": "AQI Red (>150): practice cancelled"}, {"rule": "heat", "detail": "Heat WBGT 82-85F: 2-hour max activity, decrease intensity/duration, provide rest breaks"}, {"rule": "mvbt_combined_stress", "detail": "MVBT — stricter than MCA policy: AQI>100 and WBGT>80 simultaneously → escalated one level (combined heat + smoke stress)"}]},
+        {"time_iso": "2026-07-20T18:00", "wbgt_f": 79.8, "wbgt_suspect": null, "aqi_forecast": 178, "precip_pct": 10, "weather_code": "Partly Cloudy", "status": "CANCELLED", "reasons": [{"rule": "air_quality", "detail": "AQI Red (>150): practice cancelled"}]},
+        {"time_iso": "2026-07-20T19:00", "wbgt_f": 77.0, "wbgt_suspect": null, "aqi_forecast": 178, "precip_pct": 15, "weather_code": "Partly Cloudy", "status": "CANCELLED", "reasons": [{"rule": "air_quality", "detail": "AQI Red (>150): practice cancelled"}]},
+        {"time_iso": "2026-07-20T20:00", "wbgt_f": 74.5, "wbgt_suspect": null, "aqi_forecast": 178, "precip_pct": 20, "weather_code": "Chance Showers", "status": "CANCELLED", "reasons": [{"rule": "air_quality", "detail": "AQI Red (>150): practice cancelled"}]},
+        {"time_iso": "2026-07-20T21:00", "wbgt_f": 72.0, "wbgt_suspect": null, "aqi_forecast": 178, "precip_pct": 15, "weather_code": "Partly Cloudy", "status": "CANCELLED", "reasons": [{"rule": "air_quality", "detail": "AQI Red (>150): practice cancelled"}]},
+        {"time_iso": "2026-07-20T22:00", "wbgt_f": 69.5, "wbgt_suspect": null, "aqi_forecast": 178, "precip_pct": 10, "weather_code": "Clear", "status": "CANCELLED", "reasons": [{"rule": "air_quality", "detail": "AQI Red (>150): practice cancelled"}]},
+        {"time_iso": "2026-07-20T23:00", "wbgt_f": 67.0, "wbgt_suspect": null, "aqi_forecast": 178, "precip_pct": 5, "weather_code": "Clear", "status": "CANCELLED", "reasons": [{"rule": "air_quality", "detail": "AQI Red (>150): practice cancelled"}]},
+        {"time_iso": "2026-07-21T00:00", "wbgt_f": 65.0, "wbgt_suspect": null, "aqi_forecast": 178, "precip_pct": 0, "weather_code": "Clear", "status": "CANCELLED", "reasons": [{"rule": "air_quality", "detail": "AQI Red (>150): practice cancelled"}]},
+        {"time_iso": "2026-07-21T01:00", "wbgt_f": 63.5, "wbgt_suspect": null, "aqi_forecast": 178, "precip_pct": 0, "weather_code": "Clear", "status": "CANCELLED", "reasons": [{"rule": "air_quality", "detail": "AQI Red (>150): practice cancelled"}]},
+        {"time_iso": "2026-07-21T02:00", "wbgt_f": 62.0, "wbgt_suspect": null, "aqi_forecast": 178, "precip_pct": 0, "weather_code": "Clear", "status": "CANCELLED", "reasons": [{"rule": "air_quality", "detail": "AQI Red (>150): practice cancelled"}]}
+      ],
+      "alerts": [],
+      "flags": [
+        "AQI disagreement: AirNow 187 vs PurpleAir 245 (corrected) — verify"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,30 @@
+<main id="app">
+  <header class="topbar">
+    <h1>MVBT Trail Weather</h1>
+    <p id="staleness" class="staleness" hidden></p>
+  </header>
+
+  <section id="scheduled" class="card">
+    <h2>Scheduled practice</h2>
+    <div class="venue-picker">
+      <label for="venue-select">Venue</label>
+      <select id="venue-select"></select>
+    </div>
+    <div id="scheduled-body"></div>
+  </section>
+
+  <section id="board">
+    <div class="board-head">
+      <h2>All venues</h2>
+      <button id="sort-toggle" type="button">Sort: worst-first</button>
+    </div>
+    <div id="board-body"></div>
+  </section>
+
+  <footer class="footer">
+    <p class="senses">Your senses supersede this app. If you hear thunder, clear the trail.</p>
+    <p id="data-time" class="data-time"></p>
+    <p><a id="policy-link" href="https://minnesotacycling.org/wp-content/uploads/2025/07/MCA-Weather-Policy-2025-.pdf" target="_blank" rel="noopener">MCA Weather Policy 2025 (PDF)</a></p>
+  </footer>
+</main>
+<script type="module" src="./app.js"></script>

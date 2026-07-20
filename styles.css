@@ -1,0 +1,35 @@
+:root{
+  --go:#1a7f37; --caution:#b8860b; --cancel:#c62828; --unknown:#5f6b7a;
+  --bg:#0f1115; --card:#181b22; --text:#f2f4f8; --muted:#aab3c0;
+}
+*{box-sizing:border-box}
+body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif;
+  background:var(--bg);color:var(--text);line-height:1.4}
+#app{max-width:760px;margin:0 auto;padding:12px}
+.topbar h1{font-size:1.25rem;margin:.2rem 0}
+.staleness{background:var(--cancel);color:#fff;padding:8px;border-radius:8px;font-weight:600}
+.card,#board{background:var(--card);border-radius:12px;padding:14px;margin:12px 0}
+h2{font-size:1rem;margin:.2rem 0 .6rem}
+.chip{display:inline-block;padding:.35em .7em;border-radius:999px;font-weight:700;color:#fff}
+.chip.GO{background:var(--go)} .chip.CAUTION{background:var(--caution)}
+.chip.CANCELLED{background:var(--cancel)} .chip.UNKNOWN{background:var(--unknown)}
+.big-chip{font-size:1.4rem;padding:.5em 1em}
+.reason{color:var(--muted);margin:.3rem 0}
+.row{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin:.4rem 0}
+.metric{background:#20242d;border-radius:8px;padding:6px 10px;font-variant-numeric:tabular-nums}
+.strip{display:grid;grid-auto-flow:column;gap:4px;overflow-x:auto;padding-bottom:6px}
+.strip .h{min-width:44px;text-align:center;font-size:.72rem;color:var(--muted)}
+.strip .h .w{display:block;color:var(--text);font-weight:700}
+.venue-row{border-top:1px solid #262b34;padding:10px 0;cursor:pointer}
+.venue-row .name{font-weight:600}
+.expand{display:none;margin-top:8px}
+.venue-row.open .expand{display:block}
+.footer{margin:18px 0;color:var(--muted);font-size:.85rem}
+.senses{font-weight:600;color:var(--text)}
+button{background:#20242d;color:var(--text);border:1px solid #333a45;border-radius:8px;padding:6px 10px}
+select{background:#20242d;color:var(--text);border:1px solid #333a45;border-radius:8px;padding:6px}
+.warn{color:var(--caution)}
+@media (prefers-color-scheme:light){
+  :root{--bg:#f4f6fa;--card:#fff;--text:#12151b;--muted:#5a6472}
+  .metric{background:#eef1f6}.strip .h .w{color:#12151b}.venue-row{border-color:#e3e7ee}
+}

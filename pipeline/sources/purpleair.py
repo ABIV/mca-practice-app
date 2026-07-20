@@ -33,6 +33,9 @@ def fetch_nearest(lat, lon, api_key, radius_mi=15) -> dict:
             continue
         if seen is None or (now - seen) > MAX_AGE_S:
             continue
+        pa = row[idx["pm2.5_cf_1"]]
+        if pa is None:
+            continue
         dist = units.haversine_mi(lat, lon, slat, slon)
         if best is None or dist < best[0]:
             best = (dist, row)
@@ -40,9 +43,9 @@ def fetch_nearest(lat, lon, api_key, radius_mi=15) -> dict:
         raise http.SourceError("PurpleAir: no fresh, confident sensor nearby")
     dist, row = best
     pa = row[idx["pm2.5_cf_1"]]
+    # A sensor reporting null humidity still needs an RH input for the Barkjohn
+    # correction, so fall back to a neutral default of 50% RH.
     rh = row[idx["humidity"]] if row[idx["humidity"]] is not None else 50.0
-    if pa is None:
-        raise http.SourceError("PurpleAir: null pm2.5_cf_1")
     corrected = aqi.barkjohn_correct(pa, rh)
     return {"aqi": aqi.pm25_to_aqi(corrected), "pm25_corrected": round(corrected, 1),
             "sensor_index": row[idx["sensor_index"]] if "sensor_index" in idx else None,

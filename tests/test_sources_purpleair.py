@@ -22,3 +22,12 @@ def test_all_stale_raises(monkeypatch):
     monkeypatch.setattr(purpleair.http, "get_json", lambda *a, **k: _payload(rows))
     with pytest.raises(SourceError):
         purpleair.fetch_nearest(45.176, -93.430, "KEY")
+
+def test_nearest_with_null_pm25_skipped(monkeypatch):
+    now = int(time.time())
+    # nearest sensor (101) has null pm2.5 -> should be skipped for farther valid 102
+    rows = [[101, None, 50.0, 95, now, 45.18, -93.43],
+            [102, 40.0, 45.0, 95, now, 45.30, -93.60]]
+    monkeypatch.setattr(purpleair.http, "get_json", lambda *a, **k: _payload(rows))
+    out = purpleair.fetch_nearest(45.176, -93.430, "KEY")
+    assert out["sensor_index"] == 102

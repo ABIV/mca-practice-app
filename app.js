@@ -1,6 +1,16 @@
 const DATA_URL = "https://raw.githubusercontent.com/ABIV/mca-practice-app/data/conditions.json";
-const ORDER = { CANCELLED: 0, UNKNOWN: 1, CAUTION: 2, GO: 3 };
-let STATE = { data: null, sortWorst: true, selectedVenue: null };
+let STATE = { data: null, sortMode: "az", selectedVenue: null };
+
+// Board sort comparators; missing WBGT/AQI values sort to the end.
+function curVal(v, key) {
+  const x = v.current && v.current[key] && v.current[key].value;
+  return (x === null || x === undefined) ? Infinity : x;
+}
+const SORTS = {
+  az: (a, b) => a.name.localeCompare(b.name),                 // A → Z (default)
+  wbgt: (a, b) => curVal(a, "wbgt") - curVal(b, "wbgt"),      // WBGT lowest → highest
+  aqi: (a, b) => curVal(a, "aqi") - curVal(b, "aqi"),         // AQI best (lowest) → worst
+};
 
 async function load() {
   const local = location.protocol === "file:";
@@ -142,9 +152,7 @@ function renderScheduled() {
 function renderBoard() {
   const body = document.getElementById("board-body");
   const venues = [...STATE.data.venues];
-  venues.sort((a, b) => STATE.sortWorst
-    ? ORDER[a.status] - ORDER[b.status]
-    : a.name.localeCompare(b.name));
+  venues.sort(SORTS[STATE.sortMode] || SORTS.az);
   body.innerHTML = venues.map(v => {
     const cur = v.current || {};
     const dist = cur.aqi && cur.aqi.distance_mi != null ? ` · ${cur.aqi.distance_mi} mi` : "";
@@ -177,11 +185,9 @@ function render() {
   renderBoard();
 }
 
-document.getElementById("sort-toggle").addEventListener("click", (e) => {
-  STATE.sortWorst = !STATE.sortWorst;
-  e.target.textContent = STATE.sortWorst ? "Sort: worst-first" : "Sort: A–Z";
-  renderBoard();
-});
+const sortSelect = document.getElementById("sort-select");
+sortSelect.value = STATE.sortMode;
+sortSelect.addEventListener("change", () => { STATE.sortMode = sortSelect.value; renderBoard(); });
 
 load();
 setInterval(load, 5 * 60 * 1000);  // refresh every 5 min

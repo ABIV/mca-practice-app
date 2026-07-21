@@ -69,11 +69,10 @@ function cellVal(v, unit = "") {
 }
 
 // 12-hour strip as labeled rows: an icon in front of each row identifies the
-// reading (🌡️ WBGT, 🌧️ precip); the icon column stays pinned while the hours
-// scroll. WBGT is color-coded by that hour's status. AQI is intentionally NOT
-// here — this app has no hourly AQI (only a current reading + a daily forecast),
-// so a per-hour AQI row would just repeat one flat number; AQI is shown once,
-// clearly labeled, in the summary above.
+// reading (🌡️ WBGT, 🌫️ AQI, 🌧️ precip); the icon column stays pinned while the
+// hours scroll. WBGT is color-coded by that hour's status. The AQI row is the
+// venue's daily AirNow forecast — the same number each hour (AirNow forecasts by
+// region, not by hour), but per-venue (a distant region reads differently).
 function strip(hours) {
   if (!hours.length) return `<div class="strip empty-strip">No hourly forecast</div>`;
   const cols = `grid-template-columns:1.7rem repeat(${hours.length},minmax(2.3rem,1fr));`;
@@ -81,10 +80,12 @@ function strip(hours) {
     `<span class="scell time">${new Date(h.time_iso).toLocaleTimeString([], { hour: "numeric" })}</span>`).join("");
   const wbgt = hours.map(h =>
     `<span class="scell w ${h.status}" title="WBGT — ${h.status}">${cellVal(h.wbgt_f)}</span>`).join("");
+  const aqi = hours.map(h => `<span class="scell">${cellVal(h.aqi_forecast)}</span>`).join("");
   const prec = hours.map(h => `<span class="scell">${cellVal(h.precip_pct, "%")}</span>`).join("");
   return `<div class="strip">
     <div class="srow" style="${cols}"><span class="sico"></span>${times}</div>
     <div class="srow" style="${cols}"><span class="sico" title="WBGT (°F)">🌡️</span>${wbgt}</div>
+    <div class="srow" style="${cols}"><span class="sico" title="AQI (daily forecast)">🌫️</span>${aqi}</div>
     <div class="srow" style="${cols}"><span class="sico" title="Precipitation chance">🌧️</span>${prec}</div>
   </div>`;
 }
@@ -106,7 +107,7 @@ function renderScheduled() {
   const curAqi = num(cur.aqi && cur.aqi.value) +
     (cur.aqi && cur.aqi.extra ? " (" + cur.aqi.extra.pollutant + ")" : "");
   const flags = (v.flags || []).map(f => `<p class="reason warn">⚑ ${f}</p>`).join("");
-  const stripHtml = `<h3>Next 12 hours — 🌡️ WBGT · 🌧️ precip</h3>${strip(v.hours || [])}`;
+  const stripHtml = `<h3>Next 12 hours — 🌡️ WBGT · 🌫️ AQI · 🌧️ precip</h3>${strip(v.hours || [])}`;
 
   if (v.practice_hour_iso) {
     // The scheduled-practice call is a forward-looking WARNING based on the

@@ -5,41 +5,54 @@ import pytest
 
 FIX = pathlib.Path(__file__).parent / "fixtures" / "metar_kmic.json"
 
+def _obs(temp=None, rh=None, wind=None, wdir=None):
+    return {"properties": {"temperature": {"value": temp},
+                           "relativeHumidity": {"value": rh},
+                           "windSpeed": {"value": wind},
+                           "windDirection": {"value": wdir},
+                           "timestamp": "2026-07-21T02:00:00+00:00"}}
+
+def _obs_list(*obs):
+    return {"features": list(obs)}
+
 def test_parse_metar(monkeypatch):
-    data = json.loads(FIX.read_text())
-    monkeypatch.setattr(metar.http, "get_json", lambda *a, **k: data)
+    # metar_kmic.json is a single-observation payload; wrap it in the
+    # observations-list shape the source now consumes.
+    props = json.loads(FIX.read_text())["properties"]
+    monkeypatch.setattr(metar.http, "get_json", lambda *a, **k: {"features": [{"properties": props}]})
     out = metar.fetch_current("KMIC")
     assert isinstance(out["temp_f"], float)
     assert 0 <= out["rh_pct"] <= 100
     assert out["wind_mph"] >= 0
     assert out["station"] == "KMIC"
 
-def test_metar_null_temp_raises(monkeypatch):
-    bad = {"properties": {"temperature": {"value": None},
-                          "relativeHumidity": {"value": 50},
-                          "windSpeed": {"value": 10}, "timestamp": "2026-07-19T19:00:00+00:00"}}
-    monkeypatch.setattr(metar.http, "get_json", lambda *a, **k: bad)
+def test_metar_all_null_temp_raises(monkeypatch):
+    monkeypatch.setattr(metar.http, "get_json", lambda *a, **k: _obs_list(_obs(temp=None, rh=50, wind=10)))
     with pytest.raises(SourceError):
         metar.fetch_current("KMIC")
 
-def test_metar_null_rh_raises(monkeypatch):
+def test_metar_all_null_rh_raises(monkeypatch):
     # RH is a required thermal input; missing → unknown (cannot be assumed).
-    bad = {"properties": {"temperature": {"value": 25},
-                          "relativeHumidity": {"value": None},
-                          "windSpeed": {"value": 10}, "timestamp": "2026-07-19T19:00:00+00:00"}}
-    monkeypatch.setattr(metar.http, "get_json", lambda *a, **k: bad)
+    monkeypatch.setattr(metar.http, "get_json", lambda *a, **k: _obs_list(_obs(temp=25, rh=None, wind=10)))
     with pytest.raises(SourceError):
         metar.fetch_current("KMIC")
 
 def test_metar_null_wind_is_calm(monkeypatch):
-    # NWS reports calm wind as null windSpeed (+null windDirection). This is a
-    # valid observation, NOT missing data — treat as 0 mph (calm), which is also
-    # the conservative direction for WBGT (least cooling → highest WBGT).
-    calm = {"properties": {"temperature": {"value": 29}, "relativeHumidity": {"value": 45},
-                           "windSpeed": {"value": None}, "windDirection": {"value": None},
-                           "timestamp": "2026-07-21T01:10:00+00:00"}}
-    monkeypatch.setattr(metar.http, "get_json", lambda *a, **k: calm)
+    # NWS reports calm wind as null windSpeed (+null windDirection): valid data,
+    # not missing — treat as 0 mph (conservative for WBGT: least cooling).
+    monkeypatch.setattr(metar.http, "get_json",
+        lambda *a, **k: _obs_list(_obs(temp=29, rh=45, wind=None, wdir=None)))
     out = metar.fetch_current("KSTP")
     assert out["wind_mph"] == 0.0
     assert round(out["temp_f"]) == 84  # 29C
     assert out["rh_pct"] == 45
+
+def test_metar_skips_partial_latest_ob(monkeypatch):
+    # The newest observation is a partial "special" (null temp/RH, wind only);
+    # fall back to the most recent COMPLETE observation rather than failing.
+    monkeypatch.setattr(metar.http, "get_json",
+        lambda *a, **k: _obs_list(_obs(temp=None, rh=None, wind=13),   # partial special (newest)
+                                  _obs(temp=25, rh=57, wind=8)))        # complete (older)
+    out = metar.fetch_current("K21D")
+    assert round(out["temp_f"]) == 77  # 25C
+    assert out["rh_pct"] == 57

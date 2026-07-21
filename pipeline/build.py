@@ -23,12 +23,18 @@ def _wbgt_for(temp_f, rh, wind, ghi, cloud, elevation):
         suspect = wbgt.wbgt_f(temp_f, rh, wind, reduced)
     return round(val, 1), (round(suspect, 1) if suspect is not None else None)
 
-def build_venue(venue, keys, now, schedule_events):
+_OM_UNSET = object()
+
+def build_venue(venue, keys, now, schedule_events, om=_OM_UNSET):
     vc = VenueConditions(venue_id=venue["id"], name=venue["name"])
     lat, lon = venue["lat"], venue["lon"]
 
     cur_metar, m_unknown = _try(lambda: metar.fetch_current(venue["metar"]), "METAR")
-    om, om_unknown = _try(lambda: openmeteo.fetch(lat, lon), "Open-Meteo HRRR")
+    # om is normally pre-fetched by build_all's one batched call and passed in
+    # (None if that venue's slice failed). When not provided (direct/unit call),
+    # fetch this venue's own.
+    if om is _OM_UNSET:
+        om, _ = _try(lambda: openmeteo.fetch(lat, lon), "Open-Meteo HRRR")
     fc, fc_unknown = _try(lambda: nws_forecast.fetch(lat, lon), "NWS forecast")
     al, _ = _try(lambda: nws_alerts.fetch(lat, lon), "NWS alerts")
     alerts_known = al is not None
@@ -68,7 +74,7 @@ def build_venue(venue, keys, now, schedule_events):
         "wind": (Signal(cur_metar["wind_mph"], "ok", "METAR", cur_metar["station"], None, cur_metar["fetched_at"]).to_dict()
                  if cur_metar else Signal.unknown("METAR failed", "METAR").to_dict()),
         "ghi": (Signal(om["hours"][0].get("ghi"), "ok", "Open-Meteo HRRR", None, None, om["fetched_at"]).to_dict()
-                if om else Signal.unknown("HRRR failed", "Open-Meteo HRRR").to_dict()),
+                if om else Signal.unknown("Open-Meteo HRRR unavailable", "Open-Meteo HRRR").to_dict()),
         "wbgt": (Signal(cur_wbgt, "ok", "computed",
                         extra=({"wbgt_suspect": cur_suspect} if cur_suspect is not None else {})).to_dict()
                  if cur_wbgt_known
@@ -168,11 +174,19 @@ def build_all(venues, keys, now=None):
         events = schedule.fetch_today(venues, now=now)
     except http.SourceError:
         events = []
+    # One batched Open-Meteo call for all venues, instead of one per venue — the
+    # per-venue volume was rate-limiting the shared CI runner IP. Per-venue
+    # isolation is preserved: fetch_many aligns results to input order with a
+    # latitude identity guard, and each venue receives only its own slice.
+    try:
+        om_list = openmeteo.fetch_many([(v["lat"], v["lon"]) for v in venues])
+    except http.SourceError:
+        om_list = [None] * len(venues)
     return {
         "generated_at": now.isoformat(timespec="seconds"),
         "ruleset": policy.RULESET_VERSION,
         "schedule": events,
-        "venues": [build_venue(v, keys, now, events) for v in venues],
+        "venues": [build_venue(v, keys, now, events, om=om_list[i]) for i, v in enumerate(venues)],
     }
 
 def main():

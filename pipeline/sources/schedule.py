@@ -16,18 +16,33 @@ def _parse_dt(value):
         dt = datetime.strptime(v[:8], "%Y%m%d").replace(tzinfo=CENTRAL)
     return dt.astimezone(CENTRAL)
 
-def _match(location, venues):
-    loc = (location or "").lower()
+def _unfold(text):
+    """RFC 5545 line unfolding: a line beginning with space/tab continues the
+    previous one. TeamSnap folds long SUMMARY/LOCATION values, so unfold before
+    parsing or the park name / address gets truncated."""
+    out = []
+    for line in text.replace("\r\n", "\n").split("\n"):
+        if line[:1] in (" ", "\t") and out:
+            out[-1] += line[1:]
+        else:
+            out.append(line)
+    return "\n".join(out)
+
+def _match(title, location, venues):
+    """Match against the event title AND location. The park name (e.g. "Battle
+    Creek") lives in the TITLE, while LOCATION is a street address — so both are
+    searched. Unmatched → None (never a wrong guess)."""
+    hay = f"{title or ''} {location or ''}".lower()
     for v in venues:
-        for key in ("name", "short", "city"):
+        for key in ("short", "name", "city"):
             val = (v.get(key) or "").lower()
-            if val and val in loc:
+            if val and val in hay:
                 return v["id"]
     return None
 
 def fetch_today(venues, now=None):
     now = now or datetime.now(CENTRAL)
-    text = http.get_text(ICAL, params={"_": int(now.timestamp())})
+    text = _unfold(http.get_text(ICAL, params={"_": int(now.timestamp())}))
     events = []
     for block in text.split("BEGIN:VEVENT")[1:]:
         if "END:VEVENT" not in block:
@@ -35,7 +50,7 @@ def fetch_today(venues, now=None):
         fields = {}
         for line in block.splitlines():
             if line.startswith("SUMMARY:"):
-                fields["title"] = line[len("SUMMARY:"):].strip()
+                fields["title"] = line[len("SUMMARY:"):].strip().replace("\\,", ",")
             elif line.startswith("LOCATION:"):
                 fields["location"] = line[len("LOCATION:"):].strip().replace("\\,", ",")
             elif line.startswith("DTSTART"):
@@ -46,5 +61,5 @@ def fetch_today(venues, now=None):
         events.append({"title": fields.get("title", "Practice"),
                        "location": fields.get("location", ""),
                        "start_iso": start.isoformat(timespec="seconds"),
-                       "venue_id": _match(fields.get("location"), venues)})
+                       "venue_id": _match(fields.get("title"), fields.get("location"), venues)})
     return events

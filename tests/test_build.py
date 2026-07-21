@@ -145,6 +145,29 @@ def test_build_all_batches_om_and_isolates(monkeypatch):
     assert byid["a"]["current"]["ghi"]["value"] == 111.0   # each venue gets its OWN slice
     assert byid["b"]["current"]["ghi"]["value"] == 222.0   # not swapped or reused
 
+def test_practice_hours_use_forecast_aqi_not_current(monkeypatch):
+    # Current AQI benign (GO); forecast AQI hazardous (>150). The current status
+    # uses current AQI; the forecast/practice hours use the forecast AQI.
+    now = datetime.datetime(2026, 7, 20, 17, 0, tzinfo=CENTRAL)
+    hours = [{"time_iso":(now+datetime.timedelta(hours=i)).strftime("%Y-%m-%dT%H:00"),
+              "ghi":100.0,"cloud_pct":20,"temp_f":70.0,"rh_pct":40.0,"wind_mph":6.0,
+              "precip_pct":10,"weather_code":1} for i in range(13)]
+    monkeypatch.setattr(build.metar, "fetch_current",
+        lambda s: {"temp_f":70.0,"rh_pct":40.0,"wind_mph":6.0,"station":s,"fetched_at":"t"})
+    monkeypatch.setattr(build.openmeteo, "fetch", lambda a,b: {"hours":hours,"fetched_at":"t"})
+    monkeypatch.setattr(build.nws_forecast, "fetch",
+        lambda a,b: {"hours":[{**h,"short":"Sunny","is_storm":False} for h in hours[1:]],"fetched_at":"t"})
+    monkeypatch.setattr(build.nws_alerts, "fetch", lambda a,b: {"cancel":[],"flags":[],"fetched_at":"t"})
+    monkeypatch.setattr(build.airnow, "fetch_current",
+        lambda a,b,k,**kw: {"aqi":40,"pollutant":"PM2.5","reporting_area":"A","distance_mi":5.0,"category":"Good","fetched_at":"t"})
+    monkeypatch.setattr(build.airnow, "fetch_forecast",
+        lambda a,b,k,**kw: {"aqi":160,"pollutant":"PM2.5","category":"Unhealthy","reporting_area":"A","fetched_at":"t"})
+    monkeypatch.setattr(build.purpleair, "fetch_nearest",
+        lambda a,b,k,**kw: {"aqi":40,"pm25_corrected":9.0,"sensor_index":1,"distance_mi":2.0,"fetched_at":"t"})
+    out = build.build_venue(VENUE, {"airnow":"K","purpleair":"K"}, now, [])
+    assert out["status"] == "GO"                                    # current uses current AQI 40
+    assert all(h["status"] == CANCELLED for h in out["hours"])      # forecast hours use forecast AQI 160
+
 def test_build_all_om_batch_failure_caps_all_unknown(monkeypatch):
     now = datetime.datetime(2026,7,20,17,0,tzinfo=CENTRAL)
     _stub_for_build_all(monkeypatch)

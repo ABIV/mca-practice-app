@@ -81,47 +81,38 @@ function practiceHourData(v) {
   return (v.hours || []).find(h => (h.time_iso || "").slice(0, 13) === key) || null;
 }
 
-// AQI is not an hourly forecast here: the current AirNow reading drives the call,
-// and the AirNow daily forecast is planning-grade. Show both, clearly labeled, so
-// "52 now" vs "68 forecast today" reads as intended rather than as a contradiction.
-function aqiSummary(cur) {
-  const a = cur.aqi || {};
-  const poll = a.extra && a.extra.pollutant ? ` (${a.extra.pollutant})` : "";
-  const nowTxt = a.value != null ? `<strong>AQI ${a.value}</strong>${poll}` : `<strong>AQI ⚠️ unknown</strong>`;
-  const fc = cur.aqi_forecast && cur.aqi_forecast.value != null ? cur.aqi_forecast.value : null;
-  const fcTxt = fc != null ? ` · forecast today ${fc} <em>(planning only)</em>` : "";
-  const drives = a.value != null ? " — the go/no-go call uses this current reading" : "";
-  return `<p class="aqi-line">Air quality now: ${nowTxt}${fcTxt}${drives}</p>`;
-}
-
 function renderScheduled() {
   const v = venueById(STATE.selectedVenue);
   const body = document.getElementById("scheduled-body");
   if (!v) { body.innerHTML = ""; return; }
   const cur = v.current || {};
-  const aqi = aqiSummary(cur);
+  const curAqi = num(cur.aqi && cur.aqi.value) +
+    (cur.aqi && cur.aqi.extra ? " (" + cur.aqi.extra.pollutant + ")" : "");
   const flags = (v.flags || []).map(f => `<p class="reason warn">⚑ ${f}</p>`).join("");
   const stripHtml = `<h3>Next 12 hours — 🌡️ WBGT · 🌧️ precip</h3>${strip(v.hours || [])}`;
 
   if (v.practice_hour_iso) {
-    // Lead with the PREDICTED call at practice time (WBGT + precip are the true
-    // hourly forecasts for that hour).
+    // The scheduled-practice call is a forward-looking WARNING based on the
+    // PREDICTED conditions at practice time. The box shows forecast values only;
+    // current conditions are demoted to a "Now (monitor)" line.
     const ptime = hourLabel(v.practice_hour_iso);
     const ph = practiceHourData(v);
+    const fcAqi = cur.aqi_forecast && cur.aqi_forecast.value != null ? cur.aqi_forecast.value : null;
     const primary = (v.practice_reasons && v.practice_reasons[0])
       ? v.practice_reasons[0].detail : "Conditions normal at practice time";
     body.innerHTML = `
       <div class="sched-when">Predicted call for practice at <strong>${ptime}</strong></div>
       <div class="row">${chip(v.practice_status, true)}<span class="reason">${primary}</span></div>
       <div class="predicted">
-        <div class="predicted-label">Predicted at ${ptime}</div>
+        <div class="predicted-label">Predicted at ${ptime} — forecast</div>
         <div class="row">
           <span class="metric big-metric">🌡️ WBGT ${num(ph && ph.wbgt_f, "°F")}</span>
+          <span class="metric">🌫️ AQI ${fcAqi != null ? fcAqi : "—"}</span>
           <span class="metric">🌧️ Precip ${num(ph && ph.precip_pct, "%")}</span>
         </div>
+        <p class="reason predicted-note">A forecast-based warning — practice may need to move or cancel. Verify against current conditions before practice.</p>
       </div>
-      ${aqi}
-      <p class="reason now-line">Now: ${chip(v.status)} · WBGT ${num(cur.wbgt && cur.wbgt.value, "°F")} · Temp ${num(cur.temp && cur.temp.value, "°F")} · Wind ${num(cur.wind && cur.wind.value, " mph")}</p>
+      <p class="reason now-line">Now (monitor): ${chip(v.status)} · WBGT ${num(cur.wbgt && cur.wbgt.value, "°F")} · AQI ${curAqi} · Temp ${num(cur.temp && cur.temp.value, "°F")} · Wind ${num(cur.wind && cur.wind.value, " mph")}</p>
       ${flags}
       ${stripHtml}`;
   } else {
@@ -132,10 +123,10 @@ function renderScheduled() {
       <div class="row">${chip(v.status, true)}<span class="reason">${primary}</span></div>
       <div class="row">
         <span class="metric big-metric">WBGT ${num(cur.wbgt && cur.wbgt.value, "°F")}</span>
+        <span class="metric">AQI ${curAqi}</span>
         <span class="metric">Temp ${num(cur.temp && cur.temp.value, "°F")}</span>
         <span class="metric">Wind ${num(cur.wind && cur.wind.value, " mph")}</span>
       </div>
-      ${aqi}
       ${flags}
       ${stripHtml}`;
   }

@@ -14,6 +14,18 @@ CENTRAL = ZoneInfo("America/Chicago")
 _CUR = "https://www.airnowapi.org/aq/observation/latLong/current/"
 _FC = "https://www.airnowapi.org/aq/forecast/latLong/"
 
+def _pick_nearest_dominant(rows, lat, lon):
+    """The search radius can return several reporting areas. Pick the venue's
+    NEAREST area, then the max-AQI (dominant pollutant) row WITHIN that area.
+    Taking the max across the whole radius grabs a distant area's worse value and
+    makes far-apart venues all report the same number (the 'same AQI everywhere'
+    bug)."""
+    def dist(r):
+        return units.haversine_mi(lat, lon, r.get("Latitude", lat), r.get("Longitude", lon))
+    area = min(rows, key=dist).get("ReportingArea")
+    area_rows = [r for r in rows if r.get("ReportingArea") == area] or rows
+    return max(area_rows, key=lambda r: r["AQI"])
+
 def fetch_current(lat, lon, api_key, distance=75) -> dict:
     params = {"format": "application/json", "latitude": lat, "longitude": lon,
               "distance": distance, "API_KEY": api_key}
@@ -21,7 +33,7 @@ def fetch_current(lat, lon, api_key, distance=75) -> dict:
     rows = [r for r in rows if isinstance(r.get("AQI"), int) and r["AQI"] >= 0]
     if not rows:
         raise http.SourceError("AirNow current: no observations")
-    dom = max(rows, key=lambda r: r["AQI"])
+    dom = _pick_nearest_dominant(rows, lat, lon)
     dist = units.haversine_mi(lat, lon, dom.get("Latitude", lat), dom.get("Longitude", lon))
     return {"aqi": dom["AQI"], "pollutant": dom.get("ParameterName", "?"),
             "reporting_area": dom.get("ReportingArea", "?"),
@@ -39,7 +51,7 @@ def fetch_forecast(lat, lon, api_key, date=None, distance=75) -> dict:
     if not valid:
         return {"aqi": None, "pollutant": None, "category": None, "reporting_area": None,
                 "fetched_at": datetime.now(CENTRAL).isoformat(timespec="seconds")}
-    dom = max(valid, key=lambda r: r["AQI"])
+    dom = _pick_nearest_dominant(valid, lat, lon)
     return {"aqi": dom["AQI"], "pollutant": dom.get("ParameterName"),
             "category": dom.get("Category", {}).get("Name"),
             "reporting_area": dom.get("ReportingArea"),

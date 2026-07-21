@@ -107,6 +107,17 @@ def build_venue(venue, keys, now, schedule_events, om=_OM_UNSET):
     vc.status = cur_eval["status"]
     vc.reasons = cur_eval["reasons"]
 
+    # The scheduled-practice / forecast-hour call is a forward-looking WARNING
+    # based on PREDICTED conditions, so it uses the AirNow FORECAST AQI. Fall back
+    # to the current reading only when no forecast was issued for the area, so the
+    # call still has an AQI basis. (Current AQI drives the "now" status above,
+    # which coaches monitor to make the final call.)
+    fc_aqi = anf.get("aqi") if anf else None
+    if fc_aqi is not None:
+        hour_aqi, hour_aqi_known = fc_aqi, True
+    else:
+        hour_aqi, hour_aqi_known = cur_aqi, cur_aqi_known
+
     # ---- forecast hours ----
     # NOTE: Open-Meteo and NWS format time_iso differently ("2026-07-20T11:00"
     # vs "2026-07-20T11:00:00-05:00" for the same local Central hour), so we
@@ -131,7 +142,7 @@ def build_venue(venue, keys, now, schedule_events, om=_OM_UNSET):
             is_storm = bool(nwsh and nwsh.get("is_storm"))
             ev = policy.evaluate({
                 "wbgt": wv, "wbgt_known": known,
-                "aqi": cur_aqi, "aqi_known": cur_aqi_known,   # current AQI applies; forecast AQI never drives
+                "aqi": hour_aqi, "aqi_known": hour_aqi_known,   # predicted (forecast) AQI drives the warning
                 "alerts_known": alerts_known,
                 "severe_warnings": alerts.get("cancel", []),
                 "storm_forecast": is_storm,
@@ -145,7 +156,7 @@ def build_venue(venue, keys, now, schedule_events, om=_OM_UNSET):
     elif fc:
         for nwsh in fc["hours"][:12]:
             ev = policy.evaluate({"wbgt": None, "wbgt_known": False,
-                                  "aqi": cur_aqi, "aqi_known": cur_aqi_known,
+                                  "aqi": hour_aqi, "aqi_known": hour_aqi_known,
                                   "alerts_known": alerts_known,
                                   "severe_warnings": alerts.get("cancel", []),
                                   "storm_forecast": bool(nwsh.get("is_storm"))})

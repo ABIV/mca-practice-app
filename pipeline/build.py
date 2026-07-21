@@ -1,5 +1,6 @@
 """Orchestrator: per-venue fetch (isolated), WBGT + policy, assemble conditions.json."""
 import os, json, datetime
+from concurrent.futures import ThreadPoolExecutor
 from zoneinfo import ZoneInfo
 from pipeline import http, wbgt, solar, policy, models, units
 from pipeline.models import Signal, HourPoint, VenueConditions, UNKNOWN
@@ -182,11 +183,22 @@ def build_all(venues, keys, now=None):
         om_list = openmeteo.fetch_many([(v["lat"], v["lon"]) for v in venues])
     except http.SourceError:
         om_list = [None] * len(venues)
+    # Each venue's remaining fetches (METAR, NWS forecast/alerts, AirNow, PurpleAir)
+    # are independent and I/O-bound — running them sequentially meant ~128 calls
+    # back to back (~8 min on CI). A small bounded thread pool runs venues
+    # concurrently (seconds instead of minutes). Per-venue isolation is unchanged:
+    # each task fetches only its own venue's data and reads shared inputs read-only.
+    # The pool is bounded to stay polite to the APIs (Open-Meteo is already one
+    # pre-fetched batch and is not called here).
+    with ThreadPoolExecutor(max_workers=8) as pool:
+        venue_dicts = list(pool.map(
+            lambda pair: build_venue(pair[1], keys, now, events, om=om_list[pair[0]]),
+            list(enumerate(venues))))
     return {
         "generated_at": now.isoformat(timespec="seconds"),
         "ruleset": policy.RULESET_VERSION,
         "schedule": events,
-        "venues": [build_venue(v, keys, now, events, om=om_list[i]) for i, v in enumerate(venues)],
+        "venues": venue_dicts,
     }
 
 def main():

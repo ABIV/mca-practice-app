@@ -71,28 +71,64 @@ function strip(hours) {
   </div>`;
 }
 
+function hourLabel(iso) { return new Date(iso).toLocaleTimeString([], { hour: "numeric" }); }
+
+// The forecast-hour entry that matches the scheduled practice hour (or null).
+function practiceHourData(v) {
+  if (!v.practice_hour_iso) return null;
+  const key = v.practice_hour_iso.slice(0, 13);
+  return (v.hours || []).find(h => (h.time_iso || "").slice(0, 13) === key) || null;
+}
+
 function renderScheduled() {
   const v = venueById(STATE.selectedVenue);
   const body = document.getElementById("scheduled-body");
   if (!v) { body.innerHTML = ""; return; }
   const cur = v.current || {};
-  const practice = v.practice_hour_iso
-    ? `Practice hour: <strong>${new Date(v.practice_hour_iso).toLocaleTimeString([], {hour:"numeric"})}</strong> — ${chip(v.practice_status)}`
-    : `<span class="warn">No matched practice today — showing current conditions</span>`;
-  const primary = (v.reasons && v.reasons[0]) ? v.reasons[0].detail : "Conditions normal";
-  body.innerHTML = `
-    <div class="row">${chip(v.status, true)}<span class="reason">${primary}</span></div>
-    <p class="reason">${practice}</p>
-    <div class="row">
-      <span class="metric">WBGT ${num(cur.wbgt && cur.wbgt.value, "°F")}</span>
-      <span class="metric">AQI ${num(cur.aqi && cur.aqi.value)} ${cur.aqi && cur.aqi.extra ? "("+cur.aqi.extra.pollutant+")" : ""}</span>
-      <span class="metric">Temp ${num(cur.temp && cur.temp.value, "°F")}</span>
-      <span class="metric">Wind ${num(cur.wind && cur.wind.value, " mph")}</span>
-    </div>
-    ${cur.aqi_forecast ? `<p class="reason">Forecast AQI: ${num(cur.aqi_forecast.value)} — <em>forecast, verify with current reading</em></p>` : ""}
-    ${(v.flags||[]).map(f=>`<p class="reason warn">⚑ ${f}</p>`).join("")}
-    <h3>Next 12 hours — 🌡️ WBGT · 🌫️ AQI · 🌧️ precip</h3>
-    ${strip(v.hours || [])}`;
+  const aqiTxt = num(cur.aqi && cur.aqi.value) +
+    (cur.aqi && cur.aqi.extra ? " (" + cur.aqi.extra.pollutant + ")" : "");
+  const fcNote = cur.aqi_forecast && cur.aqi_forecast.value != null
+    ? `<p class="reason">AQI forecast today: ${cur.aqi_forecast.value} — <em>planning only, verify with current reading</em></p>` : "";
+  const flags = (v.flags || []).map(f => `<p class="reason warn">⚑ ${f}</p>`).join("");
+  const stripHtml = `<h3>Next 12 hours — 🌡️ WBGT · 🌫️ AQI · 🌧️ precip</h3>${strip(v.hours || [])}`;
+
+  if (v.practice_hour_iso) {
+    // Lead with the PREDICTED call at practice time.
+    const ptime = hourLabel(v.practice_hour_iso);
+    const ph = practiceHourData(v);
+    const primary = (v.practice_reasons && v.practice_reasons[0])
+      ? v.practice_reasons[0].detail : "Conditions normal at practice time";
+    body.innerHTML = `
+      <div class="sched-when">Predicted call for practice at <strong>${ptime}</strong></div>
+      <div class="row">${chip(v.practice_status, true)}<span class="reason">${primary}</span></div>
+      <div class="predicted">
+        <div class="predicted-label">Predicted at ${ptime}</div>
+        <div class="row">
+          <span class="metric big-metric">🌡️ WBGT ${num(ph && ph.wbgt_f, "°F")}</span>
+          <span class="metric">🌫️ AQI ${aqiTxt}</span>
+          <span class="metric">🌧️ Precip ${num(ph && ph.precip_pct, "%")}</span>
+        </div>
+        ${fcNote}
+      </div>
+      <p class="reason now-line">Now: ${chip(v.status)} · WBGT ${num(cur.wbgt && cur.wbgt.value, "°F")} · AQI ${num(cur.aqi && cur.aqi.value)} · Temp ${num(cur.temp && cur.temp.value, "°F")} · Wind ${num(cur.wind && cur.wind.value, " mph")}</p>
+      ${flags}
+      ${stripHtml}`;
+  } else {
+    // No matched practice today — fall back to current conditions.
+    const primary = (v.reasons && v.reasons[0]) ? v.reasons[0].detail : "Conditions normal";
+    body.innerHTML = `
+      <div class="sched-when warn">No matched practice today — showing current conditions</div>
+      <div class="row">${chip(v.status, true)}<span class="reason">${primary}</span></div>
+      <div class="row">
+        <span class="metric big-metric">WBGT ${num(cur.wbgt && cur.wbgt.value, "°F")}</span>
+        <span class="metric">AQI ${aqiTxt}</span>
+        <span class="metric">Temp ${num(cur.temp && cur.temp.value, "°F")}</span>
+        <span class="metric">Wind ${num(cur.wind && cur.wind.value, " mph")}</span>
+      </div>
+      ${fcNote}
+      ${flags}
+      ${stripHtml}`;
+  }
 }
 
 function renderBoard() {

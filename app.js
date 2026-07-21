@@ -52,8 +52,11 @@ function cellVal(v, unit = "") {
 }
 
 // 12-hour strip as labeled rows: an icon in front of each row identifies the
-// reading (🌡️ WBGT, 🌫️ AQI, 🌧️ precip); the icon column stays pinned while the
-// hours scroll. WBGT is color-coded by that hour's status.
+// reading (🌡️ WBGT, 🌧️ precip); the icon column stays pinned while the hours
+// scroll. WBGT is color-coded by that hour's status. AQI is intentionally NOT
+// here — this app has no hourly AQI (only a current reading + a daily forecast),
+// so a per-hour AQI row would just repeat one flat number; AQI is shown once,
+// clearly labeled, in the summary above.
 function strip(hours) {
   if (!hours.length) return `<div class="strip empty-strip">No hourly forecast</div>`;
   const cols = `grid-template-columns:1.7rem repeat(${hours.length},minmax(2.3rem,1fr));`;
@@ -61,12 +64,10 @@ function strip(hours) {
     `<span class="scell time">${new Date(h.time_iso).toLocaleTimeString([], { hour: "numeric" })}</span>`).join("");
   const wbgt = hours.map(h =>
     `<span class="scell w ${h.status}" title="WBGT — ${h.status}">${cellVal(h.wbgt_f)}</span>`).join("");
-  const aqi = hours.map(h => `<span class="scell">${cellVal(h.aqi_forecast)}</span>`).join("");
   const prec = hours.map(h => `<span class="scell">${cellVal(h.precip_pct, "%")}</span>`).join("");
   return `<div class="strip">
     <div class="srow" style="${cols}"><span class="sico"></span>${times}</div>
     <div class="srow" style="${cols}"><span class="sico" title="WBGT (°F)">🌡️</span>${wbgt}</div>
-    <div class="srow" style="${cols}"><span class="sico" title="Air Quality Index">🌫️</span>${aqi}</div>
     <div class="srow" style="${cols}"><span class="sico" title="Precipitation chance">🌧️</span>${prec}</div>
   </div>`;
 }
@@ -80,20 +81,31 @@ function practiceHourData(v) {
   return (v.hours || []).find(h => (h.time_iso || "").slice(0, 13) === key) || null;
 }
 
+// AQI is not an hourly forecast here: the current AirNow reading drives the call,
+// and the AirNow daily forecast is planning-grade. Show both, clearly labeled, so
+// "52 now" vs "68 forecast today" reads as intended rather than as a contradiction.
+function aqiSummary(cur) {
+  const a = cur.aqi || {};
+  const poll = a.extra && a.extra.pollutant ? ` (${a.extra.pollutant})` : "";
+  const nowTxt = a.value != null ? `<strong>AQI ${a.value}</strong>${poll}` : `<strong>AQI ⚠️ unknown</strong>`;
+  const fc = cur.aqi_forecast && cur.aqi_forecast.value != null ? cur.aqi_forecast.value : null;
+  const fcTxt = fc != null ? ` · forecast today ${fc} <em>(planning only)</em>` : "";
+  const drives = a.value != null ? " — the go/no-go call uses this current reading" : "";
+  return `<p class="aqi-line">Air quality now: ${nowTxt}${fcTxt}${drives}</p>`;
+}
+
 function renderScheduled() {
   const v = venueById(STATE.selectedVenue);
   const body = document.getElementById("scheduled-body");
   if (!v) { body.innerHTML = ""; return; }
   const cur = v.current || {};
-  const aqiTxt = num(cur.aqi && cur.aqi.value) +
-    (cur.aqi && cur.aqi.extra ? " (" + cur.aqi.extra.pollutant + ")" : "");
-  const fcNote = cur.aqi_forecast && cur.aqi_forecast.value != null
-    ? `<p class="reason">AQI forecast today: ${cur.aqi_forecast.value} — <em>planning only, verify with current reading</em></p>` : "";
+  const aqi = aqiSummary(cur);
   const flags = (v.flags || []).map(f => `<p class="reason warn">⚑ ${f}</p>`).join("");
-  const stripHtml = `<h3>Next 12 hours — 🌡️ WBGT · 🌫️ AQI · 🌧️ precip</h3>${strip(v.hours || [])}`;
+  const stripHtml = `<h3>Next 12 hours — 🌡️ WBGT · 🌧️ precip</h3>${strip(v.hours || [])}`;
 
   if (v.practice_hour_iso) {
-    // Lead with the PREDICTED call at practice time.
+    // Lead with the PREDICTED call at practice time (WBGT + precip are the true
+    // hourly forecasts for that hour).
     const ptime = hourLabel(v.practice_hour_iso);
     const ph = practiceHourData(v);
     const primary = (v.practice_reasons && v.practice_reasons[0])
@@ -105,12 +117,11 @@ function renderScheduled() {
         <div class="predicted-label">Predicted at ${ptime}</div>
         <div class="row">
           <span class="metric big-metric">🌡️ WBGT ${num(ph && ph.wbgt_f, "°F")}</span>
-          <span class="metric">🌫️ AQI ${aqiTxt}</span>
           <span class="metric">🌧️ Precip ${num(ph && ph.precip_pct, "%")}</span>
         </div>
-        ${fcNote}
       </div>
-      <p class="reason now-line">Now: ${chip(v.status)} · WBGT ${num(cur.wbgt && cur.wbgt.value, "°F")} · AQI ${num(cur.aqi && cur.aqi.value)} · Temp ${num(cur.temp && cur.temp.value, "°F")} · Wind ${num(cur.wind && cur.wind.value, " mph")}</p>
+      ${aqi}
+      <p class="reason now-line">Now: ${chip(v.status)} · WBGT ${num(cur.wbgt && cur.wbgt.value, "°F")} · Temp ${num(cur.temp && cur.temp.value, "°F")} · Wind ${num(cur.wind && cur.wind.value, " mph")}</p>
       ${flags}
       ${stripHtml}`;
   } else {
@@ -121,11 +132,10 @@ function renderScheduled() {
       <div class="row">${chip(v.status, true)}<span class="reason">${primary}</span></div>
       <div class="row">
         <span class="metric big-metric">WBGT ${num(cur.wbgt && cur.wbgt.value, "°F")}</span>
-        <span class="metric">AQI ${aqiTxt}</span>
         <span class="metric">Temp ${num(cur.temp && cur.temp.value, "°F")}</span>
         <span class="metric">Wind ${num(cur.wind && cur.wind.value, " mph")}</span>
       </div>
-      ${fcNote}
+      ${aqi}
       ${flags}
       ${stripHtml}`;
   }

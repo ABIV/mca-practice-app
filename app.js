@@ -19,6 +19,13 @@ async function load() {
 function chip(status, big) {
   return `<span class="chip ${status} ${big ? "big-chip" : ""}">${status}</span>`;
 }
+// Compact colored status indicator for the board (avoids repeating GO/CAUTION
+// text on every row). The status stays available via title/aria for hover and
+// screen readers.
+function dot(status, label) {
+  const t = (label ? label + ": " : "") + status;
+  return `<span class="dot ${status}" title="${t}" aria-label="${t}"></span>`;
+}
 function num(v, unit = "") { return v === null || v === undefined ? "—" : `${v}${unit}`; }
 
 function staleness(generatedAt) {
@@ -144,11 +151,11 @@ function renderBoard() {
     const poll = cur.aqi && cur.aqi.extra ? ` ${cur.aqi.extra.pollutant}` : "";
     return `<div class="venue-row" data-id="${v.venue_id}">
       <div class="row">
-        ${chip(v.status)}
+        ${dot(v.status, "Now")}
         <span class="name">${v.name}</span>
         <span class="metric">WBGT ${num(cur.wbgt && cur.wbgt.value)}</span>
         <span class="metric">AQI ${num(cur.aqi && cur.aqi.value)}${poll}${dist}</span>
-        ${v.practice_hour_iso ? chip(v.practice_status) : ""}
+        ${v.practice_hour_iso ? `<span class="at-practice">practice ${dot(v.practice_status, "At practice")}</span>` : ""}
         ${(v.flags||[]).length ? `<span class="warn">⚑${v.flags.length}</span>` : ""}
       </div>
       <div class="expand">

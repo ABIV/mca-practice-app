@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-28T02:18:25-05:00",
+  "generated_at": "2026-07-28T05:07:06-05:00",
   "ruleset": "MCA-2025",
   "schedule": [
     {
@@ -25,12 +25,12 @@
       "practice_reasons": [],
       "current": {
         "temp": {
-          "value": 68.36,
+          "value": 65.3,
           "status": "ok",
           "source": "METAR",
           "station_or_monitor": "KOEO",
           "distance_mi": null,
-          "fetched_at": "2026-07-28T02:18:26-05:00"
+          "fetched_at": "2026-07-28T05:07:07-05:00"
         },
         "rh": {
           "value": 100.0,
@@ -38,7 +38,7 @@
           "source": "METAR",
           "station_or_monitor": "KOEO",
           "distance_mi": null,
-          "fetched_at": "2026-07-28T02:18:26-05:00"
+          "fetched_at": "2026-07-28T05:07:07-05:00"
         },
         "wind": {
           "value": 0.0,
@@ -46,7 +46,7 @@
           "source": "METAR",
           "station_or_monitor": "KOEO",
           "distance_mi": null,
-          "fetched_at": "2026-07-28T02:18:26-05:00"
+          "fetched_at": "2026-07-28T05:07:07-05:00"
         },
         "ghi": {
           "value": 0.0,
@@ -54,10 +54,10 @@
           "source": "Open-Meteo HRRR",
           "station_or_monitor": null,
           "distance_mi": null,
-          "fetched_at": "2026-07-28T02:18:26-05:00"
+          "fetched_at": "2026-07-28T05:07:07-05:00"
         },
         "wbgt": {
-          "value": 68.4,
+          "value": 65.3,
           "status": "ok",
           "source": "computed",
           "station_or_monitor": null,
@@ -65,12 +65,12 @@
           "fetched_at": null
         },
         "aqi": {
-          "value": 57,
+          "value": 54,
           "status": "ok",
           "source": "AirNow",
           "station_or_monitor": "East Central Minnesota",
           "distance_mi": 32.3,
-          "fetched_at": "2026-07-28T02:18:28-05:00",
+          "fetched_at": "2026-07-28T05:07:08-05:00",
           "extra": {
             "pollutant": "PM2.5",
             "category": "Moderate"
@@ -91,58 +91,13 @@
           "source": "AirNow forecast",
           "station_or_monitor": null,
           "distance_mi": null,
-          "fetched_at": "2026-07-28T02:18:28-05:00",
+          "fetched_at": "2026-07-28T05:07:09-05:00",
           "extra": {
             "label": "forecast \u2014 verify with current reading"
           }
         }
       },
       "hours": [
-        {
-          "time_iso": "2026-07-28T03:00",
-          "wbgt_f": 64.0,
-          "wbgt_suspect": null,
-          "aqi_forecast": 56,
-          "precip_pct": 0,
-          "weather_code": "Partly Cloudy",
-          "status": "GO",
-          "reasons": [
-            {
-              "rule": "air_quality",
-              "detail": "AQI Yellow (51-100): check in with air-quality-sensitive athletes; consider reduced duration/intensity for sensitive groups"
-            }
-          ]
-        },
-        {
-          "time_iso": "2026-07-28T04:00",
-          "wbgt_f": 63.0,
-          "wbgt_suspect": null,
-          "aqi_forecast": 56,
-          "precip_pct": 0,
-          "weather_code": "Partly Cloudy",
-          "status": "GO",
-          "reasons": [
-            {
-              "rule": "air_quality",
-              "detail": "AQI Yellow (51-100): check in with air-quality-sensitive athletes; consider reduced duration/intensity for sensitive groups"
-            }
-          ]
-        },
-        {
-          "time_iso": "2026-07-28T05:00",
-          "wbgt_f": 62.0,
-          "wbgt_suspect": null,
-          "aqi_forecast": 56,
-          "precip_pct": 0,
-          "weather_code": "Mostly Clear",
-          "status": "GO",
-          "reasons": [
-            {
-              "rule": "air_quality",
-              "detail": "AQI Yellow (51-100): check in with air-quality-sensitive athletes; consider reduced duration/intensity for sensitive groups"
-            }
-          ]
-        },
         {
           "time_iso": "2026-07-28T06:00",
           "wbgt_f": 61.1,
@@ -175,7 +130,7 @@
         },
         {
           "time_iso": "2026-07-28T08:00",
-          "wbgt_f": 67.9,
+          "wbgt_f": 67.8,
           "wbgt_suspect": null,
           "aqi_forecast": 56,
           "precip_pct": 0,
@@ -205,7 +160,7 @@
         },
         {
           "time_iso": "2026-07-28T10:00",
-          "wbgt_f": 77.8,
+          "wbgt_f": 78.2,
           "wbgt_suspect": null,
           "aqi_forecast": 56,
           "precip_pct": 0,
@@ -220,13 +175,17 @@
         },
         {
           "time_iso": "2026-07-28T11:00",
-          "wbgt_f": 80.3,
+          "wbgt_f": 82.6,
           "wbgt_suspect": null,
           "aqi_forecast": 56,
           "precip_pct": 0,
           "weather_code": "Mostly Sunny",
-          "status": "GO",
+          "status": "CAUTION",
           "reasons": [
+            {
+              "rule": "heat",
+              "detail": "Heat WBGT 82-85F: 2-hour max activity, decrease intensity/duration, provide rest breaks"
+            },
             {
               "rule": "air_quality",
               "detail": "AQI Yellow (51-100): check in with air-quality-sensitive athletes; consider reduced duration/intensity for sensitive groups"
@@ -235,26 +194,11 @@
         },
         {
           "time_iso": "2026-07-28T12:00",
-          "wbgt_f": 81.8,
+          "wbgt_f": 85.9,
           "wbgt_suspect": null,
           "aqi_forecast": 56,
           "precip_pct": 0,
           "weather_code": "Sunny",
-          "status": "GO",
-          "reasons": [
-            {
-              "rule": "air_quality",
-              "detail": "AQI Yellow (51-100): check in with air-quality-sensitive athletes; consider reduced duration/intensity for sensitive groups"
-            }
-          ]
-        },
-        {
-          "time_iso": "2026-07-28T13:00",
-          "wbgt_f": 86.3,
-          "wbgt_suspect": null,
-          "aqi_forecast": 56,
-          "precip_pct": 0,
-          "weather_code": "Mostly Sunny",
           "status": "CAUTION",
           "reasons": [
             {
@@ -268,12 +212,88 @@
           ]
         },
         {
-          "time_iso": "2026-07-28T14:00",
-          "wbgt_f": 81.1,
+          "time_iso": "2026-07-28T13:00",
+          "wbgt_f": 88.4,
           "wbgt_suspect": null,
           "aqi_forecast": 56,
           "precip_pct": 0,
-          "weather_code": "1",
+          "weather_code": "Mostly Sunny",
+          "status": "CANCELLED",
+          "reasons": [
+            {
+              "rule": "heat",
+              "detail": "Heat WBGT >87.1F: practice cancelled"
+            },
+            {
+              "rule": "air_quality",
+              "detail": "AQI Yellow (51-100): check in with air-quality-sensitive athletes; consider reduced duration/intensity for sensitive groups"
+            }
+          ]
+        },
+        {
+          "time_iso": "2026-07-28T14:00",
+          "wbgt_f": 90.7,
+          "wbgt_suspect": null,
+          "aqi_forecast": 56,
+          "precip_pct": 0,
+          "weather_code": "Sunny",
+          "status": "CANCELLED",
+          "reasons": [
+            {
+              "rule": "heat",
+              "detail": "Heat WBGT >87.1F: practice cancelled"
+            },
+            {
+              "rule": "air_quality",
+              "detail": "AQI Yellow (51-100): check in with air-quality-sensitive athletes; consider reduced duration/intensity for sensitive groups"
+            }
+          ]
+        },
+        {
+          "time_iso": "2026-07-28T15:00",
+          "wbgt_f": 91.1,
+          "wbgt_suspect": null,
+          "aqi_forecast": 56,
+          "precip_pct": 0,
+          "weather_code": "Sunny",
+          "status": "CANCELLED",
+          "reasons": [
+            {
+              "rule": "heat",
+              "detail": "Heat WBGT >87.1F: practice cancelled"
+            },
+            {
+              "rule": "air_quality",
+              "detail": "AQI Yellow (51-100): check in with air-quality-sensitive athletes; consider reduced duration/intensity for sensitive groups"
+            }
+          ]
+        },
+        {
+          "time_iso": "2026-07-28T16:00",
+          "wbgt_f": 89.9,
+          "wbgt_suspect": null,
+          "aqi_forecast": 56,
+          "precip_pct": 0,
+          "weather_code": "Sunny",
+          "status": "CANCELLED",
+          "reasons": [
+            {
+              "rule": "heat",
+              "detail": "Heat WBGT >87.1F: practice cancelled"
+            },
+            {
+              "rule": "air_quality",
+              "detail": "AQI Yellow (51-100): check in with air-quality-sensitive athletes; consider reduced duration/intensity for sensitive groups"
+            }
+          ]
+        },
+        {
+          "time_iso": "2026-07-28T17:00",
+          "wbgt_f": 80.2,
+          "wbgt_suspect": null,
+          "aqi_forecast": 56,
+          "precip_pct": 0,
+          "weather_code": "0",
           "status": "GO",
           "reasons": [
             {
@@ -301,28 +321,28 @@
       "practice_reasons": [],
       "current": {
         "temp": {
-          "value": 73.4,
+          "value": 69.8,
           "status": "ok",
           "source": "METAR",
           "station_or_monitor": "KMIC",
           "distance_mi": null,
-          "fetched_at": "2026-07-28T02:18:26-05:00"
+          "fetched_at": "2026-07-28T05:07:07-05:00"
         },
         "rh": {
-          "value": 73.461696749353,
+          "value": 77.915158291749,
           "status": "ok",
           "source": "METAR",
           "station_or_monitor": "KMIC",
           "distance_mi": null,
-          "fetched_at": "2026-07-28T02:18:26-05:00"
+          "fetched_at": "2026-07-28T05:07:07-05:00"
         },
         "wind": {
-          "value": 0.0,
+          "value": 6.912131004000001,
           "status": "ok",
           "source": "METAR",
           "station_or_monitor": "KMIC",
           "distance_mi": null,
-          "fetched_at": "2026-07-28T02:18:26-05:00"
+          "fetched_at": "2026-07-28T05:07:07-05:00"
         },
         "ghi": {
           "value": 0.0,
@@ -330,10 +350,10 @@
           "source": "Open-Meteo HRRR",
           "station_or_monitor": null,
           "distance_mi": null,
-          "fetched_at": "2026-07-28T02:18:26-05:00"
+          "fetched_at": "2026-07-28T05:07:07-05:00"
         },
         "wbgt": {
-          "value": 69.0,
+          "value": 66.3,
           "status": "ok",
           "source": "computed",
           "station_or_monitor": null,
@@ -341,12 +361,12 @@
           "fetched_at": null
         },
         "aqi": {
-          "value": 60,
+          "value": 62,
           "status": "ok",
           "source": "AirNow",
           "station_or_monitor": "Northern Twin Cities Metro",
           "distance_mi": 7.7,
-          "fetched_at": "2026-07-28T02:18:28-05:00",
+          "fetched_at": "2026-07-28T05:07:09-05:00",
           "extra": {
             "pollutant": "PM2.5",
             "category": "Moderate"
@@ -367,58 +387,13 @@
           "source": "AirNow forecast",
           "station_or_monitor": null,
           "distance_mi": null,
-          "fetched_at": "2026-07-28T02:18:28-05:00",
+          "fetched_at": "2026-07-28T05:07:09-05:00",
           "extra": {
             "label": "forecast \u2014 verify with current reading"
           }
         }
       },
       "hours": [
-        {
-          "time_iso": "2026-07-28T03:00",
-          "wbgt_f": 68.0,
-          "wbgt_suspect": null,
-          "aqi_forecast": 71,
-          "precip_pct": 0,
-          "weather_code": "Partly Cloudy",
-          "status": "GO",
-          "reasons": [
-            {
-              "rule": "air_quality",
-              "detail": "AQI Yellow (51-100): check in with air-quality-sensitive athletes; consider reduced duration/intensity for sensitive groups"
-            }
-          ]
-        },
-        {
-          "time_iso": "2026-07-28T04:00",
-          "wbgt_f": 67.0,
-          "wbgt_suspect": null,
-          "aqi_forecast": 71,
-          "precip_pct": 0,
-          "weather_code": "Partly Cloudy",
-          "status": "GO",
-          "reasons": [
-            {
-              "rule": "air_quality",
-              "detail": "AQI Yellow (51-100): check in with air-quality-sensitive athletes; consider reduced duration/intensity for sensitive groups"
-            }
-          ]
-        },
-        {
-          "time_iso": "2026-07-28T05:00",
-          "wbgt_f": 66.5,
-          "wbgt_suspect": null,
-          "aqi_forecast": 71,
-          "precip_pct": 1,
-          "weather_code": "Partly Cloudy",
-          "status": "GO",
-          "reasons": [
-            {
-              "rule": "air_quality",
-              "detail": "AQI Yellow (51-100): check in with air-quality-sensitive athletes; consider reduced duration/intensity for sensitive groups"
-            }
-          ]
-        },
         {
           "time_iso": "2026-07-28T06:00",
           "wbgt_f": 65.5,
@@ -436,7 +411,7 @@
         },
         {
           "time_iso": "2026-07-28T07:00",
-          "wbgt_f": 66.7,
+          "wbgt_f": 66.8,
           "wbgt_suspect": null,
           "aqi_forecast": 71,
           "precip_pct": 0,
@@ -466,7 +441,7 @@
         },
         {
           "time_iso": "2026-07-28T09:00",
-          "wbgt_f": 71.9,
+          "wbgt_f": 72.0,
           "wbgt_suspect": null,
           "aqi_forecast": 71,
           "precip_pct": 0,
@@ -481,7 +456,7 @@
         },
         {
           "time_iso": "2026-07-28T10:00",
-          "wbgt_f": 75.2,
+          "wbgt_f": 75.1,
           "wbgt_suspect": null,
           "aqi_forecast": 71,
           "precip_pct": 0,
@@ -496,7 +471,7 @@
         },
         {
           "time_iso": "2026-07-28T11:00",
-          "wbgt_f": 76.9,
+          "wbgt_f": 77.2,
           "wbgt_suspect": null,
           "aqi_forecast": 71,
           "precip_pct": 0,
@@ -511,7 +486,7 @@
         },
         {
           "time_iso": "2026-07-28T12:00",
-          "wbgt_f": 79.7,
+          "wbgt_f": 79.9,
           "wbgt_suspect": null,
           "aqi_forecast": 71,
           "precip_pct": 0,
@@ -541,17 +516,66 @@
         },
         {
           "time_iso": "2026-07-28T14:00",
-          "wbgt_f": 83.9,
+          "wbgt_f": 81.7,
           "wbgt_suspect": null,
           "aqi_forecast": 71,
           "precip_pct": 0,
-          "weather_code": "0",
+          "weather_code": "Sunny",
+          "status": "GO",
+          "reasons": [
+            {
+              "rule": "air_quality",
+              "detail": "AQI Yellow (51-100): check in with air-quality-sensitive athletes; consider reduced duration/intensity for sensitive groups"
+            }
+          ]
+        },
+        {
+          "time_iso": "2026-07-28T15:00",
+          "wbgt_f": 82.6,
+          "wbgt_suspect": null,
+          "aqi_forecast": 71,
+          "precip_pct": 0,
+          "weather_code": "Sunny",
           "status": "CAUTION",
           "reasons": [
             {
               "rule": "heat",
               "detail": "Heat WBGT 82-85F: 2-hour max activity, decrease intensity/duration, provide rest breaks"
             },
+            {
+              "rule": "air_quality",
+              "detail": "AQI Yellow (51-100): check in with air-quality-sensitive athletes; consider reduced duration/intensity for sensitive groups"
+            }
+          ]
+        },
+        {
+          "time_iso": "2026-07-28T16:00",
+          "wbgt_f": 83.0,
+          "wbgt_suspect": null,
+          "aqi_forecast": 71,
+          "precip_pct": 1,
+          "weather_code": "Sunny",
+          "status": "CAUTION",
+          "reasons": [
+            {
+              "rule": "heat",
+              "detail": "Heat WBGT 82-85F: 2-hour max activity, decrease intensity/duration, provide rest breaks"
+            },
+            {
+              "rule": "air_quality",
+              "detail": "AQI Yellow (51-100): check in with air-quality-sensitive athletes; consider reduced duration/intensity for sensitive groups"
+            }
+          ]
+        },
+        {
+          "time_iso": "2026-07-28T17:00",
+          "wbgt_f": 80.7,
+          "wbgt_suspect": null,
+          "aqi_forecast": 71,
+          "precip_pct": 0,
+          "weather_code": "0",
+          "status": "GO",
+          "reasons": [
             {
               "rule": "air_quality",
               "detail": "AQI Yellow (51-100): check in with air-quality-sensitive athletes; consider reduced duration/intensity for sensitive groups"
@@ -577,28 +601,28 @@
       "practice_reasons": [],
       "current": {
         "temp": {
-          "value": 73.4,
+          "value": 69.8,
           "status": "ok",
           "source": "METAR",
           "station_or_monitor": "KSTP",
           "distance_mi": null,
-          "fetched_at": "2026-07-28T02:18:26-05:00"
+          "fetched_at": "2026-07-28T05:07:07-05:00"
         },
         "rh": {
-          "value": 73.461696749353,
+          "value": 77.915158291749,
           "status": "ok",
           "source": "METAR",
           "station_or_monitor": "KSTP",
           "distance_mi": null,
-          "fetched_at": "2026-07-28T02:18:26-05:00"
+          "fetched_at": "2026-07-28T05:07:07-05:00"
         },
         "wind": {
-          "value": 4.6080873360000005,
+          "value": 5.748924492,
           "status": "ok",
           "source": "METAR",
           "station_or_monitor": "KSTP",
           "distance_mi": null,
-          "fetched_at": "2026-07-28T02:18:26-05:00"
+          "fetched_at": "2026-07-28T05:07:07-05:00"
         },
         "ghi": {
           "value": 0.0,
@@ -606,10 +630,10 @@
           "source": "Open-Meteo HRRR",
           "station_or_monitor": null,
           "distance_mi": null,
-          "fetched_at": "2026-07-28T02:18:26-05:00"
+          "fetched_at": "2026-07-28T05:07:07-05:00"
         },
         "wbgt": {
-          "value": 69.0,
+          "value": 66.3,
           "status": "ok",
           "source": "computed",
           "station_or_monitor": null,
@@ -617,12 +641,12 @@
           "fetched_at": null
         },
         "aqi": {
-          "value": 61,
+          "value": 64,
           "status": "ok",
           "source": "AirNow",
           "station_or_monitor": "Twin Cities",
           "distance_mi": 8.6,
-          "fetched_at": "2026-07-28T02:18:28-05:00",
+          "fetched_at": "2026-07-28T05:07:09-05:00",
           "extra": {
             "pollutant": "PM2.5",
             "category": "Moderate"
@@ -643,58 +667,13 @@
           "source": "AirNow forecast",
           "station_or_monitor": null,
           "distance_mi": null,
-          "fetched_at": "2026-07-28T02:18:28-05:00",
+          "fetched_at": "2026-07-28T05:07:09-05:00",
           "extra": {
             "label": "forecast \u2014 verify with current reading"
           }
         }
       },
       "hours": [
-        {
-          "time_iso": "2026-07-28T03:00",
-          "wbgt_f": 68.1,
-          "wbgt_suspect": null,
-          "aqi_forecast": 71,
-          "precip_pct": 0,
-          "weather_code": "Partly Cloudy",
-          "status": "GO",
-          "reasons": [
-            {
-              "rule": "air_quality",
-              "detail": "AQI Yellow (51-100): check in with air-quality-sensitive athletes; consider reduced duration/intensity for sensitive groups"
-            }
-          ]
-        },
-        {
-          "time_iso": "2026-07-28T04:00",
-          "wbgt_f": 66.5,
-          "wbgt_suspect": null,
-          "aqi_forecast": 71,
-          "precip_pct": 0,
-          "weather_code": "Partly Cloudy",
-          "status": "GO",
-          "reasons": [
-            {
-              "rule": "air_quality",
-              "detail": "AQI Yellow (51-100): check in with air-quality-sensitive athletes; consider reduced duration/intensity for sensitive groups"
-            }
-          ]
-        },
-        {
-          "time_iso": "2026-07-28T05:00",
-          "wbgt_f": 66.0,
-          "wbgt_suspect": null,
-          "aqi_forecast": 71,
-          "precip_pct": 0,
-          "weather_code": "Partly Cloudy",
-          "status": "GO",
-          "reasons": [
-            {
-              "rule": "air_quality",
-              "detail": "AQI Yellow (51-100): check in with air-quality-sensitive athletes; consider reduced duration/intensity for sensitive groups"
-            }
-          ]
-        },
         {
           "time_iso": "2026-07-28T06:00",
           "wbgt_f": 65.0,
@@ -712,7 +691,7 @@
         },
         {
           "time_iso": "2026-07-28T07:00",
-          "wbgt_f": 65.8,
+          "wbgt_f": 65.9,
           "wbgt_suspect": null,
           "aqi_forecast": 71,
           "precip_pct": 0,
@@ -727,7 +706,7 @@
         },
         {
           "time_iso": "2026-07-28T08:00",
-          "wbgt_f": 69.2,
+          "wbgt_f": 69.3,
           "wbgt_suspect": null,
           "aqi_forecast": 71,
           "precip_pct": 0,
@@ -743,846 +722,6 @@
         {
           "time_iso": "2026-07-28T09:00",
           "wbgt_f": 73.6,
-          "wbgt_suspect": null,
-          "aqi_forecast": 71,
-          "precip_pct": 0,
-          "weather_code": "Mostly Sunny",
-          "status": "GO",
-          "reasons": [
-            {
-              "rule": "air_quality",
-              "detail": "AQI Yellow (51-100): check in with air-quality-sensitive athletes; consider reduced duration/intensity for sensitive groups"
-            }
-          ]
-        },
-        {
-          "time_iso": "2026-07-28T10:00",
-          "wbgt_f": 73.4,
-          "wbgt_suspect": null,
-          "aqi_forecast": 71,
-          "precip_pct": 0,
-          "weather_code": "Mostly Sunny",
-          "status": "GO",
-          "reasons": [
-            {
-              "rule": "air_quality",
-              "detail": "AQI Yellow (51-100): check in with air-quality-sensitive athletes; consider reduced duration/intensity for sensitive groups"
-            }
-          ]
-        },
-        {
-          "time_iso": "2026-07-28T11:00",
-          "wbgt_f": 75.7,
-          "wbgt_suspect": null,
-          "aqi_forecast": 71,
-          "precip_pct": 0,
-          "weather_code": "Sunny",
-          "status": "GO",
-          "reasons": [
-            {
-              "rule": "air_quality",
-              "detail": "AQI Yellow (51-100): check in with air-quality-sensitive athletes; consider reduced duration/intensity for sensitive groups"
-            }
-          ]
-        },
-        {
-          "time_iso": "2026-07-28T12:00",
-          "wbgt_f": 78.4,
-          "wbgt_suspect": null,
-          "aqi_forecast": 71,
-          "precip_pct": 0,
-          "weather_code": "Sunny",
-          "status": "GO",
-          "reasons": [
-            {
-              "rule": "air_quality",
-              "detail": "AQI Yellow (51-100): check in with air-quality-sensitive athletes; consider reduced duration/intensity for sensitive groups"
-            }
-          ]
-        },
-        {
-          "time_iso": "2026-07-28T13:00",
-          "wbgt_f": 79.9,
-          "wbgt_suspect": null,
-          "aqi_forecast": 71,
-          "precip_pct": 0,
-          "weather_code": "Sunny",
-          "status": "GO",
-          "reasons": [
-            {
-              "rule": "air_quality",
-              "detail": "AQI Yellow (51-100): check in with air-quality-sensitive athletes; consider reduced duration/intensity for sensitive groups"
-            }
-          ]
-        },
-        {
-          "time_iso": "2026-07-28T14:00",
-          "wbgt_f": 83.0,
-          "wbgt_suspect": null,
-          "aqi_forecast": 71,
-          "precip_pct": 0,
-          "weather_code": "0",
-          "status": "CAUTION",
-          "reasons": [
-            {
-              "rule": "heat",
-              "detail": "Heat WBGT 82-85F: 2-hour max activity, decrease intensity/duration, provide rest breaks"
-            },
-            {
-              "rule": "air_quality",
-              "detail": "AQI Yellow (51-100): check in with air-quality-sensitive athletes; consider reduced duration/intensity for sensitive groups"
-            }
-          ]
-        }
-      ],
-      "alerts": [],
-      "flags": []
-    },
-    {
-      "venue_id": "theo-wirth",
-      "name": "Theodore Wirth",
-      "status": "GO",
-      "reasons": [
-        {
-          "rule": "air_quality",
-          "detail": "AQI Yellow (51-100): check in with air-quality-sensitive athletes; consider reduced duration/intensity for sensitive groups"
-        }
-      ],
-      "practice_hour_iso": "2026-07-28T19:00:00-05:00",
-      "practice_status": "UNKNOWN",
-      "practice_reasons": [],
-      "current": {
-        "temp": {
-          "value": 73.4,
-          "status": "ok",
-          "source": "METAR",
-          "station_or_monitor": "KMIC",
-          "distance_mi": null,
-          "fetched_at": "2026-07-28T02:18:26-05:00"
-        },
-        "rh": {
-          "value": 73.461696749353,
-          "status": "ok",
-          "source": "METAR",
-          "station_or_monitor": "KMIC",
-          "distance_mi": null,
-          "fetched_at": "2026-07-28T02:18:26-05:00"
-        },
-        "wind": {
-          "value": 0.0,
-          "status": "ok",
-          "source": "METAR",
-          "station_or_monitor": "KMIC",
-          "distance_mi": null,
-          "fetched_at": "2026-07-28T02:18:26-05:00"
-        },
-        "ghi": {
-          "value": 0.0,
-          "status": "ok",
-          "source": "Open-Meteo HRRR",
-          "station_or_monitor": null,
-          "distance_mi": null,
-          "fetched_at": "2026-07-28T02:18:26-05:00"
-        },
-        "wbgt": {
-          "value": 69.0,
-          "status": "ok",
-          "source": "computed",
-          "station_or_monitor": null,
-          "distance_mi": null,
-          "fetched_at": null
-        },
-        "aqi": {
-          "value": 61,
-          "status": "ok",
-          "source": "AirNow",
-          "station_or_monitor": "Twin Cities",
-          "distance_mi": 7.2,
-          "fetched_at": "2026-07-28T02:18:28-05:00",
-          "extra": {
-            "pollutant": "PM2.5",
-            "category": "Moderate"
-          }
-        },
-        "aqi_purpleair": {
-          "value": null,
-          "status": "unknown",
-          "source": "PurpleAir",
-          "station_or_monitor": null,
-          "distance_mi": null,
-          "fetched_at": null,
-          "reason": "PurpleAir failed"
-        },
-        "aqi_forecast": {
-          "value": 71,
-          "status": "ok",
-          "source": "AirNow forecast",
-          "station_or_monitor": null,
-          "distance_mi": null,
-          "fetched_at": "2026-07-28T02:18:28-05:00",
-          "extra": {
-            "label": "forecast \u2014 verify with current reading"
-          }
-        }
-      },
-      "hours": [
-        {
-          "time_iso": "2026-07-28T03:00",
-          "wbgt_f": 69.7,
-          "wbgt_suspect": null,
-          "aqi_forecast": 71,
-          "precip_pct": 0,
-          "weather_code": "Partly Cloudy",
-          "status": "GO",
-          "reasons": [
-            {
-              "rule": "air_quality",
-              "detail": "AQI Yellow (51-100): check in with air-quality-sensitive athletes; consider reduced duration/intensity for sensitive groups"
-            }
-          ]
-        },
-        {
-          "time_iso": "2026-07-28T04:00",
-          "wbgt_f": 68.1,
-          "wbgt_suspect": null,
-          "aqi_forecast": 71,
-          "precip_pct": 0,
-          "weather_code": "Partly Cloudy",
-          "status": "GO",
-          "reasons": [
-            {
-              "rule": "air_quality",
-              "detail": "AQI Yellow (51-100): check in with air-quality-sensitive athletes; consider reduced duration/intensity for sensitive groups"
-            }
-          ]
-        },
-        {
-          "time_iso": "2026-07-28T05:00",
-          "wbgt_f": 67.6,
-          "wbgt_suspect": null,
-          "aqi_forecast": 71,
-          "precip_pct": 0,
-          "weather_code": "Partly Cloudy",
-          "status": "GO",
-          "reasons": [
-            {
-              "rule": "air_quality",
-              "detail": "AQI Yellow (51-100): check in with air-quality-sensitive athletes; consider reduced duration/intensity for sensitive groups"
-            }
-          ]
-        },
-        {
-          "time_iso": "2026-07-28T06:00",
-          "wbgt_f": 66.5,
-          "wbgt_suspect": null,
-          "aqi_forecast": 71,
-          "precip_pct": 1,
-          "weather_code": "Mostly Sunny",
-          "status": "GO",
-          "reasons": [
-            {
-              "rule": "air_quality",
-              "detail": "AQI Yellow (51-100): check in with air-quality-sensitive athletes; consider reduced duration/intensity for sensitive groups"
-            }
-          ]
-        },
-        {
-          "time_iso": "2026-07-28T07:00",
-          "wbgt_f": 67.2,
-          "wbgt_suspect": null,
-          "aqi_forecast": 71,
-          "precip_pct": 0,
-          "weather_code": "Mostly Sunny",
-          "status": "GO",
-          "reasons": [
-            {
-              "rule": "air_quality",
-              "detail": "AQI Yellow (51-100): check in with air-quality-sensitive athletes; consider reduced duration/intensity for sensitive groups"
-            }
-          ]
-        },
-        {
-          "time_iso": "2026-07-28T08:00",
-          "wbgt_f": 71.2,
-          "wbgt_suspect": null,
-          "aqi_forecast": 71,
-          "precip_pct": 0,
-          "weather_code": "Mostly Sunny",
-          "status": "GO",
-          "reasons": [
-            {
-              "rule": "air_quality",
-              "detail": "AQI Yellow (51-100): check in with air-quality-sensitive athletes; consider reduced duration/intensity for sensitive groups"
-            }
-          ]
-        },
-        {
-          "time_iso": "2026-07-28T09:00",
-          "wbgt_f": 74.4,
-          "wbgt_suspect": null,
-          "aqi_forecast": 71,
-          "precip_pct": 0,
-          "weather_code": "Mostly Sunny",
-          "status": "GO",
-          "reasons": [
-            {
-              "rule": "air_quality",
-              "detail": "AQI Yellow (51-100): check in with air-quality-sensitive athletes; consider reduced duration/intensity for sensitive groups"
-            }
-          ]
-        },
-        {
-          "time_iso": "2026-07-28T10:00",
-          "wbgt_f": 74.3,
-          "wbgt_suspect": null,
-          "aqi_forecast": 71,
-          "precip_pct": 0,
-          "weather_code": "Mostly Sunny",
-          "status": "GO",
-          "reasons": [
-            {
-              "rule": "air_quality",
-              "detail": "AQI Yellow (51-100): check in with air-quality-sensitive athletes; consider reduced duration/intensity for sensitive groups"
-            }
-          ]
-        },
-        {
-          "time_iso": "2026-07-28T11:00",
-          "wbgt_f": 76.9,
-          "wbgt_suspect": null,
-          "aqi_forecast": 71,
-          "precip_pct": 0,
-          "weather_code": "Sunny",
-          "status": "GO",
-          "reasons": [
-            {
-              "rule": "air_quality",
-              "detail": "AQI Yellow (51-100): check in with air-quality-sensitive athletes; consider reduced duration/intensity for sensitive groups"
-            }
-          ]
-        },
-        {
-          "time_iso": "2026-07-28T12:00",
-          "wbgt_f": 79.1,
-          "wbgt_suspect": null,
-          "aqi_forecast": 71,
-          "precip_pct": 0,
-          "weather_code": "Sunny",
-          "status": "GO",
-          "reasons": [
-            {
-              "rule": "air_quality",
-              "detail": "AQI Yellow (51-100): check in with air-quality-sensitive athletes; consider reduced duration/intensity for sensitive groups"
-            }
-          ]
-        },
-        {
-          "time_iso": "2026-07-28T13:00",
-          "wbgt_f": 81.1,
-          "wbgt_suspect": null,
-          "aqi_forecast": 71,
-          "precip_pct": 0,
-          "weather_code": "Sunny",
-          "status": "GO",
-          "reasons": [
-            {
-              "rule": "air_quality",
-              "detail": "AQI Yellow (51-100): check in with air-quality-sensitive athletes; consider reduced duration/intensity for sensitive groups"
-            }
-          ]
-        },
-        {
-          "time_iso": "2026-07-28T14:00",
-          "wbgt_f": 84.1,
-          "wbgt_suspect": null,
-          "aqi_forecast": 71,
-          "precip_pct": 0,
-          "weather_code": "1",
-          "status": "CAUTION",
-          "reasons": [
-            {
-              "rule": "heat",
-              "detail": "Heat WBGT 82-85F: 2-hour max activity, decrease intensity/duration, provide rest breaks"
-            },
-            {
-              "rule": "air_quality",
-              "detail": "AQI Yellow (51-100): check in with air-quality-sensitive athletes; consider reduced duration/intensity for sensitive groups"
-            }
-          ]
-        }
-      ],
-      "alerts": [],
-      "flags": []
-    },
-    {
-      "venue_id": "sunfish-lake",
-      "name": "Sunfish Lake Park",
-      "status": "GO",
-      "reasons": [
-        {
-          "rule": "air_quality",
-          "detail": "AQI Yellow (51-100): check in with air-quality-sensitive athletes; consider reduced duration/intensity for sensitive groups"
-        }
-      ],
-      "practice_hour_iso": null,
-      "practice_status": "UNKNOWN",
-      "practice_reasons": [],
-      "current": {
-        "temp": {
-          "value": 68.0,
-          "status": "ok",
-          "source": "METAR",
-          "station_or_monitor": "K21D",
-          "distance_mi": null,
-          "fetched_at": "2026-07-28T02:18:26-05:00"
-        },
-        "rh": {
-          "value": 82.871929790445,
-          "status": "ok",
-          "source": "METAR",
-          "station_or_monitor": "K21D",
-          "distance_mi": null,
-          "fetched_at": "2026-07-28T02:18:26-05:00"
-        },
-        "wind": {
-          "value": 3.4448808239999997,
-          "status": "ok",
-          "source": "METAR",
-          "station_or_monitor": "K21D",
-          "distance_mi": null,
-          "fetched_at": "2026-07-28T02:18:26-05:00"
-        },
-        "ghi": {
-          "value": 0.0,
-          "status": "ok",
-          "source": "Open-Meteo HRRR",
-          "station_or_monitor": null,
-          "distance_mi": null,
-          "fetched_at": "2026-07-28T02:18:26-05:00"
-        },
-        "wbgt": {
-          "value": 65.3,
-          "status": "ok",
-          "source": "computed",
-          "station_or_monitor": null,
-          "distance_mi": null,
-          "fetched_at": null
-        },
-        "aqi": {
-          "value": 61,
-          "status": "ok",
-          "source": "AirNow",
-          "station_or_monitor": "Twin Cities",
-          "distance_mi": 13.6,
-          "fetched_at": "2026-07-28T02:18:28-05:00",
-          "extra": {
-            "pollutant": "PM2.5",
-            "category": "Moderate"
-          }
-        },
-        "aqi_purpleair": {
-          "value": null,
-          "status": "unknown",
-          "source": "PurpleAir",
-          "station_or_monitor": null,
-          "distance_mi": null,
-          "fetched_at": null,
-          "reason": "PurpleAir failed"
-        },
-        "aqi_forecast": {
-          "value": 71,
-          "status": "ok",
-          "source": "AirNow forecast",
-          "station_or_monitor": null,
-          "distance_mi": null,
-          "fetched_at": "2026-07-28T02:18:28-05:00",
-          "extra": {
-            "label": "forecast \u2014 verify with current reading"
-          }
-        }
-      },
-      "hours": [
-        {
-          "time_iso": "2026-07-28T03:00",
-          "wbgt_f": 66.5,
-          "wbgt_suspect": null,
-          "aqi_forecast": 71,
-          "precip_pct": 0,
-          "weather_code": "Partly Cloudy",
-          "status": "GO",
-          "reasons": [
-            {
-              "rule": "air_quality",
-              "detail": "AQI Yellow (51-100): check in with air-quality-sensitive athletes; consider reduced duration/intensity for sensitive groups"
-            }
-          ]
-        },
-        {
-          "time_iso": "2026-07-28T04:00",
-          "wbgt_f": 65.5,
-          "wbgt_suspect": null,
-          "aqi_forecast": 71,
-          "precip_pct": 0,
-          "weather_code": "Partly Cloudy",
-          "status": "GO",
-          "reasons": [
-            {
-              "rule": "air_quality",
-              "detail": "AQI Yellow (51-100): check in with air-quality-sensitive athletes; consider reduced duration/intensity for sensitive groups"
-            }
-          ]
-        },
-        {
-          "time_iso": "2026-07-28T05:00",
-          "wbgt_f": 64.0,
-          "wbgt_suspect": null,
-          "aqi_forecast": 71,
-          "precip_pct": 0,
-          "weather_code": "Partly Cloudy",
-          "status": "GO",
-          "reasons": [
-            {
-              "rule": "air_quality",
-              "detail": "AQI Yellow (51-100): check in with air-quality-sensitive athletes; consider reduced duration/intensity for sensitive groups"
-            }
-          ]
-        },
-        {
-          "time_iso": "2026-07-28T06:00",
-          "wbgt_f": 63.6,
-          "wbgt_suspect": null,
-          "aqi_forecast": 71,
-          "precip_pct": 0,
-          "weather_code": "Mostly Sunny",
-          "status": "GO",
-          "reasons": [
-            {
-              "rule": "air_quality",
-              "detail": "AQI Yellow (51-100): check in with air-quality-sensitive athletes; consider reduced duration/intensity for sensitive groups"
-            }
-          ]
-        },
-        {
-          "time_iso": "2026-07-28T07:00",
-          "wbgt_f": 64.3,
-          "wbgt_suspect": null,
-          "aqi_forecast": 71,
-          "precip_pct": 0,
-          "weather_code": "Mostly Sunny",
-          "status": "GO",
-          "reasons": [
-            {
-              "rule": "air_quality",
-              "detail": "AQI Yellow (51-100): check in with air-quality-sensitive athletes; consider reduced duration/intensity for sensitive groups"
-            }
-          ]
-        },
-        {
-          "time_iso": "2026-07-28T08:00",
-          "wbgt_f": 69.1,
-          "wbgt_suspect": null,
-          "aqi_forecast": 71,
-          "precip_pct": 0,
-          "weather_code": "Mostly Sunny",
-          "status": "GO",
-          "reasons": [
-            {
-              "rule": "air_quality",
-              "detail": "AQI Yellow (51-100): check in with air-quality-sensitive athletes; consider reduced duration/intensity for sensitive groups"
-            }
-          ]
-        },
-        {
-          "time_iso": "2026-07-28T09:00",
-          "wbgt_f": 73.6,
-          "wbgt_suspect": null,
-          "aqi_forecast": 71,
-          "precip_pct": 0,
-          "weather_code": "Mostly Sunny",
-          "status": "GO",
-          "reasons": [
-            {
-              "rule": "air_quality",
-              "detail": "AQI Yellow (51-100): check in with air-quality-sensitive athletes; consider reduced duration/intensity for sensitive groups"
-            }
-          ]
-        },
-        {
-          "time_iso": "2026-07-28T10:00",
-          "wbgt_f": 79.0,
-          "wbgt_suspect": null,
-          "aqi_forecast": 71,
-          "precip_pct": 0,
-          "weather_code": "Mostly Sunny",
-          "status": "GO",
-          "reasons": [
-            {
-              "rule": "air_quality",
-              "detail": "AQI Yellow (51-100): check in with air-quality-sensitive athletes; consider reduced duration/intensity for sensitive groups"
-            }
-          ]
-        },
-        {
-          "time_iso": "2026-07-28T11:00",
-          "wbgt_f": 82.1,
-          "wbgt_suspect": null,
-          "aqi_forecast": 71,
-          "precip_pct": 0,
-          "weather_code": "Sunny",
-          "status": "CAUTION",
-          "reasons": [
-            {
-              "rule": "heat",
-              "detail": "Heat WBGT 82-85F: 2-hour max activity, decrease intensity/duration, provide rest breaks"
-            },
-            {
-              "rule": "air_quality",
-              "detail": "AQI Yellow (51-100): check in with air-quality-sensitive athletes; consider reduced duration/intensity for sensitive groups"
-            }
-          ]
-        },
-        {
-          "time_iso": "2026-07-28T12:00",
-          "wbgt_f": 85.5,
-          "wbgt_suspect": null,
-          "aqi_forecast": 71,
-          "precip_pct": 0,
-          "weather_code": "Sunny",
-          "status": "CAUTION",
-          "reasons": [
-            {
-              "rule": "heat",
-              "detail": "Heat WBGT 85.1-87.1F: 1-hour max activity, significantly increase rest breaks"
-            },
-            {
-              "rule": "air_quality",
-              "detail": "AQI Yellow (51-100): check in with air-quality-sensitive athletes; consider reduced duration/intensity for sensitive groups"
-            }
-          ]
-        },
-        {
-          "time_iso": "2026-07-28T13:00",
-          "wbgt_f": 85.4,
-          "wbgt_suspect": null,
-          "aqi_forecast": 71,
-          "precip_pct": 0,
-          "weather_code": "Sunny",
-          "status": "CAUTION",
-          "reasons": [
-            {
-              "rule": "heat",
-              "detail": "Heat WBGT 85.1-87.1F: 1-hour max activity, significantly increase rest breaks"
-            },
-            {
-              "rule": "air_quality",
-              "detail": "AQI Yellow (51-100): check in with air-quality-sensitive athletes; consider reduced duration/intensity for sensitive groups"
-            }
-          ]
-        },
-        {
-          "time_iso": "2026-07-28T14:00",
-          "wbgt_f": 83.8,
-          "wbgt_suspect": null,
-          "aqi_forecast": 71,
-          "precip_pct": 0,
-          "weather_code": "0",
-          "status": "CAUTION",
-          "reasons": [
-            {
-              "rule": "heat",
-              "detail": "Heat WBGT 82-85F: 2-hour max activity, decrease intensity/duration, provide rest breaks"
-            },
-            {
-              "rule": "air_quality",
-              "detail": "AQI Yellow (51-100): check in with air-quality-sensitive athletes; consider reduced duration/intensity for sensitive groups"
-            }
-          ]
-        }
-      ],
-      "alerts": [],
-      "flags": []
-    },
-    {
-      "venue_id": "carver-lake",
-      "name": "Carver Lake Park",
-      "status": "GO",
-      "reasons": [
-        {
-          "rule": "air_quality",
-          "detail": "AQI Yellow (51-100): check in with air-quality-sensitive athletes; consider reduced duration/intensity for sensitive groups"
-        }
-      ],
-      "practice_hour_iso": null,
-      "practice_status": "UNKNOWN",
-      "practice_reasons": [],
-      "current": {
-        "temp": {
-          "value": 73.4,
-          "status": "ok",
-          "source": "METAR",
-          "station_or_monitor": "KSTP",
-          "distance_mi": null,
-          "fetched_at": "2026-07-28T02:18:26-05:00"
-        },
-        "rh": {
-          "value": 73.461696749353,
-          "status": "ok",
-          "source": "METAR",
-          "station_or_monitor": "KSTP",
-          "distance_mi": null,
-          "fetched_at": "2026-07-28T02:18:26-05:00"
-        },
-        "wind": {
-          "value": 4.6080873360000005,
-          "status": "ok",
-          "source": "METAR",
-          "station_or_monitor": "KSTP",
-          "distance_mi": null,
-          "fetched_at": "2026-07-28T02:18:26-05:00"
-        },
-        "ghi": {
-          "value": 0.0,
-          "status": "ok",
-          "source": "Open-Meteo HRRR",
-          "station_or_monitor": null,
-          "distance_mi": null,
-          "fetched_at": "2026-07-28T02:18:26-05:00"
-        },
-        "wbgt": {
-          "value": 69.0,
-          "status": "ok",
-          "source": "computed",
-          "station_or_monitor": null,
-          "distance_mi": null,
-          "fetched_at": null
-        },
-        "aqi": {
-          "value": 61,
-          "status": "ok",
-          "source": "AirNow",
-          "station_or_monitor": "Twin Cities",
-          "distance_mi": 10.7,
-          "fetched_at": "2026-07-28T02:18:27-05:00",
-          "extra": {
-            "pollutant": "PM2.5",
-            "category": "Moderate"
-          }
-        },
-        "aqi_purpleair": {
-          "value": null,
-          "status": "unknown",
-          "source": "PurpleAir",
-          "station_or_monitor": null,
-          "distance_mi": null,
-          "fetched_at": null,
-          "reason": "PurpleAir failed"
-        },
-        "aqi_forecast": {
-          "value": 71,
-          "status": "ok",
-          "source": "AirNow forecast",
-          "station_or_monitor": null,
-          "distance_mi": null,
-          "fetched_at": "2026-07-28T02:18:28-05:00",
-          "extra": {
-            "label": "forecast \u2014 verify with current reading"
-          }
-        }
-      },
-      "hours": [
-        {
-          "time_iso": "2026-07-28T03:00",
-          "wbgt_f": 67.0,
-          "wbgt_suspect": null,
-          "aqi_forecast": 71,
-          "precip_pct": 0,
-          "weather_code": "Partly Cloudy",
-          "status": "GO",
-          "reasons": [
-            {
-              "rule": "air_quality",
-              "detail": "AQI Yellow (51-100): check in with air-quality-sensitive athletes; consider reduced duration/intensity for sensitive groups"
-            }
-          ]
-        },
-        {
-          "time_iso": "2026-07-28T04:00",
-          "wbgt_f": 66.0,
-          "wbgt_suspect": null,
-          "aqi_forecast": 71,
-          "precip_pct": 0,
-          "weather_code": "Partly Cloudy",
-          "status": "GO",
-          "reasons": [
-            {
-              "rule": "air_quality",
-              "detail": "AQI Yellow (51-100): check in with air-quality-sensitive athletes; consider reduced duration/intensity for sensitive groups"
-            }
-          ]
-        },
-        {
-          "time_iso": "2026-07-28T05:00",
-          "wbgt_f": 65.0,
-          "wbgt_suspect": null,
-          "aqi_forecast": 71,
-          "precip_pct": 0,
-          "weather_code": "Partly Cloudy",
-          "status": "GO",
-          "reasons": [
-            {
-              "rule": "air_quality",
-              "detail": "AQI Yellow (51-100): check in with air-quality-sensitive athletes; consider reduced duration/intensity for sensitive groups"
-            }
-          ]
-        },
-        {
-          "time_iso": "2026-07-28T06:00",
-          "wbgt_f": 64.1,
-          "wbgt_suspect": null,
-          "aqi_forecast": 71,
-          "precip_pct": 0,
-          "weather_code": "Mostly Sunny",
-          "status": "GO",
-          "reasons": [
-            {
-              "rule": "air_quality",
-              "detail": "AQI Yellow (51-100): check in with air-quality-sensitive athletes; consider reduced duration/intensity for sensitive groups"
-            }
-          ]
-        },
-        {
-          "time_iso": "2026-07-28T07:00",
-          "wbgt_f": 65.3,
-          "wbgt_suspect": null,
-          "aqi_forecast": 71,
-          "precip_pct": 0,
-          "weather_code": "Mostly Sunny",
-          "status": "GO",
-          "reasons": [
-            {
-              "rule": "air_quality",
-              "detail": "AQI Yellow (51-100): check in with air-quality-sensitive athletes; consider reduced duration/intensity for sensitive groups"
-            }
-          ]
-        },
-        {
-          "time_iso": "2026-07-28T08:00",
-          "wbgt_f": 68.6,
-          "wbgt_suspect": null,
-          "aqi_forecast": 71,
-          "precip_pct": 0,
-          "weather_code": "Mostly Sunny",
-          "status": "GO",
-          "reasons": [
-            {
-              "rule": "air_quality",
-              "detail": "AQI Yellow (51-100): check in with air-quality-sensitive athletes; consider reduced duration/intensity for sensitive groups"
-            }
-          ]
-        },
-        {
-          "time_iso": "2026-07-28T09:00",
-          "wbgt_f": 72.7,
           "wbgt_suspect": null,
           "aqi_forecast": 71,
           "precip_pct": 0,
@@ -1612,7 +751,7 @@
         },
         {
           "time_iso": "2026-07-28T11:00",
-          "wbgt_f": 75.2,
+          "wbgt_f": 76.2,
           "wbgt_suspect": null,
           "aqi_forecast": 71,
           "precip_pct": 0,
@@ -1627,7 +766,7 @@
         },
         {
           "time_iso": "2026-07-28T12:00",
-          "wbgt_f": 78.6,
+          "wbgt_f": 78.5,
           "wbgt_suspect": null,
           "aqi_forecast": 71,
           "precip_pct": 0,
@@ -1642,7 +781,7 @@
         },
         {
           "time_iso": "2026-07-28T13:00",
-          "wbgt_f": 80.0,
+          "wbgt_f": 79.9,
           "wbgt_suspect": null,
           "aqi_forecast": 71,
           "precip_pct": 0,
@@ -1657,11 +796,904 @@
         },
         {
           "time_iso": "2026-07-28T14:00",
-          "wbgt_f": 82.6,
+          "wbgt_f": 81.4,
+          "wbgt_suspect": null,
+          "aqi_forecast": 71,
+          "precip_pct": 0,
+          "weather_code": "Sunny",
+          "status": "GO",
+          "reasons": [
+            {
+              "rule": "air_quality",
+              "detail": "AQI Yellow (51-100): check in with air-quality-sensitive athletes; consider reduced duration/intensity for sensitive groups"
+            }
+          ]
+        },
+        {
+          "time_iso": "2026-07-28T15:00",
+          "wbgt_f": 81.1,
+          "wbgt_suspect": null,
+          "aqi_forecast": 71,
+          "precip_pct": 0,
+          "weather_code": "Sunny",
+          "status": "GO",
+          "reasons": [
+            {
+              "rule": "air_quality",
+              "detail": "AQI Yellow (51-100): check in with air-quality-sensitive athletes; consider reduced duration/intensity for sensitive groups"
+            }
+          ]
+        },
+        {
+          "time_iso": "2026-07-28T16:00",
+          "wbgt_f": 81.4,
+          "wbgt_suspect": null,
+          "aqi_forecast": 71,
+          "precip_pct": 1,
+          "weather_code": "Sunny",
+          "status": "GO",
+          "reasons": [
+            {
+              "rule": "air_quality",
+              "detail": "AQI Yellow (51-100): check in with air-quality-sensitive athletes; consider reduced duration/intensity for sensitive groups"
+            }
+          ]
+        },
+        {
+          "time_iso": "2026-07-28T17:00",
+          "wbgt_f": 81.2,
+          "wbgt_suspect": null,
+          "aqi_forecast": 71,
+          "precip_pct": 0,
+          "weather_code": "1",
+          "status": "GO",
+          "reasons": [
+            {
+              "rule": "air_quality",
+              "detail": "AQI Yellow (51-100): check in with air-quality-sensitive athletes; consider reduced duration/intensity for sensitive groups"
+            }
+          ]
+        }
+      ],
+      "alerts": [],
+      "flags": []
+    },
+    {
+      "venue_id": "theo-wirth",
+      "name": "Theodore Wirth",
+      "status": "GO",
+      "reasons": [
+        {
+          "rule": "air_quality",
+          "detail": "AQI Yellow (51-100): check in with air-quality-sensitive athletes; consider reduced duration/intensity for sensitive groups"
+        }
+      ],
+      "practice_hour_iso": "2026-07-28T19:00:00-05:00",
+      "practice_status": "UNKNOWN",
+      "practice_reasons": [],
+      "current": {
+        "temp": {
+          "value": 69.8,
+          "status": "ok",
+          "source": "METAR",
+          "station_or_monitor": "KMIC",
+          "distance_mi": null,
+          "fetched_at": "2026-07-28T05:07:08-05:00"
+        },
+        "rh": {
+          "value": 77.915158291749,
+          "status": "ok",
+          "source": "METAR",
+          "station_or_monitor": "KMIC",
+          "distance_mi": null,
+          "fetched_at": "2026-07-28T05:07:08-05:00"
+        },
+        "wind": {
+          "value": 6.912131004000001,
+          "status": "ok",
+          "source": "METAR",
+          "station_or_monitor": "KMIC",
+          "distance_mi": null,
+          "fetched_at": "2026-07-28T05:07:08-05:00"
+        },
+        "ghi": {
+          "value": 0.0,
+          "status": "ok",
+          "source": "Open-Meteo HRRR",
+          "station_or_monitor": null,
+          "distance_mi": null,
+          "fetched_at": "2026-07-28T05:07:07-05:00"
+        },
+        "wbgt": {
+          "value": 66.3,
+          "status": "ok",
+          "source": "computed",
+          "station_or_monitor": null,
+          "distance_mi": null,
+          "fetched_at": null
+        },
+        "aqi": {
+          "value": 64,
+          "status": "ok",
+          "source": "AirNow",
+          "station_or_monitor": "Twin Cities",
+          "distance_mi": 7.2,
+          "fetched_at": "2026-07-28T05:07:08-05:00",
+          "extra": {
+            "pollutant": "PM2.5",
+            "category": "Moderate"
+          }
+        },
+        "aqi_purpleair": {
+          "value": null,
+          "status": "unknown",
+          "source": "PurpleAir",
+          "station_or_monitor": null,
+          "distance_mi": null,
+          "fetched_at": null,
+          "reason": "PurpleAir failed"
+        },
+        "aqi_forecast": {
+          "value": 71,
+          "status": "ok",
+          "source": "AirNow forecast",
+          "station_or_monitor": null,
+          "distance_mi": null,
+          "fetched_at": "2026-07-28T05:07:09-05:00",
+          "extra": {
+            "label": "forecast \u2014 verify with current reading"
+          }
+        }
+      },
+      "hours": [
+        {
+          "time_iso": "2026-07-28T06:00",
+          "wbgt_f": 66.5,
+          "wbgt_suspect": null,
+          "aqi_forecast": 71,
+          "precip_pct": 1,
+          "weather_code": "Mostly Sunny",
+          "status": "GO",
+          "reasons": [
+            {
+              "rule": "air_quality",
+              "detail": "AQI Yellow (51-100): check in with air-quality-sensitive athletes; consider reduced duration/intensity for sensitive groups"
+            }
+          ]
+        },
+        {
+          "time_iso": "2026-07-28T07:00",
+          "wbgt_f": 67.3,
+          "wbgt_suspect": null,
+          "aqi_forecast": 71,
+          "precip_pct": 0,
+          "weather_code": "Mostly Sunny",
+          "status": "GO",
+          "reasons": [
+            {
+              "rule": "air_quality",
+              "detail": "AQI Yellow (51-100): check in with air-quality-sensitive athletes; consider reduced duration/intensity for sensitive groups"
+            }
+          ]
+        },
+        {
+          "time_iso": "2026-07-28T08:00",
+          "wbgt_f": 71.2,
+          "wbgt_suspect": null,
+          "aqi_forecast": 71,
+          "precip_pct": 0,
+          "weather_code": "Mostly Sunny",
+          "status": "GO",
+          "reasons": [
+            {
+              "rule": "air_quality",
+              "detail": "AQI Yellow (51-100): check in with air-quality-sensitive athletes; consider reduced duration/intensity for sensitive groups"
+            }
+          ]
+        },
+        {
+          "time_iso": "2026-07-28T09:00",
+          "wbgt_f": 74.5,
+          "wbgt_suspect": null,
+          "aqi_forecast": 71,
+          "precip_pct": 0,
+          "weather_code": "Mostly Sunny",
+          "status": "GO",
+          "reasons": [
+            {
+              "rule": "air_quality",
+              "detail": "AQI Yellow (51-100): check in with air-quality-sensitive athletes; consider reduced duration/intensity for sensitive groups"
+            }
+          ]
+        },
+        {
+          "time_iso": "2026-07-28T10:00",
+          "wbgt_f": 74.3,
+          "wbgt_suspect": null,
+          "aqi_forecast": 71,
+          "precip_pct": 0,
+          "weather_code": "Mostly Sunny",
+          "status": "GO",
+          "reasons": [
+            {
+              "rule": "air_quality",
+              "detail": "AQI Yellow (51-100): check in with air-quality-sensitive athletes; consider reduced duration/intensity for sensitive groups"
+            }
+          ]
+        },
+        {
+          "time_iso": "2026-07-28T11:00",
+          "wbgt_f": 77.4,
+          "wbgt_suspect": null,
+          "aqi_forecast": 71,
+          "precip_pct": 0,
+          "weather_code": "Sunny",
+          "status": "GO",
+          "reasons": [
+            {
+              "rule": "air_quality",
+              "detail": "AQI Yellow (51-100): check in with air-quality-sensitive athletes; consider reduced duration/intensity for sensitive groups"
+            }
+          ]
+        },
+        {
+          "time_iso": "2026-07-28T12:00",
+          "wbgt_f": 78.9,
+          "wbgt_suspect": null,
+          "aqi_forecast": 71,
+          "precip_pct": 0,
+          "weather_code": "Sunny",
+          "status": "GO",
+          "reasons": [
+            {
+              "rule": "air_quality",
+              "detail": "AQI Yellow (51-100): check in with air-quality-sensitive athletes; consider reduced duration/intensity for sensitive groups"
+            }
+          ]
+        },
+        {
+          "time_iso": "2026-07-28T13:00",
+          "wbgt_f": 81.0,
+          "wbgt_suspect": null,
+          "aqi_forecast": 71,
+          "precip_pct": 0,
+          "weather_code": "Sunny",
+          "status": "GO",
+          "reasons": [
+            {
+              "rule": "air_quality",
+              "detail": "AQI Yellow (51-100): check in with air-quality-sensitive athletes; consider reduced duration/intensity for sensitive groups"
+            }
+          ]
+        },
+        {
+          "time_iso": "2026-07-28T14:00",
+          "wbgt_f": 82.0,
+          "wbgt_suspect": null,
+          "aqi_forecast": 71,
+          "precip_pct": 0,
+          "weather_code": "Sunny",
+          "status": "CAUTION",
+          "reasons": [
+            {
+              "rule": "heat",
+              "detail": "Heat WBGT 82-85F: 2-hour max activity, decrease intensity/duration, provide rest breaks"
+            },
+            {
+              "rule": "air_quality",
+              "detail": "AQI Yellow (51-100): check in with air-quality-sensitive athletes; consider reduced duration/intensity for sensitive groups"
+            }
+          ]
+        },
+        {
+          "time_iso": "2026-07-28T15:00",
+          "wbgt_f": 82.0,
+          "wbgt_suspect": null,
+          "aqi_forecast": 71,
+          "precip_pct": 0,
+          "weather_code": "Sunny",
+          "status": "CAUTION",
+          "reasons": [
+            {
+              "rule": "heat",
+              "detail": "Heat WBGT 82-85F: 2-hour max activity, decrease intensity/duration, provide rest breaks"
+            },
+            {
+              "rule": "air_quality",
+              "detail": "AQI Yellow (51-100): check in with air-quality-sensitive athletes; consider reduced duration/intensity for sensitive groups"
+            }
+          ]
+        },
+        {
+          "time_iso": "2026-07-28T16:00",
+          "wbgt_f": 82.9,
+          "wbgt_suspect": null,
+          "aqi_forecast": 71,
+          "precip_pct": 1,
+          "weather_code": "Mostly Sunny",
+          "status": "CAUTION",
+          "reasons": [
+            {
+              "rule": "heat",
+              "detail": "Heat WBGT 82-85F: 2-hour max activity, decrease intensity/duration, provide rest breaks"
+            },
+            {
+              "rule": "air_quality",
+              "detail": "AQI Yellow (51-100): check in with air-quality-sensitive athletes; consider reduced duration/intensity for sensitive groups"
+            }
+          ]
+        },
+        {
+          "time_iso": "2026-07-28T17:00",
+          "wbgt_f": 81.0,
           "wbgt_suspect": null,
           "aqi_forecast": 71,
           "precip_pct": 0,
           "weather_code": "0",
+          "status": "GO",
+          "reasons": [
+            {
+              "rule": "air_quality",
+              "detail": "AQI Yellow (51-100): check in with air-quality-sensitive athletes; consider reduced duration/intensity for sensitive groups"
+            }
+          ]
+        }
+      ],
+      "alerts": [],
+      "flags": []
+    },
+    {
+      "venue_id": "sunfish-lake",
+      "name": "Sunfish Lake Park",
+      "status": "GO",
+      "reasons": [
+        {
+          "rule": "air_quality",
+          "detail": "AQI Yellow (51-100): check in with air-quality-sensitive athletes; consider reduced duration/intensity for sensitive groups"
+        }
+      ],
+      "practice_hour_iso": null,
+      "practice_status": "UNKNOWN",
+      "practice_reasons": [],
+      "current": {
+        "temp": {
+          "value": 64.4,
+          "status": "ok",
+          "source": "METAR",
+          "station_or_monitor": "K21D",
+          "distance_mi": null,
+          "fetched_at": "2026-07-28T05:07:07-05:00"
+        },
+        "rh": {
+          "value": 88.10014352739,
+          "status": "ok",
+          "source": "METAR",
+          "station_or_monitor": "K21D",
+          "distance_mi": null,
+          "fetched_at": "2026-07-28T05:07:07-05:00"
+        },
+        "wind": {
+          "value": 0.0,
+          "status": "ok",
+          "source": "METAR",
+          "station_or_monitor": "K21D",
+          "distance_mi": null,
+          "fetched_at": "2026-07-28T05:07:07-05:00"
+        },
+        "ghi": {
+          "value": 0.0,
+          "status": "ok",
+          "source": "Open-Meteo HRRR",
+          "station_or_monitor": null,
+          "distance_mi": null,
+          "fetched_at": "2026-07-28T05:07:07-05:00"
+        },
+        "wbgt": {
+          "value": 62.6,
+          "status": "ok",
+          "source": "computed",
+          "station_or_monitor": null,
+          "distance_mi": null,
+          "fetched_at": null
+        },
+        "aqi": {
+          "value": 64,
+          "status": "ok",
+          "source": "AirNow",
+          "station_or_monitor": "Twin Cities",
+          "distance_mi": 13.6,
+          "fetched_at": "2026-07-28T05:07:09-05:00",
+          "extra": {
+            "pollutant": "PM2.5",
+            "category": "Moderate"
+          }
+        },
+        "aqi_purpleair": {
+          "value": null,
+          "status": "unknown",
+          "source": "PurpleAir",
+          "station_or_monitor": null,
+          "distance_mi": null,
+          "fetched_at": null,
+          "reason": "PurpleAir failed"
+        },
+        "aqi_forecast": {
+          "value": 71,
+          "status": "ok",
+          "source": "AirNow forecast",
+          "station_or_monitor": null,
+          "distance_mi": null,
+          "fetched_at": "2026-07-28T05:07:09-05:00",
+          "extra": {
+            "label": "forecast \u2014 verify with current reading"
+          }
+        }
+      },
+      "hours": [
+        {
+          "time_iso": "2026-07-28T06:00",
+          "wbgt_f": 63.6,
+          "wbgt_suspect": null,
+          "aqi_forecast": 71,
+          "precip_pct": 0,
+          "weather_code": "Mostly Sunny",
+          "status": "GO",
+          "reasons": [
+            {
+              "rule": "air_quality",
+              "detail": "AQI Yellow (51-100): check in with air-quality-sensitive athletes; consider reduced duration/intensity for sensitive groups"
+            }
+          ]
+        },
+        {
+          "time_iso": "2026-07-28T07:00",
+          "wbgt_f": 64.4,
+          "wbgt_suspect": null,
+          "aqi_forecast": 71,
+          "precip_pct": 0,
+          "weather_code": "Mostly Sunny",
+          "status": "GO",
+          "reasons": [
+            {
+              "rule": "air_quality",
+              "detail": "AQI Yellow (51-100): check in with air-quality-sensitive athletes; consider reduced duration/intensity for sensitive groups"
+            }
+          ]
+        },
+        {
+          "time_iso": "2026-07-28T08:00",
+          "wbgt_f": 69.2,
+          "wbgt_suspect": null,
+          "aqi_forecast": 71,
+          "precip_pct": 0,
+          "weather_code": "Mostly Sunny",
+          "status": "GO",
+          "reasons": [
+            {
+              "rule": "air_quality",
+              "detail": "AQI Yellow (51-100): check in with air-quality-sensitive athletes; consider reduced duration/intensity for sensitive groups"
+            }
+          ]
+        },
+        {
+          "time_iso": "2026-07-28T09:00",
+          "wbgt_f": 73.5,
+          "wbgt_suspect": null,
+          "aqi_forecast": 71,
+          "precip_pct": 0,
+          "weather_code": "Mostly Sunny",
+          "status": "GO",
+          "reasons": [
+            {
+              "rule": "air_quality",
+              "detail": "AQI Yellow (51-100): check in with air-quality-sensitive athletes; consider reduced duration/intensity for sensitive groups"
+            }
+          ]
+        },
+        {
+          "time_iso": "2026-07-28T10:00",
+          "wbgt_f": 78.9,
+          "wbgt_suspect": null,
+          "aqi_forecast": 71,
+          "precip_pct": 0,
+          "weather_code": "Mostly Sunny",
+          "status": "GO",
+          "reasons": [
+            {
+              "rule": "air_quality",
+              "detail": "AQI Yellow (51-100): check in with air-quality-sensitive athletes; consider reduced duration/intensity for sensitive groups"
+            }
+          ]
+        },
+        {
+          "time_iso": "2026-07-28T11:00",
+          "wbgt_f": 83.1,
+          "wbgt_suspect": null,
+          "aqi_forecast": 71,
+          "precip_pct": 0,
+          "weather_code": "Sunny",
+          "status": "CAUTION",
+          "reasons": [
+            {
+              "rule": "heat",
+              "detail": "Heat WBGT 82-85F: 2-hour max activity, decrease intensity/duration, provide rest breaks"
+            },
+            {
+              "rule": "air_quality",
+              "detail": "AQI Yellow (51-100): check in with air-quality-sensitive athletes; consider reduced duration/intensity for sensitive groups"
+            }
+          ]
+        },
+        {
+          "time_iso": "2026-07-28T12:00",
+          "wbgt_f": 86.3,
+          "wbgt_suspect": null,
+          "aqi_forecast": 71,
+          "precip_pct": 0,
+          "weather_code": "Sunny",
+          "status": "CAUTION",
+          "reasons": [
+            {
+              "rule": "heat",
+              "detail": "Heat WBGT 85.1-87.1F: 1-hour max activity, significantly increase rest breaks"
+            },
+            {
+              "rule": "air_quality",
+              "detail": "AQI Yellow (51-100): check in with air-quality-sensitive athletes; consider reduced duration/intensity for sensitive groups"
+            }
+          ]
+        },
+        {
+          "time_iso": "2026-07-28T13:00",
+          "wbgt_f": 87.4,
+          "wbgt_suspect": null,
+          "aqi_forecast": 71,
+          "precip_pct": 0,
+          "weather_code": "Sunny",
+          "status": "CANCELLED",
+          "reasons": [
+            {
+              "rule": "heat",
+              "detail": "Heat WBGT >87.1F: practice cancelled"
+            },
+            {
+              "rule": "air_quality",
+              "detail": "AQI Yellow (51-100): check in with air-quality-sensitive athletes; consider reduced duration/intensity for sensitive groups"
+            }
+          ]
+        },
+        {
+          "time_iso": "2026-07-28T14:00",
+          "wbgt_f": 90.0,
+          "wbgt_suspect": null,
+          "aqi_forecast": 71,
+          "precip_pct": 0,
+          "weather_code": "Sunny",
+          "status": "CANCELLED",
+          "reasons": [
+            {
+              "rule": "heat",
+              "detail": "Heat WBGT >87.1F: practice cancelled"
+            },
+            {
+              "rule": "air_quality",
+              "detail": "AQI Yellow (51-100): check in with air-quality-sensitive athletes; consider reduced duration/intensity for sensitive groups"
+            }
+          ]
+        },
+        {
+          "time_iso": "2026-07-28T15:00",
+          "wbgt_f": 89.9,
+          "wbgt_suspect": null,
+          "aqi_forecast": 71,
+          "precip_pct": 0,
+          "weather_code": "Sunny",
+          "status": "CANCELLED",
+          "reasons": [
+            {
+              "rule": "heat",
+              "detail": "Heat WBGT >87.1F: practice cancelled"
+            },
+            {
+              "rule": "air_quality",
+              "detail": "AQI Yellow (51-100): check in with air-quality-sensitive athletes; consider reduced duration/intensity for sensitive groups"
+            }
+          ]
+        },
+        {
+          "time_iso": "2026-07-28T16:00",
+          "wbgt_f": 81.4,
+          "wbgt_suspect": null,
+          "aqi_forecast": 71,
+          "precip_pct": 1,
+          "weather_code": "Sunny",
+          "status": "GO",
+          "reasons": [
+            {
+              "rule": "air_quality",
+              "detail": "AQI Yellow (51-100): check in with air-quality-sensitive athletes; consider reduced duration/intensity for sensitive groups"
+            }
+          ]
+        },
+        {
+          "time_iso": "2026-07-28T17:00",
+          "wbgt_f": 81.1,
+          "wbgt_suspect": null,
+          "aqi_forecast": 71,
+          "precip_pct": 0,
+          "weather_code": "0",
+          "status": "GO",
+          "reasons": [
+            {
+              "rule": "air_quality",
+              "detail": "AQI Yellow (51-100): check in with air-quality-sensitive athletes; consider reduced duration/intensity for sensitive groups"
+            }
+          ]
+        }
+      ],
+      "alerts": [],
+      "flags": []
+    },
+    {
+      "venue_id": "carver-lake",
+      "name": "Carver Lake Park",
+      "status": "GO",
+      "reasons": [
+        {
+          "rule": "air_quality",
+          "detail": "AQI Yellow (51-100): check in with air-quality-sensitive athletes; consider reduced duration/intensity for sensitive groups"
+        }
+      ],
+      "practice_hour_iso": null,
+      "practice_status": "UNKNOWN",
+      "practice_reasons": [],
+      "current": {
+        "temp": {
+          "value": 69.8,
+          "status": "ok",
+          "source": "METAR",
+          "station_or_monitor": "KSTP",
+          "distance_mi": null,
+          "fetched_at": "2026-07-28T05:07:07-05:00"
+        },
+        "rh": {
+          "value": 77.915158291749,
+          "status": "ok",
+          "source": "METAR",
+          "station_or_monitor": "KSTP",
+          "distance_mi": null,
+          "fetched_at": "2026-07-28T05:07:07-05:00"
+        },
+        "wind": {
+          "value": 5.748924492,
+          "status": "ok",
+          "source": "METAR",
+          "station_or_monitor": "KSTP",
+          "distance_mi": null,
+          "fetched_at": "2026-07-28T05:07:07-05:00"
+        },
+        "ghi": {
+          "value": 0.0,
+          "status": "ok",
+          "source": "Open-Meteo HRRR",
+          "station_or_monitor": null,
+          "distance_mi": null,
+          "fetched_at": "2026-07-28T05:07:07-05:00"
+        },
+        "wbgt": {
+          "value": 66.3,
+          "status": "ok",
+          "source": "computed",
+          "station_or_monitor": null,
+          "distance_mi": null,
+          "fetched_at": null
+        },
+        "aqi": {
+          "value": 64,
+          "status": "ok",
+          "source": "AirNow",
+          "station_or_monitor": "Twin Cities",
+          "distance_mi": 10.7,
+          "fetched_at": "2026-07-28T05:07:08-05:00",
+          "extra": {
+            "pollutant": "PM2.5",
+            "category": "Moderate"
+          }
+        },
+        "aqi_purpleair": {
+          "value": null,
+          "status": "unknown",
+          "source": "PurpleAir",
+          "station_or_monitor": null,
+          "distance_mi": null,
+          "fetched_at": null,
+          "reason": "PurpleAir failed"
+        },
+        "aqi_forecast": {
+          "value": 71,
+          "status": "ok",
+          "source": "AirNow forecast",
+          "station_or_monitor": null,
+          "distance_mi": null,
+          "fetched_at": "2026-07-28T05:07:09-05:00",
+          "extra": {
+            "label": "forecast \u2014 verify with current reading"
+          }
+        }
+      },
+      "hours": [
+        {
+          "time_iso": "2026-07-28T06:00",
+          "wbgt_f": 64.1,
+          "wbgt_suspect": null,
+          "aqi_forecast": 71,
+          "precip_pct": 0,
+          "weather_code": "Mostly Sunny",
+          "status": "GO",
+          "reasons": [
+            {
+              "rule": "air_quality",
+              "detail": "AQI Yellow (51-100): check in with air-quality-sensitive athletes; consider reduced duration/intensity for sensitive groups"
+            }
+          ]
+        },
+        {
+          "time_iso": "2026-07-28T07:00",
+          "wbgt_f": 65.4,
+          "wbgt_suspect": null,
+          "aqi_forecast": 71,
+          "precip_pct": 0,
+          "weather_code": "Mostly Sunny",
+          "status": "GO",
+          "reasons": [
+            {
+              "rule": "air_quality",
+              "detail": "AQI Yellow (51-100): check in with air-quality-sensitive athletes; consider reduced duration/intensity for sensitive groups"
+            }
+          ]
+        },
+        {
+          "time_iso": "2026-07-28T08:00",
+          "wbgt_f": 68.7,
+          "wbgt_suspect": null,
+          "aqi_forecast": 71,
+          "precip_pct": 0,
+          "weather_code": "Mostly Sunny",
+          "status": "GO",
+          "reasons": [
+            {
+              "rule": "air_quality",
+              "detail": "AQI Yellow (51-100): check in with air-quality-sensitive athletes; consider reduced duration/intensity for sensitive groups"
+            }
+          ]
+        },
+        {
+          "time_iso": "2026-07-28T09:00",
+          "wbgt_f": 73.1,
+          "wbgt_suspect": null,
+          "aqi_forecast": 71,
+          "precip_pct": 0,
+          "weather_code": "Mostly Sunny",
+          "status": "GO",
+          "reasons": [
+            {
+              "rule": "air_quality",
+              "detail": "AQI Yellow (51-100): check in with air-quality-sensitive athletes; consider reduced duration/intensity for sensitive groups"
+            }
+          ]
+        },
+        {
+          "time_iso": "2026-07-28T10:00",
+          "wbgt_f": 73.4,
+          "wbgt_suspect": null,
+          "aqi_forecast": 71,
+          "precip_pct": 0,
+          "weather_code": "Mostly Sunny",
+          "status": "GO",
+          "reasons": [
+            {
+              "rule": "air_quality",
+              "detail": "AQI Yellow (51-100): check in with air-quality-sensitive athletes; consider reduced duration/intensity for sensitive groups"
+            }
+          ]
+        },
+        {
+          "time_iso": "2026-07-28T11:00",
+          "wbgt_f": 75.9,
+          "wbgt_suspect": null,
+          "aqi_forecast": 71,
+          "precip_pct": 0,
+          "weather_code": "Sunny",
+          "status": "GO",
+          "reasons": [
+            {
+              "rule": "air_quality",
+              "detail": "AQI Yellow (51-100): check in with air-quality-sensitive athletes; consider reduced duration/intensity for sensitive groups"
+            }
+          ]
+        },
+        {
+          "time_iso": "2026-07-28T12:00",
+          "wbgt_f": 78.5,
+          "wbgt_suspect": null,
+          "aqi_forecast": 71,
+          "precip_pct": 0,
+          "weather_code": "Sunny",
+          "status": "GO",
+          "reasons": [
+            {
+              "rule": "air_quality",
+              "detail": "AQI Yellow (51-100): check in with air-quality-sensitive athletes; consider reduced duration/intensity for sensitive groups"
+            }
+          ]
+        },
+        {
+          "time_iso": "2026-07-28T13:00",
+          "wbgt_f": 80.2,
+          "wbgt_suspect": null,
+          "aqi_forecast": 71,
+          "precip_pct": 0,
+          "weather_code": "Sunny",
+          "status": "GO",
+          "reasons": [
+            {
+              "rule": "air_quality",
+              "detail": "AQI Yellow (51-100): check in with air-quality-sensitive athletes; consider reduced duration/intensity for sensitive groups"
+            }
+          ]
+        },
+        {
+          "time_iso": "2026-07-28T14:00",
+          "wbgt_f": 80.8,
+          "wbgt_suspect": null,
+          "aqi_forecast": 71,
+          "precip_pct": 0,
+          "weather_code": "Sunny",
+          "status": "GO",
+          "reasons": [
+            {
+              "rule": "air_quality",
+              "detail": "AQI Yellow (51-100): check in with air-quality-sensitive athletes; consider reduced duration/intensity for sensitive groups"
+            }
+          ]
+        },
+        {
+          "time_iso": "2026-07-28T15:00",
+          "wbgt_f": 81.1,
+          "wbgt_suspect": null,
+          "aqi_forecast": 71,
+          "precip_pct": 0,
+          "weather_code": "Sunny",
+          "status": "GO",
+          "reasons": [
+            {
+              "rule": "air_quality",
+              "detail": "AQI Yellow (51-100): check in with air-quality-sensitive athletes; consider reduced duration/intensity for sensitive groups"
+            }
+          ]
+        },
+        {
+          "time_iso": "2026-07-28T16:00",
+          "wbgt_f": 81.0,
+          "wbgt_suspect": null,
+          "aqi_forecast": 71,
+          "precip_pct": 1,
+          "weather_code": "Sunny",
+          "status": "GO",
+          "reasons": [
+            {
+              "rule": "air_quality",
+              "detail": "AQI Yellow (51-100): check in with air-quality-sensitive athletes; consider reduced duration/intensity for sensitive groups"
+            }
+          ]
+        },
+        {
+          "time_iso": "2026-07-28T17:00",
+          "wbgt_f": 82.4,
+          "wbgt_suspect": null,
+          "aqi_forecast": 71,
+          "precip_pct": 0,
+          "weather_code": "1",
           "status": "CAUTION",
           "reasons": [
             {
@@ -1693,20 +1725,20 @@
       "practice_reasons": [],
       "current": {
         "temp": {
-          "value": 72.14,
+          "value": 68.18,
           "status": "ok",
           "source": "METAR",
           "station_or_monitor": "KANE",
           "distance_mi": null,
-          "fetched_at": "2026-07-28T02:18:26-05:00"
+          "fetched_at": "2026-07-28T05:07:08-05:00"
         },
         "rh": {
-          "value": 78.106901973914,
+          "value": 85.005883524012,
           "status": "ok",
           "source": "METAR",
           "station_or_monitor": "KANE",
           "distance_mi": null,
-          "fetched_at": "2026-07-28T02:18:26-05:00"
+          "fetched_at": "2026-07-28T05:07:08-05:00"
         },
         "wind": {
           "value": 4.6080873360000005,
@@ -1714,7 +1746,7 @@
           "source": "METAR",
           "station_or_monitor": "KANE",
           "distance_mi": null,
-          "fetched_at": "2026-07-28T02:18:26-05:00"
+          "fetched_at": "2026-07-28T05:07:08-05:00"
         },
         "ghi": {
           "value": 0.0,
@@ -1722,10 +1754,10 @@
           "source": "Open-Meteo HRRR",
           "station_or_monitor": null,
           "distance_mi": null,
-          "fetched_at": "2026-07-28T02:18:26-05:00"
+          "fetched_at": "2026-07-28T05:07:07-05:00"
         },
         "wbgt": {
-          "value": 68.6,
+          "value": 65.8,
           "status": "ok",
           "source": "computed",
           "station_or_monitor": null,
@@ -1733,12 +1765,12 @@
           "fetched_at": null
         },
         "aqi": {
-          "value": 61,
+          "value": 64,
           "status": "ok",
           "source": "AirNow",
           "station_or_monitor": "Twin Cities",
           "distance_mi": 8.5,
-          "fetched_at": "2026-07-28T02:18:27-05:00",
+          "fetched_at": "2026-07-28T05:07:08-05:00",
           "extra": {
             "pollutant": "PM2.5",
             "category": "Moderate"
@@ -1759,58 +1791,13 @@
           "source": "AirNow forecast",
           "station_or_monitor": null,
           "distance_mi": null,
-          "fetched_at": "2026-07-28T02:18:28-05:00",
+          "fetched_at": "2026-07-28T05:07:09-05:00",
           "extra": {
             "label": "forecast \u2014 verify with current reading"
           }
         }
       },
       "hours": [
-        {
-          "time_iso": "2026-07-28T03:00",
-          "wbgt_f": 68.0,
-          "wbgt_suspect": null,
-          "aqi_forecast": 71,
-          "precip_pct": 0,
-          "weather_code": "Partly Cloudy",
-          "status": "GO",
-          "reasons": [
-            {
-              "rule": "air_quality",
-              "detail": "AQI Yellow (51-100): check in with air-quality-sensitive athletes; consider reduced duration/intensity for sensitive groups"
-            }
-          ]
-        },
-        {
-          "time_iso": "2026-07-28T04:00",
-          "wbgt_f": 67.0,
-          "wbgt_suspect": null,
-          "aqi_forecast": 71,
-          "precip_pct": 0,
-          "weather_code": "Partly Cloudy",
-          "status": "GO",
-          "reasons": [
-            {
-              "rule": "air_quality",
-              "detail": "AQI Yellow (51-100): check in with air-quality-sensitive athletes; consider reduced duration/intensity for sensitive groups"
-            }
-          ]
-        },
-        {
-          "time_iso": "2026-07-28T05:00",
-          "wbgt_f": 66.0,
-          "wbgt_suspect": null,
-          "aqi_forecast": 71,
-          "precip_pct": 0,
-          "weather_code": "Partly Cloudy",
-          "status": "GO",
-          "reasons": [
-            {
-              "rule": "air_quality",
-              "detail": "AQI Yellow (51-100): check in with air-quality-sensitive athletes; consider reduced duration/intensity for sensitive groups"
-            }
-          ]
-        },
         {
           "time_iso": "2026-07-28T06:00",
           "wbgt_f": 65.5,
@@ -1843,7 +1830,7 @@
         },
         {
           "time_iso": "2026-07-28T08:00",
-          "wbgt_f": 69.5,
+          "wbgt_f": 69.6,
           "wbgt_suspect": null,
           "aqi_forecast": 71,
           "precip_pct": 0,
@@ -1873,7 +1860,7 @@
         },
         {
           "time_iso": "2026-07-28T10:00",
-          "wbgt_f": 73.6,
+          "wbgt_f": 73.8,
           "wbgt_suspect": null,
           "aqi_forecast": 71,
           "precip_pct": 0,
@@ -1903,7 +1890,56 @@
         },
         {
           "time_iso": "2026-07-28T12:00",
-          "wbgt_f": 84.5,
+          "wbgt_f": 86.9,
+          "wbgt_suspect": null,
+          "aqi_forecast": 71,
+          "precip_pct": 0,
+          "weather_code": "Sunny",
+          "status": "CAUTION",
+          "reasons": [
+            {
+              "rule": "heat",
+              "detail": "Heat WBGT 85.1-87.1F: 1-hour max activity, significantly increase rest breaks"
+            },
+            {
+              "rule": "air_quality",
+              "detail": "AQI Yellow (51-100): check in with air-quality-sensitive athletes; consider reduced duration/intensity for sensitive groups"
+            }
+          ]
+        },
+        {
+          "time_iso": "2026-07-28T13:00",
+          "wbgt_f": 80.2,
+          "wbgt_suspect": null,
+          "aqi_forecast": 71,
+          "precip_pct": 0,
+          "weather_code": "Sunny",
+          "status": "GO",
+          "reasons": [
+            {
+              "rule": "air_quality",
+              "detail": "AQI Yellow (51-100): check in with air-quality-sensitive athletes; consider reduced duration/intensity for sensitive groups"
+            }
+          ]
+        },
+        {
+          "time_iso": "2026-07-28T14:00",
+          "wbgt_f": 81.4,
+          "wbgt_suspect": null,
+          "aqi_forecast": 71,
+          "precip_pct": 0,
+          "weather_code": "Sunny",
+          "status": "GO",
+          "reasons": [
+            {
+              "rule": "air_quality",
+              "detail": "AQI Yellow (51-100): check in with air-quality-sensitive athletes; consider reduced duration/intensity for sensitive groups"
+            }
+          ]
+        },
+        {
+          "time_iso": "2026-07-28T15:00",
+          "wbgt_f": 82.0,
           "wbgt_suspect": null,
           "aqi_forecast": 71,
           "precip_pct": 0,
@@ -1921,12 +1957,12 @@
           ]
         },
         {
-          "time_iso": "2026-07-28T13:00",
-          "wbgt_f": 80.4,
+          "time_iso": "2026-07-28T16:00",
+          "wbgt_f": 81.6,
           "wbgt_suspect": null,
           "aqi_forecast": 71,
-          "precip_pct": 0,
-          "weather_code": "Sunny",
+          "precip_pct": 1,
+          "weather_code": "Mostly Sunny",
           "status": "GO",
           "reasons": [
             {
@@ -1936,18 +1972,14 @@
           ]
         },
         {
-          "time_iso": "2026-07-28T14:00",
-          "wbgt_f": 85.8,
+          "time_iso": "2026-07-28T17:00",
+          "wbgt_f": 81.3,
           "wbgt_suspect": null,
           "aqi_forecast": 71,
           "precip_pct": 0,
           "weather_code": "0",
-          "status": "CAUTION",
+          "status": "GO",
           "reasons": [
-            {
-              "rule": "heat",
-              "detail": "Heat WBGT 85.1-87.1F: 1-hour max activity, significantly increase rest breaks"
-            },
             {
               "rule": "air_quality",
               "detail": "AQI Yellow (51-100): check in with air-quality-sensitive athletes; consider reduced duration/intensity for sensitive groups"
@@ -1973,20 +2005,20 @@
       "practice_reasons": [],
       "current": {
         "temp": {
-          "value": 72.14,
+          "value": 68.18,
           "status": "ok",
           "source": "METAR",
           "station_or_monitor": "KANE",
           "distance_mi": null,
-          "fetched_at": "2026-07-28T02:18:26-05:00"
+          "fetched_at": "2026-07-28T05:07:07-05:00"
         },
         "rh": {
-          "value": 78.106901973914,
+          "value": 85.005883524012,
           "status": "ok",
           "source": "METAR",
           "station_or_monitor": "KANE",
           "distance_mi": null,
-          "fetched_at": "2026-07-28T02:18:26-05:00"
+          "fetched_at": "2026-07-28T05:07:07-05:00"
         },
         "wind": {
           "value": 4.6080873360000005,
@@ -1994,7 +2026,7 @@
           "source": "METAR",
           "station_or_monitor": "KANE",
           "distance_mi": null,
-          "fetched_at": "2026-07-28T02:18:26-05:00"
+          "fetched_at": "2026-07-28T05:07:07-05:00"
         },
         "ghi": {
           "value": 0.0,
@@ -2002,10 +2034,10 @@
           "source": "Open-Meteo HRRR",
           "station_or_monitor": null,
           "distance_mi": null,
-          "fetched_at": "2026-07-28T02:18:26-05:00"
+          "fetched_at": "2026-07-28T05:07:07-05:00"
         },
         "wbgt": {
-          "value": 68.6,
+          "value": 65.8,
           "status": "ok",
           "source": "computed",
           "station_or_monitor": null,
@@ -2013,12 +2045,12 @@
           "fetched_at": null
         },
         "aqi": {
-          "value": 60,
+          "value": 62,
           "status": "ok",
           "source": "AirNow",
           "station_or_monitor": "Northern Twin Cities Metro",
           "distance_mi": 9.5,
-          "fetched_at": "2026-07-28T02:18:28-05:00",
+          "fetched_at": "2026-07-28T05:07:09-05:00",
           "extra": {
             "pollutant": "PM2.5",
             "category": "Moderate"
@@ -2039,58 +2071,13 @@
           "source": "AirNow forecast",
           "station_or_monitor": null,
           "distance_mi": null,
-          "fetched_at": "2026-07-28T02:18:28-05:00",
+          "fetched_at": "2026-07-28T05:07:09-05:00",
           "extra": {
             "label": "forecast \u2014 verify with current reading"
           }
         }
       },
       "hours": [
-        {
-          "time_iso": "2026-07-28T03:00",
-          "wbgt_f": 67.5,
-          "wbgt_suspect": null,
-          "aqi_forecast": 71,
-          "precip_pct": 0,
-          "weather_code": "Partly Cloudy",
-          "status": "GO",
-          "reasons": [
-            {
-              "rule": "air_quality",
-              "detail": "AQI Yellow (51-100): check in with air-quality-sensitive athletes; consider reduced duration/intensity for sensitive groups"
-            }
-          ]
-        },
-        {
-          "time_iso": "2026-07-28T04:00",
-          "wbgt_f": 66.5,
-          "wbgt_suspect": null,
-          "aqi_forecast": 71,
-          "precip_pct": 0,
-          "weather_code": "Partly Cloudy",
-          "status": "GO",
-          "reasons": [
-            {
-              "rule": "air_quality",
-              "detail": "AQI Yellow (51-100): check in with air-quality-sensitive athletes; consider reduced duration/intensity for sensitive groups"
-            }
-          ]
-        },
-        {
-          "time_iso": "2026-07-28T05:00",
-          "wbgt_f": 65.5,
-          "wbgt_suspect": null,
-          "aqi_forecast": 71,
-          "precip_pct": 0,
-          "weather_code": "Partly Cloudy",
-          "status": "GO",
-          "reasons": [
-            {
-              "rule": "air_quality",
-              "detail": "AQI Yellow (51-100): check in with air-quality-sensitive athletes; consider reduced duration/intensity for sensitive groups"
-            }
-          ]
-        },
         {
           "time_iso": "2026-07-28T06:00",
           "wbgt_f": 64.5,
@@ -2123,7 +2110,7 @@
         },
         {
           "time_iso": "2026-07-28T08:00",
-          "wbgt_f": 70.0,
+          "wbgt_f": 70.1,
           "wbgt_suspect": null,
           "aqi_forecast": 71,
           "precip_pct": 0,
@@ -2138,7 +2125,7 @@
         },
         {
           "time_iso": "2026-07-28T09:00",
-          "wbgt_f": 74.7,
+          "wbgt_f": 74.6,
           "wbgt_suspect": null,
           "aqi_forecast": 71,
           "precip_pct": 0,
@@ -2153,7 +2140,7 @@
         },
         {
           "time_iso": "2026-07-28T10:00",
-          "wbgt_f": 78.4,
+          "wbgt_f": 79.4,
           "wbgt_suspect": null,
           "aqi_forecast": 71,
           "precip_pct": 0,
@@ -2168,13 +2155,17 @@
         },
         {
           "time_iso": "2026-07-28T11:00",
-          "wbgt_f": 80.7,
+          "wbgt_f": 83.3,
           "wbgt_suspect": null,
           "aqi_forecast": 71,
           "precip_pct": 0,
           "weather_code": "Mostly Sunny",
-          "status": "GO",
+          "status": "CAUTION",
           "reasons": [
+            {
+              "rule": "heat",
+              "detail": "Heat WBGT 82-85F: 2-hour max activity, decrease intensity/duration, provide rest breaks"
+            },
             {
               "rule": "air_quality",
               "detail": "AQI Yellow (51-100): check in with air-quality-sensitive athletes; consider reduced duration/intensity for sensitive groups"
@@ -2183,16 +2174,16 @@
         },
         {
           "time_iso": "2026-07-28T12:00",
-          "wbgt_f": 86.0,
+          "wbgt_f": 87.2,
           "wbgt_suspect": null,
           "aqi_forecast": 71,
           "precip_pct": 0,
           "weather_code": "Sunny",
-          "status": "CAUTION",
+          "status": "CANCELLED",
           "reasons": [
             {
               "rule": "heat",
-              "detail": "Heat WBGT 85.1-87.1F: 1-hour max activity, significantly increase rest breaks"
+              "detail": "Heat WBGT >87.1F: practice cancelled"
             },
             {
               "rule": "air_quality",
@@ -2202,7 +2193,7 @@
         },
         {
           "time_iso": "2026-07-28T13:00",
-          "wbgt_f": 87.7,
+          "wbgt_f": 89.2,
           "wbgt_suspect": null,
           "aqi_forecast": 71,
           "precip_pct": 0,
@@ -2221,17 +2212,70 @@
         },
         {
           "time_iso": "2026-07-28T14:00",
-          "wbgt_f": 83.3,
+          "wbgt_f": 90.4,
+          "wbgt_suspect": null,
+          "aqi_forecast": 71,
+          "precip_pct": 0,
+          "weather_code": "Sunny",
+          "status": "CANCELLED",
+          "reasons": [
+            {
+              "rule": "heat",
+              "detail": "Heat WBGT >87.1F: practice cancelled"
+            },
+            {
+              "rule": "air_quality",
+              "detail": "AQI Yellow (51-100): check in with air-quality-sensitive athletes; consider reduced duration/intensity for sensitive groups"
+            }
+          ]
+        },
+        {
+          "time_iso": "2026-07-28T15:00",
+          "wbgt_f": 88.9,
+          "wbgt_suspect": null,
+          "aqi_forecast": 71,
+          "precip_pct": 0,
+          "weather_code": "Sunny",
+          "status": "CANCELLED",
+          "reasons": [
+            {
+              "rule": "heat",
+              "detail": "Heat WBGT >87.1F: practice cancelled"
+            },
+            {
+              "rule": "air_quality",
+              "detail": "AQI Yellow (51-100): check in with air-quality-sensitive athletes; consider reduced duration/intensity for sensitive groups"
+            }
+          ]
+        },
+        {
+          "time_iso": "2026-07-28T16:00",
+          "wbgt_f": 89.6,
+          "wbgt_suspect": null,
+          "aqi_forecast": 71,
+          "precip_pct": 1,
+          "weather_code": "Mostly Sunny",
+          "status": "CANCELLED",
+          "reasons": [
+            {
+              "rule": "heat",
+              "detail": "Heat WBGT >87.1F: practice cancelled"
+            },
+            {
+              "rule": "air_quality",
+              "detail": "AQI Yellow (51-100): check in with air-quality-sensitive athletes; consider reduced duration/intensity for sensitive groups"
+            }
+          ]
+        },
+        {
+          "time_iso": "2026-07-28T17:00",
+          "wbgt_f": 81.2,
           "wbgt_suspect": null,
           "aqi_forecast": 71,
           "precip_pct": 0,
           "weather_code": "0",
-          "status": "CAUTION",
+          "status": "GO",
           "reasons": [
-            {
-              "rule": "heat",
-              "detail": "Heat WBGT 82-85F: 2-hour max activity, decrease intensity/duration, provide rest breaks"
-            },
             {
               "rule": "air_quality",
               "detail": "AQI Yellow (51-100): check in with air-quality-sensitive athletes; consider reduced duration/intensity for sensitive groups"
@@ -2257,28 +2301,28 @@
       "practice_reasons": [],
       "current": {
         "temp": {
-          "value": 75.2,
+          "value": 71.6,
           "status": "ok",
           "source": "METAR",
           "station_or_monitor": "KMSP",
           "distance_mi": null,
-          "fetched_at": "2026-07-28T02:18:28-05:00"
+          "fetched_at": "2026-07-28T05:07:09-05:00"
         },
         "rh": {
-          "value": 69.163192099994,
+          "value": 73.288964682767,
           "status": "ok",
           "source": "METAR",
           "station_or_monitor": "KMSP",
           "distance_mi": null,
-          "fetched_at": "2026-07-28T02:18:28-05:00"
+          "fetched_at": "2026-07-28T05:07:09-05:00"
         },
         "wind": {
-          "value": 3.4448808239999997,
+          "value": 9.216174672000001,
           "status": "ok",
           "source": "METAR",
           "station_or_monitor": "KMSP",
           "distance_mi": null,
-          "fetched_at": "2026-07-28T02:18:28-05:00"
+          "fetched_at": "2026-07-28T05:07:09-05:00"
         },
         "ghi": {
           "value": 0.0,
@@ -2286,10 +2330,10 @@
           "source": "Open-Meteo HRRR",
           "station_or_monitor": null,
           "distance_mi": null,
-          "fetched_at": "2026-07-28T02:18:26-05:00"
+          "fetched_at": "2026-07-28T05:07:07-05:00"
         },
         "wbgt": {
-          "value": 70.0,
+          "value": 67.3,
           "status": "ok",
           "source": "computed",
           "station_or_monitor": null,
@@ -2297,12 +2341,12 @@
           "fetched_at": null
         },
         "aqi": {
-          "value": 59,
+          "value": 61,
           "status": "ok",
           "source": "AirNow",
           "station_or_monitor": "Southern Twin Cities Metro",
           "distance_mi": 5.9,
-          "fetched_at": "2026-07-28T02:18:29-05:00",
+          "fetched_at": "2026-07-28T05:07:10-05:00",
           "extra": {
             "pollutant": "PM2.5",
             "category": "Moderate"
@@ -2323,58 +2367,13 @@
           "source": "AirNow forecast",
           "station_or_monitor": null,
           "distance_mi": null,
-          "fetched_at": "2026-07-28T02:18:29-05:00",
+          "fetched_at": "2026-07-28T05:07:11-05:00",
           "extra": {
             "label": "forecast \u2014 verify with current reading"
           }
         }
       },
       "hours": [
-        {
-          "time_iso": "2026-07-28T03:00",
-          "wbgt_f": 69.1,
-          "wbgt_suspect": null,
-          "aqi_forecast": 71,
-          "precip_pct": 0,
-          "weather_code": "Partly Cloudy",
-          "status": "GO",
-          "reasons": [
-            {
-              "rule": "air_quality",
-              "detail": "AQI Yellow (51-100): check in with air-quality-sensitive athletes; consider reduced duration/intensity for sensitive groups"
-            }
-          ]
-        },
-        {
-          "time_iso": "2026-07-28T04:00",
-          "wbgt_f": 68.1,
-          "wbgt_suspect": null,
-          "aqi_forecast": 71,
-          "precip_pct": 0,
-          "weather_code": "Partly Cloudy",
-          "status": "GO",
-          "reasons": [
-            {
-              "rule": "air_quality",
-              "detail": "AQI Yellow (51-100): check in with air-quality-sensitive athletes; consider reduced duration/intensity for sensitive groups"
-            }
-          ]
-        },
-        {
-          "time_iso": "2026-07-28T05:00",
-          "wbgt_f": 67.0,
-          "wbgt_suspect": null,
-          "aqi_forecast": 71,
-          "precip_pct": 0,
-          "weather_code": "Partly Cloudy",
-          "status": "GO",
-          "reasons": [
-            {
-              "rule": "air_quality",
-              "detail": "AQI Yellow (51-100): check in with air-quality-sensitive athletes; consider reduced duration/intensity for sensitive groups"
-            }
-          ]
-        },
         {
           "time_iso": "2026-07-28T06:00",
           "wbgt_f": 66.0,
@@ -2452,7 +2451,7 @@
         },
         {
           "time_iso": "2026-07-28T11:00",
-          "wbgt_f": 76.5,
+          "wbgt_f": 76.8,
           "wbgt_suspect": null,
           "aqi_forecast": 71,
           "precip_pct": 0,
@@ -2467,7 +2466,7 @@
         },
         {
           "time_iso": "2026-07-28T12:00",
-          "wbgt_f": 78.6,
+          "wbgt_f": 78.9,
           "wbgt_suspect": null,
           "aqi_forecast": 71,
           "precip_pct": 0,
@@ -2482,7 +2481,7 @@
         },
         {
           "time_iso": "2026-07-28T13:00",
-          "wbgt_f": 89.5,
+          "wbgt_f": 89.1,
           "wbgt_suspect": null,
           "aqi_forecast": 71,
           "precip_pct": 0,
@@ -2501,17 +2500,70 @@
         },
         {
           "time_iso": "2026-07-28T14:00",
-          "wbgt_f": 83.1,
+          "wbgt_f": 90.5,
           "wbgt_suspect": null,
           "aqi_forecast": 71,
           "precip_pct": 0,
-          "weather_code": "0",
+          "weather_code": "Sunny",
+          "status": "CANCELLED",
+          "reasons": [
+            {
+              "rule": "heat",
+              "detail": "Heat WBGT >87.1F: practice cancelled"
+            },
+            {
+              "rule": "air_quality",
+              "detail": "AQI Yellow (51-100): check in with air-quality-sensitive athletes; consider reduced duration/intensity for sensitive groups"
+            }
+          ]
+        },
+        {
+          "time_iso": "2026-07-28T15:00",
+          "wbgt_f": 90.2,
+          "wbgt_suspect": null,
+          "aqi_forecast": 71,
+          "precip_pct": 0,
+          "weather_code": "Sunny",
+          "status": "CANCELLED",
+          "reasons": [
+            {
+              "rule": "heat",
+              "detail": "Heat WBGT >87.1F: practice cancelled"
+            },
+            {
+              "rule": "air_quality",
+              "detail": "AQI Yellow (51-100): check in with air-quality-sensitive athletes; consider reduced duration/intensity for sensitive groups"
+            }
+          ]
+        },
+        {
+          "time_iso": "2026-07-28T16:00",
+          "wbgt_f": 82.0,
+          "wbgt_suspect": null,
+          "aqi_forecast": 71,
+          "precip_pct": 1,
+          "weather_code": "Sunny",
           "status": "CAUTION",
           "reasons": [
             {
               "rule": "heat",
               "detail": "Heat WBGT 82-85F: 2-hour max activity, decrease intensity/duration, provide rest breaks"
             },
+            {
+              "rule": "air_quality",
+              "detail": "AQI Yellow (51-100): check in with air-quality-sensitive athletes; consider reduced duration/intensity for sensitive groups"
+            }
+          ]
+        },
+        {
+          "time_iso": "2026-07-28T17:00",
+          "wbgt_f": 80.2,
+          "wbgt_suspect": null,
+          "aqi_forecast": 71,
+          "precip_pct": 0,
+          "weather_code": "0",
+          "status": "GO",
+          "reasons": [
             {
               "rule": "air_quality",
               "detail": "AQI Yellow (51-100): check in with air-quality-sensitive athletes; consider reduced duration/intensity for sensitive groups"
@@ -2537,28 +2589,28 @@
       "practice_reasons": [],
       "current": {
         "temp": {
-          "value": 69.8,
+          "value": 68.0,
           "status": "ok",
           "source": "METAR",
           "station_or_monitor": "KLVN",
           "distance_mi": null,
-          "fetched_at": "2026-07-28T02:18:28-05:00"
+          "fetched_at": "2026-07-28T05:07:09-05:00"
         },
         "rh": {
-          "value": 82.990398777177,
+          "value": 88.27004464254,
           "status": "ok",
           "source": "METAR",
           "station_or_monitor": "KLVN",
           "distance_mi": null,
-          "fetched_at": "2026-07-28T02:18:28-05:00"
+          "fetched_at": "2026-07-28T05:07:09-05:00"
         },
         "wind": {
-          "value": 0.0,
+          "value": 3.3554034,
           "status": "ok",
           "source": "METAR",
           "station_or_monitor": "KLVN",
           "distance_mi": null,
-          "fetched_at": "2026-07-28T02:18:28-05:00"
+          "fetched_at": "2026-07-28T05:07:09-05:00"
         },
         "ghi": {
           "value": 0.0,
@@ -2566,10 +2618,10 @@
           "source": "Open-Meteo HRRR",
           "station_or_monitor": null,
           "distance_mi": null,
-          "fetched_at": "2026-07-28T02:18:26-05:00"
+          "fetched_at": "2026-07-28T05:07:07-05:00"
         },
         "wbgt": {
-          "value": 67.1,
+          "value": 66.2,
           "status": "ok",
           "source": "computed",
           "station_or_monitor": null,
@@ -2577,12 +2629,12 @@
           "fetched_at": null
         },
         "aqi": {
-          "value": 59,
+          "value": 61,
           "status": "ok",
           "source": "AirNow",
           "station_or_monitor": "Southern Twin Cities Metro",
           "distance_mi": 4.8,
-          "fetched_at": "2026-07-28T02:18:29-05:00",
+          "fetched_at": "2026-07-28T05:07:10-05:00",
           "extra": {
             "pollutant": "PM2.5",
             "category": "Moderate"
@@ -2603,58 +2655,13 @@
           "source": "AirNow forecast",
           "station_or_monitor": null,
           "distance_mi": null,
-          "fetched_at": "2026-07-28T02:18:30-05:00",
+          "fetched_at": "2026-07-28T05:07:10-05:00",
           "extra": {
             "label": "forecast \u2014 verify with current reading"
           }
         }
       },
       "hours": [
-        {
-          "time_iso": "2026-07-28T03:00",
-          "wbgt_f": 68.6,
-          "wbgt_suspect": null,
-          "aqi_forecast": 71,
-          "precip_pct": 0,
-          "weather_code": "Partly Cloudy",
-          "status": "GO",
-          "reasons": [
-            {
-              "rule": "air_quality",
-              "detail": "AQI Yellow (51-100): check in with air-quality-sensitive athletes; consider reduced duration/intensity for sensitive groups"
-            }
-          ]
-        },
-        {
-          "time_iso": "2026-07-28T04:00",
-          "wbgt_f": 67.6,
-          "wbgt_suspect": null,
-          "aqi_forecast": 71,
-          "precip_pct": 0,
-          "weather_code": "Partly Cloudy",
-          "status": "GO",
-          "reasons": [
-            {
-              "rule": "air_quality",
-              "detail": "AQI Yellow (51-100): check in with air-quality-sensitive athletes; consider reduced duration/intensity for sensitive groups"
-            }
-          ]
-        },
-        {
-          "time_iso": "2026-07-28T05:00",
-          "wbgt_f": 67.0,
-          "wbgt_suspect": null,
-          "aqi_forecast": 71,
-          "precip_pct": 0,
-          "weather_code": "Partly Cloudy",
-          "status": "GO",
-          "reasons": [
-            {
-              "rule": "air_quality",
-              "detail": "AQI Yellow (51-100): check in with air-quality-sensitive athletes; consider reduced duration/intensity for sensitive groups"
-            }
-          ]
-        },
         {
           "time_iso": "2026-07-28T06:00",
           "wbgt_f": 66.0,
@@ -2717,7 +2724,7 @@
         },
         {
           "time_iso": "2026-07-28T10:00",
-          "wbgt_f": 74.0,
+          "wbgt_f": 74.2,
           "wbgt_suspect": null,
           "aqi_forecast": 71,
           "precip_pct": 0,
@@ -2732,7 +2739,7 @@
         },
         {
           "time_iso": "2026-07-28T11:00",
-          "wbgt_f": 76.7,
+          "wbgt_f": 77.0,
           "wbgt_suspect": null,
           "aqi_forecast": 71,
           "precip_pct": 0,
@@ -2747,7 +2754,7 @@
         },
         {
           "time_iso": "2026-07-28T12:00",
-          "wbgt_f": 86.8,
+          "wbgt_f": 86.5,
           "wbgt_suspect": null,
           "aqi_forecast": 71,
           "precip_pct": 0,
@@ -2766,7 +2773,7 @@
         },
         {
           "time_iso": "2026-07-28T13:00",
-          "wbgt_f": 89.1,
+          "wbgt_f": 88.6,
           "wbgt_suspect": null,
           "aqi_forecast": 71,
           "precip_pct": 0,
@@ -2785,7 +2792,60 @@
         },
         {
           "time_iso": "2026-07-28T14:00",
-          "wbgt_f": 83.5,
+          "wbgt_f": 90.4,
+          "wbgt_suspect": null,
+          "aqi_forecast": 71,
+          "precip_pct": 0,
+          "weather_code": "Sunny",
+          "status": "CANCELLED",
+          "reasons": [
+            {
+              "rule": "heat",
+              "detail": "Heat WBGT >87.1F: practice cancelled"
+            },
+            {
+              "rule": "air_quality",
+              "detail": "AQI Yellow (51-100): check in with air-quality-sensitive athletes; consider reduced duration/intensity for sensitive groups"
+            }
+          ]
+        },
+        {
+          "time_iso": "2026-07-28T15:00",
+          "wbgt_f": 90.2,
+          "wbgt_suspect": null,
+          "aqi_forecast": 71,
+          "precip_pct": 0,
+          "weather_code": "Sunny",
+          "status": "CANCELLED",
+          "reasons": [
+            {
+              "rule": "heat",
+              "detail": "Heat WBGT >87.1F: practice cancelled"
+            },
+            {
+              "rule": "air_quality",
+              "detail": "AQI Yellow (51-100): check in with air-quality-sensitive athletes; consider reduced duration/intensity for sensitive groups"
+            }
+          ]
+        },
+        {
+          "time_iso": "2026-07-28T16:00",
+          "wbgt_f": 81.9,
+          "wbgt_suspect": null,
+          "aqi_forecast": 71,
+          "precip_pct": 1,
+          "weather_code": "Mostly Sunny",
+          "status": "GO",
+          "reasons": [
+            {
+              "rule": "air_quality",
+              "detail": "AQI Yellow (51-100): check in with air-quality-sensitive athletes; consider reduced duration/intensity for sensitive groups"
+            }
+          ]
+        },
+        {
+          "time_iso": "2026-07-28T17:00",
+          "wbgt_f": 82.3,
           "wbgt_suspect": null,
           "aqi_forecast": 71,
           "precip_pct": 0,
@@ -2826,23 +2886,23 @@
           "source": "METAR",
           "station_or_monitor": "KFCM",
           "distance_mi": null,
-          "fetched_at": "2026-07-28T02:18:28-05:00"
+          "fetched_at": "2026-07-28T05:07:09-05:00"
         },
         "rh": {
-          "value": 78.209169794993,
+          "value": 73.461696749353,
           "status": "ok",
           "source": "METAR",
           "station_or_monitor": "KFCM",
           "distance_mi": null,
-          "fetched_at": "2026-07-28T02:18:28-05:00"
+          "fetched_at": "2026-07-28T05:07:09-05:00"
         },
         "wind": {
-          "value": 0.0,
+          "value": 8.05296816,
           "status": "ok",
           "source": "METAR",
           "station_or_monitor": "KFCM",
           "distance_mi": null,
-          "fetched_at": "2026-07-28T02:18:28-05:00"
+          "fetched_at": "2026-07-28T05:07:09-05:00"
         },
         "ghi": {
           "value": 0.0,
@@ -2850,10 +2910,10 @@
           "source": "Open-Meteo HRRR",
           "station_or_monitor": null,
           "distance_mi": null,
-          "fetched_at": "2026-07-28T02:18:26-05:00"
+          "fetched_at": "2026-07-28T05:07:07-05:00"
         },
         "wbgt": {
-          "value": 69.8,
+          "value": 69.0,
           "status": "ok",
           "source": "computed",
           "station_or_monitor": null,
@@ -2861,12 +2921,12 @@
           "fetched_at": null
         },
         "aqi": {
-          "value": 59,
+          "value": 61,
           "status": "ok",
           "source": "AirNow",
           "station_or_monitor": "Southern Twin Cities Metro",
           "distance_mi": 25.8,
-          "fetched_at": "2026-07-28T02:18:30-05:00",
+          "fetched_at": "2026-07-28T05:07:10-05:00",
           "extra": {
             "pollutant": "PM2.5",
             "category": "Moderate"
@@ -2887,58 +2947,13 @@
           "source": "AirNow forecast",
           "station_or_monitor": null,
           "distance_mi": null,
-          "fetched_at": "2026-07-28T02:18:30-05:00",
+          "fetched_at": "2026-07-28T05:07:11-05:00",
           "extra": {
             "label": "forecast \u2014 verify with current reading"
           }
         }
       },
       "hours": [
-        {
-          "time_iso": "2026-07-28T03:00",
-          "wbgt_f": 68.6,
-          "wbgt_suspect": null,
-          "aqi_forecast": 71,
-          "precip_pct": 0,
-          "weather_code": "Partly Cloudy",
-          "status": "GO",
-          "reasons": [
-            {
-              "rule": "air_quality",
-              "detail": "AQI Yellow (51-100): check in with air-quality-sensitive athletes; consider reduced duration/intensity for sensitive groups"
-            }
-          ]
-        },
-        {
-          "time_iso": "2026-07-28T04:00",
-          "wbgt_f": 67.5,
-          "wbgt_suspect": null,
-          "aqi_forecast": 71,
-          "precip_pct": 1,
-          "weather_code": "Partly Cloudy",
-          "status": "GO",
-          "reasons": [
-            {
-              "rule": "air_quality",
-              "detail": "AQI Yellow (51-100): check in with air-quality-sensitive athletes; consider reduced duration/intensity for sensitive groups"
-            }
-          ]
-        },
-        {
-          "time_iso": "2026-07-28T05:00",
-          "wbgt_f": 66.5,
-          "wbgt_suspect": null,
-          "aqi_forecast": 71,
-          "precip_pct": 1,
-          "weather_code": "Partly Cloudy",
-          "status": "GO",
-          "reasons": [
-            {
-              "rule": "air_quality",
-              "detail": "AQI Yellow (51-100): check in with air-quality-sensitive athletes; consider reduced duration/intensity for sensitive groups"
-            }
-          ]
-        },
         {
           "time_iso": "2026-07-28T06:00",
           "wbgt_f": 66.0,
@@ -3016,7 +3031,7 @@
         },
         {
           "time_iso": "2026-07-28T11:00",
-          "wbgt_f": 77.1,
+          "wbgt_f": 76.9,
           "wbgt_suspect": null,
           "aqi_forecast": 71,
           "precip_pct": 0,
@@ -3031,7 +3046,7 @@
         },
         {
           "time_iso": "2026-07-28T12:00",
-          "wbgt_f": 79.1,
+          "wbgt_f": 78.8,
           "wbgt_suspect": null,
           "aqi_forecast": 71,
           "precip_pct": 0,
@@ -3046,7 +3061,7 @@
         },
         {
           "time_iso": "2026-07-28T13:00",
-          "wbgt_f": 89.5,
+          "wbgt_f": 89.3,
           "wbgt_suspect": null,
           "aqi_forecast": 71,
           "precip_pct": 0,
@@ -3065,17 +3080,70 @@
         },
         {
           "time_iso": "2026-07-28T14:00",
-          "wbgt_f": 83.0,
+          "wbgt_f": 90.8,
           "wbgt_suspect": null,
           "aqi_forecast": 71,
           "precip_pct": 0,
-          "weather_code": "0",
+          "weather_code": "Sunny",
+          "status": "CANCELLED",
+          "reasons": [
+            {
+              "rule": "heat",
+              "detail": "Heat WBGT >87.1F: practice cancelled"
+            },
+            {
+              "rule": "air_quality",
+              "detail": "AQI Yellow (51-100): check in with air-quality-sensitive athletes; consider reduced duration/intensity for sensitive groups"
+            }
+          ]
+        },
+        {
+          "time_iso": "2026-07-28T15:00",
+          "wbgt_f": 90.5,
+          "wbgt_suspect": null,
+          "aqi_forecast": 71,
+          "precip_pct": 2,
+          "weather_code": "Mostly Sunny",
+          "status": "CANCELLED",
+          "reasons": [
+            {
+              "rule": "heat",
+              "detail": "Heat WBGT >87.1F: practice cancelled"
+            },
+            {
+              "rule": "air_quality",
+              "detail": "AQI Yellow (51-100): check in with air-quality-sensitive athletes; consider reduced duration/intensity for sensitive groups"
+            }
+          ]
+        },
+        {
+          "time_iso": "2026-07-28T16:00",
+          "wbgt_f": 82.1,
+          "wbgt_suspect": null,
+          "aqi_forecast": 71,
+          "precip_pct": 3,
+          "weather_code": "Mostly Sunny",
           "status": "CAUTION",
           "reasons": [
             {
               "rule": "heat",
               "detail": "Heat WBGT 82-85F: 2-hour max activity, decrease intensity/duration, provide rest breaks"
             },
+            {
+              "rule": "air_quality",
+              "detail": "AQI Yellow (51-100): check in with air-quality-sensitive athletes; consider reduced duration/intensity for sensitive groups"
+            }
+          ]
+        },
+        {
+          "time_iso": "2026-07-28T17:00",
+          "wbgt_f": 81.9,
+          "wbgt_suspect": null,
+          "aqi_forecast": 71,
+          "precip_pct": 2,
+          "weather_code": "0",
+          "status": "GO",
+          "reasons": [
             {
               "rule": "air_quality",
               "detail": "AQI Yellow (51-100): check in with air-quality-sensitive athletes; consider reduced duration/intensity for sensitive groups"
@@ -3101,28 +3169,28 @@
       "practice_reasons": [],
       "current": {
         "temp": {
-          "value": 68.0,
+          "value": 64.4,
           "status": "ok",
           "source": "METAR",
           "station_or_monitor": "K21D",
           "distance_mi": null,
-          "fetched_at": "2026-07-28T02:18:28-05:00"
+          "fetched_at": "2026-07-28T05:07:09-05:00"
         },
         "rh": {
-          "value": 82.871929790445,
+          "value": 88.10014352739,
           "status": "ok",
           "source": "METAR",
           "station_or_monitor": "K21D",
           "distance_mi": null,
-          "fetched_at": "2026-07-28T02:18:28-05:00"
+          "fetched_at": "2026-07-28T05:07:09-05:00"
         },
         "wind": {
-          "value": 3.4448808239999997,
+          "value": 0.0,
           "status": "ok",
           "source": "METAR",
           "station_or_monitor": "K21D",
           "distance_mi": null,
-          "fetched_at": "2026-07-28T02:18:28-05:00"
+          "fetched_at": "2026-07-28T05:07:09-05:00"
         },
         "ghi": {
           "value": 0.0,
@@ -3130,10 +3198,10 @@
           "source": "Open-Meteo HRRR",
           "station_or_monitor": null,
           "distance_mi": null,
-          "fetched_at": "2026-07-28T02:18:26-05:00"
+          "fetched_at": "2026-07-28T05:07:07-05:00"
         },
         "wbgt": {
-          "value": 65.3,
+          "value": 62.6,
           "status": "ok",
           "source": "computed",
           "station_or_monitor": null,
@@ -3141,12 +3209,12 @@
           "fetched_at": null
         },
         "aqi": {
-          "value": 61,
+          "value": 64,
           "status": "ok",
           "source": "AirNow",
           "station_or_monitor": "Twin Cities",
           "distance_mi": 27.3,
-          "fetched_at": "2026-07-28T02:18:31-05:00",
+          "fetched_at": "2026-07-28T05:07:10-05:00",
           "extra": {
             "pollutant": "PM2.5",
             "category": "Moderate"
@@ -3167,58 +3235,13 @@
           "source": "AirNow forecast",
           "station_or_monitor": null,
           "distance_mi": null,
-          "fetched_at": "2026-07-28T02:18:31-05:00",
+          "fetched_at": "2026-07-28T05:07:10-05:00",
           "extra": {
             "label": "forecast \u2014 verify with current reading"
           }
         }
       },
       "hours": [
-        {
-          "time_iso": "2026-07-28T03:00",
-          "wbgt_f": 65.0,
-          "wbgt_suspect": null,
-          "aqi_forecast": 71,
-          "precip_pct": 0,
-          "weather_code": "Partly Cloudy",
-          "status": "GO",
-          "reasons": [
-            {
-              "rule": "air_quality",
-              "detail": "AQI Yellow (51-100): check in with air-quality-sensitive athletes; consider reduced duration/intensity for sensitive groups"
-            }
-          ]
-        },
-        {
-          "time_iso": "2026-07-28T04:00",
-          "wbgt_f": 63.6,
-          "wbgt_suspect": null,
-          "aqi_forecast": 71,
-          "precip_pct": 0,
-          "weather_code": "Partly Cloudy",
-          "status": "GO",
-          "reasons": [
-            {
-              "rule": "air_quality",
-              "detail": "AQI Yellow (51-100): check in with air-quality-sensitive athletes; consider reduced duration/intensity for sensitive groups"
-            }
-          ]
-        },
-        {
-          "time_iso": "2026-07-28T05:00",
-          "wbgt_f": 62.6,
-          "wbgt_suspect": null,
-          "aqi_forecast": 71,
-          "precip_pct": 0,
-          "weather_code": "Mostly Clear",
-          "status": "GO",
-          "reasons": [
-            {
-              "rule": "air_quality",
-              "detail": "AQI Yellow (51-100): check in with air-quality-sensitive athletes; consider reduced duration/intensity for sensitive groups"
-            }
-          ]
-        },
         {
           "time_iso": "2026-07-28T06:00",
           "wbgt_f": 62.0,
@@ -3266,7 +3289,7 @@
         },
         {
           "time_iso": "2026-07-28T09:00",
-          "wbgt_f": 72.5,
+          "wbgt_f": 72.4,
           "wbgt_suspect": null,
           "aqi_forecast": 71,
           "precip_pct": 0,
@@ -3281,7 +3304,7 @@
         },
         {
           "time_iso": "2026-07-28T10:00",
-          "wbgt_f": 77.2,
+          "wbgt_f": 77.3,
           "wbgt_suspect": null,
           "aqi_forecast": 71,
           "precip_pct": 0,
@@ -3296,22 +3319,7 @@
         },
         {
           "time_iso": "2026-07-28T11:00",
-          "wbgt_f": 81.7,
-          "wbgt_suspect": null,
-          "aqi_forecast": 71,
-          "precip_pct": 0,
-          "weather_code": "Sunny",
-          "status": "GO",
-          "reasons": [
-            {
-              "rule": "air_quality",
-              "detail": "AQI Yellow (51-100): check in with air-quality-sensitive athletes; consider reduced duration/intensity for sensitive groups"
-            }
-          ]
-        },
-        {
-          "time_iso": "2026-07-28T12:00",
-          "wbgt_f": 82.9,
+          "wbgt_f": 82.0,
           "wbgt_suspect": null,
           "aqi_forecast": 71,
           "precip_pct": 0,
@@ -3329,8 +3337,46 @@
           ]
         },
         {
+          "time_iso": "2026-07-28T12:00",
+          "wbgt_f": 85.5,
+          "wbgt_suspect": null,
+          "aqi_forecast": 71,
+          "precip_pct": 0,
+          "weather_code": "Sunny",
+          "status": "CAUTION",
+          "reasons": [
+            {
+              "rule": "heat",
+              "detail": "Heat WBGT 85.1-87.1F: 1-hour max activity, significantly increase rest breaks"
+            },
+            {
+              "rule": "air_quality",
+              "detail": "AQI Yellow (51-100): check in with air-quality-sensitive athletes; consider reduced duration/intensity for sensitive groups"
+            }
+          ]
+        },
+        {
           "time_iso": "2026-07-28T13:00",
-          "wbgt_f": 87.2,
+          "wbgt_f": 87.0,
+          "wbgt_suspect": null,
+          "aqi_forecast": 71,
+          "precip_pct": 0,
+          "weather_code": "Sunny",
+          "status": "CAUTION",
+          "reasons": [
+            {
+              "rule": "heat",
+              "detail": "Heat WBGT 85.1-87.1F: 1-hour max activity, significantly increase rest breaks"
+            },
+            {
+              "rule": "air_quality",
+              "detail": "AQI Yellow (51-100): check in with air-quality-sensitive athletes; consider reduced duration/intensity for sensitive groups"
+            }
+          ]
+        },
+        {
+          "time_iso": "2026-07-28T14:00",
+          "wbgt_f": 88.0,
           "wbgt_suspect": null,
           "aqi_forecast": 71,
           "precip_pct": 0,
@@ -3348,8 +3394,46 @@
           ]
         },
         {
-          "time_iso": "2026-07-28T14:00",
-          "wbgt_f": 80.6,
+          "time_iso": "2026-07-28T15:00",
+          "wbgt_f": 88.8,
+          "wbgt_suspect": null,
+          "aqi_forecast": 71,
+          "precip_pct": 0,
+          "weather_code": "Sunny",
+          "status": "CANCELLED",
+          "reasons": [
+            {
+              "rule": "heat",
+              "detail": "Heat WBGT >87.1F: practice cancelled"
+            },
+            {
+              "rule": "air_quality",
+              "detail": "AQI Yellow (51-100): check in with air-quality-sensitive athletes; consider reduced duration/intensity for sensitive groups"
+            }
+          ]
+        },
+        {
+          "time_iso": "2026-07-28T16:00",
+          "wbgt_f": 88.0,
+          "wbgt_suspect": null,
+          "aqi_forecast": 71,
+          "precip_pct": 0,
+          "weather_code": "Sunny",
+          "status": "CANCELLED",
+          "reasons": [
+            {
+              "rule": "heat",
+              "detail": "Heat WBGT >87.1F: practice cancelled"
+            },
+            {
+              "rule": "air_quality",
+              "detail": "AQI Yellow (51-100): check in with air-quality-sensitive athletes; consider reduced duration/intensity for sensitive groups"
+            }
+          ]
+        },
+        {
+          "time_iso": "2026-07-28T17:00",
+          "wbgt_f": 80.3,
           "wbgt_suspect": null,
           "aqi_forecast": 71,
           "precip_pct": 0,
@@ -3381,28 +3465,28 @@
       "practice_reasons": [],
       "current": {
         "temp": {
-          "value": 68.0,
+          "value": 64.4,
           "status": "ok",
           "source": "METAR",
           "station_or_monitor": "K21D",
           "distance_mi": null,
-          "fetched_at": "2026-07-28T02:18:29-05:00"
+          "fetched_at": "2026-07-28T05:07:09-05:00"
         },
         "rh": {
-          "value": 82.871929790445,
+          "value": 88.10014352739,
           "status": "ok",
           "source": "METAR",
           "station_or_monitor": "K21D",
           "distance_mi": null,
-          "fetched_at": "2026-07-28T02:18:29-05:00"
+          "fetched_at": "2026-07-28T05:07:09-05:00"
         },
         "wind": {
-          "value": 3.4448808239999997,
+          "value": 0.0,
           "status": "ok",
           "source": "METAR",
           "station_or_monitor": "K21D",
           "distance_mi": null,
-          "fetched_at": "2026-07-28T02:18:29-05:00"
+          "fetched_at": "2026-07-28T05:07:09-05:00"
         },
         "ghi": {
           "value": 0.0,
@@ -3410,10 +3494,10 @@
           "source": "Open-Meteo HRRR",
           "station_or_monitor": null,
           "distance_mi": null,
-          "fetched_at": "2026-07-28T02:18:26-05:00"
+          "fetched_at": "2026-07-28T05:07:07-05:00"
         },
         "wbgt": {
-          "value": 65.3,
+          "value": 62.6,
           "status": "ok",
           "source": "computed",
           "station_or_monitor": null,
@@ -3421,12 +3505,12 @@
           "fetched_at": null
         },
         "aqi": {
-          "value": 61,
+          "value": 64,
           "status": "ok",
           "source": "AirNow",
           "station_or_monitor": "Twin Cities",
           "distance_mi": 25.1,
-          "fetched_at": "2026-07-28T02:18:30-05:00",
+          "fetched_at": "2026-07-28T05:07:10-05:00",
           "extra": {
             "pollutant": "PM2.5",
             "category": "Moderate"
@@ -3447,58 +3531,13 @@
           "source": "AirNow forecast",
           "station_or_monitor": null,
           "distance_mi": null,
-          "fetched_at": "2026-07-28T02:18:30-05:00",
+          "fetched_at": "2026-07-28T05:07:10-05:00",
           "extra": {
             "label": "forecast \u2014 verify with current reading"
           }
         }
       },
       "hours": [
-        {
-          "time_iso": "2026-07-28T03:00",
-          "wbgt_f": 65.0,
-          "wbgt_suspect": null,
-          "aqi_forecast": 71,
-          "precip_pct": 0,
-          "weather_code": "Partly Cloudy",
-          "status": "GO",
-          "reasons": [
-            {
-              "rule": "air_quality",
-              "detail": "AQI Yellow (51-100): check in with air-quality-sensitive athletes; consider reduced duration/intensity for sensitive groups"
-            }
-          ]
-        },
-        {
-          "time_iso": "2026-07-28T04:00",
-          "wbgt_f": 63.6,
-          "wbgt_suspect": null,
-          "aqi_forecast": 71,
-          "precip_pct": 0,
-          "weather_code": "Partly Cloudy",
-          "status": "GO",
-          "reasons": [
-            {
-              "rule": "air_quality",
-              "detail": "AQI Yellow (51-100): check in with air-quality-sensitive athletes; consider reduced duration/intensity for sensitive groups"
-            }
-          ]
-        },
-        {
-          "time_iso": "2026-07-28T05:00",
-          "wbgt_f": 63.0,
-          "wbgt_suspect": null,
-          "aqi_forecast": 71,
-          "precip_pct": 0,
-          "weather_code": "Mostly Clear",
-          "status": "GO",
-          "reasons": [
-            {
-              "rule": "air_quality",
-              "detail": "AQI Yellow (51-100): check in with air-quality-sensitive athletes; consider reduced duration/intensity for sensitive groups"
-            }
-          ]
-        },
         {
           "time_iso": "2026-07-28T06:00",
           "wbgt_f": 62.0,
@@ -3531,7 +3570,7 @@
         },
         {
           "time_iso": "2026-07-28T08:00",
-          "wbgt_f": 68.4,
+          "wbgt_f": 68.3,
           "wbgt_suspect": null,
           "aqi_forecast": 71,
           "precip_pct": 0,
@@ -3561,7 +3600,7 @@
         },
         {
           "time_iso": "2026-07-28T10:00",
-          "wbgt_f": 78.4,
+          "wbgt_f": 78.3,
           "wbgt_suspect": null,
           "aqi_forecast": 71,
           "precip_pct": 0,
@@ -3576,7 +3615,7 @@
         },
         {
           "time_iso": "2026-07-28T11:00",
-          "wbgt_f": 81.3,
+          "wbgt_f": 81.8,
           "wbgt_suspect": null,
           "aqi_forecast": 71,
           "precip_pct": 0,
@@ -3591,13 +3630,17 @@
         },
         {
           "time_iso": "2026-07-28T12:00",
-          "wbgt_f": 80.9,
+          "wbgt_f": 85.2,
           "wbgt_suspect": null,
           "aqi_forecast": 71,
           "precip_pct": 0,
           "weather_code": "Sunny",
-          "status": "GO",
+          "status": "CAUTION",
           "reasons": [
+            {
+              "rule": "heat",
+              "detail": "Heat WBGT 85.1-87.1F: 1-hour max activity, significantly increase rest breaks"
+            },
             {
               "rule": "air_quality",
               "detail": "AQI Yellow (51-100): check in with air-quality-sensitive athletes; consider reduced duration/intensity for sensitive groups"
@@ -3606,7 +3649,7 @@
         },
         {
           "time_iso": "2026-07-28T13:00",
-          "wbgt_f": 87.4,
+          "wbgt_f": 87.6,
           "wbgt_suspect": null,
           "aqi_forecast": 71,
           "precip_pct": 0,
@@ -3625,17 +3668,66 @@
         },
         {
           "time_iso": "2026-07-28T14:00",
-          "wbgt_f": 82.2,
+          "wbgt_f": 89.3,
+          "wbgt_suspect": null,
+          "aqi_forecast": 71,
+          "precip_pct": 0,
+          "weather_code": "Sunny",
+          "status": "CANCELLED",
+          "reasons": [
+            {
+              "rule": "heat",
+              "detail": "Heat WBGT >87.1F: practice cancelled"
+            },
+            {
+              "rule": "air_quality",
+              "detail": "AQI Yellow (51-100): check in with air-quality-sensitive athletes; consider reduced duration/intensity for sensitive groups"
+            }
+          ]
+        },
+        {
+          "time_iso": "2026-07-28T15:00",
+          "wbgt_f": 89.2,
+          "wbgt_suspect": null,
+          "aqi_forecast": 71,
+          "precip_pct": 0,
+          "weather_code": "Sunny",
+          "status": "CANCELLED",
+          "reasons": [
+            {
+              "rule": "heat",
+              "detail": "Heat WBGT >87.1F: practice cancelled"
+            },
+            {
+              "rule": "air_quality",
+              "detail": "AQI Yellow (51-100): check in with air-quality-sensitive athletes; consider reduced duration/intensity for sensitive groups"
+            }
+          ]
+        },
+        {
+          "time_iso": "2026-07-28T16:00",
+          "wbgt_f": 81.0,
+          "wbgt_suspect": null,
+          "aqi_forecast": 71,
+          "precip_pct": 0,
+          "weather_code": "Sunny",
+          "status": "GO",
+          "reasons": [
+            {
+              "rule": "air_quality",
+              "detail": "AQI Yellow (51-100): check in with air-quality-sensitive athletes; consider reduced duration/intensity for sensitive groups"
+            }
+          ]
+        },
+        {
+          "time_iso": "2026-07-28T17:00",
+          "wbgt_f": 81.4,
           "wbgt_suspect": null,
           "aqi_forecast": 71,
           "precip_pct": 0,
           "weather_code": "0",
-          "status": "CAUTION",
+          "status": "GO",
           "reasons": [
-            {
-              "rule": "heat",
-              "detail": "Heat WBGT 82-85F: 2-hour max activity, decrease intensity/duration, provide rest breaks"
-            },
             {
               "rule": "air_quality",
               "detail": "AQI Yellow (51-100): check in with air-quality-sensitive athletes; consider reduced duration/intensity for sensitive groups"
@@ -3661,28 +3753,28 @@
       "practice_reasons": [],
       "current": {
         "temp": {
-          "value": 73.4,
+          "value": 69.8,
           "status": "ok",
           "source": "METAR",
           "station_or_monitor": "KSTP",
           "distance_mi": null,
-          "fetched_at": "2026-07-28T02:18:29-05:00"
+          "fetched_at": "2026-07-28T05:07:09-05:00"
         },
         "rh": {
-          "value": 73.461696749353,
+          "value": 77.915158291749,
           "status": "ok",
           "source": "METAR",
           "station_or_monitor": "KSTP",
           "distance_mi": null,
-          "fetched_at": "2026-07-28T02:18:29-05:00"
+          "fetched_at": "2026-07-28T05:07:09-05:00"
         },
         "wind": {
-          "value": 4.6080873360000005,
+          "value": 5.748924492,
           "status": "ok",
           "source": "METAR",
           "station_or_monitor": "KSTP",
           "distance_mi": null,
-          "fetched_at": "2026-07-28T02:18:29-05:00"
+          "fetched_at": "2026-07-28T05:07:09-05:00"
         },
         "ghi": {
           "value": 0.0,
@@ -3690,10 +3782,10 @@
           "source": "Open-Meteo HRRR",
           "station_or_monitor": null,
           "distance_mi": null,
-          "fetched_at": "2026-07-28T02:18:26-05:00"
+          "fetched_at": "2026-07-28T05:07:07-05:00"
         },
         "wbgt": {
-          "value": 69.0,
+          "value": 66.3,
           "status": "ok",
           "source": "computed",
           "station_or_monitor": null,
@@ -3701,12 +3793,12 @@
           "fetched_at": null
         },
         "aqi": {
-          "value": 61,
+          "value": 64,
           "status": "ok",
           "source": "AirNow",
           "station_or_monitor": "Twin Cities",
           "distance_mi": 5.2,
-          "fetched_at": "2026-07-28T02:18:30-05:00",
+          "fetched_at": "2026-07-28T05:07:10-05:00",
           "extra": {
             "pollutant": "PM2.5",
             "category": "Moderate"
@@ -3727,58 +3819,13 @@
           "source": "AirNow forecast",
           "station_or_monitor": null,
           "distance_mi": null,
-          "fetched_at": "2026-07-28T02:18:30-05:00",
+          "fetched_at": "2026-07-28T05:07:11-05:00",
           "extra": {
             "label": "forecast \u2014 verify with current reading"
           }
         }
       },
       "hours": [
-        {
-          "time_iso": "2026-07-28T03:00",
-          "wbgt_f": 68.6,
-          "wbgt_suspect": null,
-          "aqi_forecast": 71,
-          "precip_pct": 0,
-          "weather_code": "Partly Cloudy",
-          "status": "GO",
-          "reasons": [
-            {
-              "rule": "air_quality",
-              "detail": "AQI Yellow (51-100): check in with air-quality-sensitive athletes; consider reduced duration/intensity for sensitive groups"
-            }
-          ]
-        },
-        {
-          "time_iso": "2026-07-28T04:00",
-          "wbgt_f": 67.6,
-          "wbgt_suspect": null,
-          "aqi_forecast": 71,
-          "precip_pct": 0,
-          "weather_code": "Partly Cloudy",
-          "status": "GO",
-          "reasons": [
-            {
-              "rule": "air_quality",
-              "detail": "AQI Yellow (51-100): check in with air-quality-sensitive athletes; consider reduced duration/intensity for sensitive groups"
-            }
-          ]
-        },
-        {
-          "time_iso": "2026-07-28T05:00",
-          "wbgt_f": 66.0,
-          "wbgt_suspect": null,
-          "aqi_forecast": 71,
-          "precip_pct": 0,
-          "weather_code": "Partly Cloudy",
-          "status": "GO",
-          "reasons": [
-            {
-              "rule": "air_quality",
-              "detail": "AQI Yellow (51-100): check in with air-quality-sensitive athletes; consider reduced duration/intensity for sensitive groups"
-            }
-          ]
-        },
         {
           "time_iso": "2026-07-28T06:00",
           "wbgt_f": 65.5,
@@ -3811,7 +3858,7 @@
         },
         {
           "time_iso": "2026-07-28T08:00",
-          "wbgt_f": 70.1,
+          "wbgt_f": 70.2,
           "wbgt_suspect": null,
           "aqi_forecast": 71,
           "precip_pct": 0,
@@ -3826,7 +3873,7 @@
         },
         {
           "time_iso": "2026-07-28T09:00",
-          "wbgt_f": 74.6,
+          "wbgt_f": 74.5,
           "wbgt_suspect": null,
           "aqi_forecast": 71,
           "precip_pct": 0,
@@ -3841,7 +3888,7 @@
         },
         {
           "time_iso": "2026-07-28T10:00",
-          "wbgt_f": 73.6,
+          "wbgt_f": 74.0,
           "wbgt_suspect": null,
           "aqi_forecast": 71,
           "precip_pct": 0,
@@ -3856,7 +3903,7 @@
         },
         {
           "time_iso": "2026-07-28T11:00",
-          "wbgt_f": 76.4,
+          "wbgt_f": 76.6,
           "wbgt_suspect": null,
           "aqi_forecast": 71,
           "precip_pct": 0,
@@ -3901,17 +3948,66 @@
         },
         {
           "time_iso": "2026-07-28T14:00",
-          "wbgt_f": 85.1,
+          "wbgt_f": 81.4,
           "wbgt_suspect": null,
           "aqi_forecast": 71,
           "precip_pct": 0,
-          "weather_code": "1",
+          "weather_code": "Sunny",
+          "status": "GO",
+          "reasons": [
+            {
+              "rule": "air_quality",
+              "detail": "AQI Yellow (51-100): check in with air-quality-sensitive athletes; consider reduced duration/intensity for sensitive groups"
+            }
+          ]
+        },
+        {
+          "time_iso": "2026-07-28T15:00",
+          "wbgt_f": 82.0,
+          "wbgt_suspect": null,
+          "aqi_forecast": 71,
+          "precip_pct": 0,
+          "weather_code": "Sunny",
           "status": "CAUTION",
           "reasons": [
             {
               "rule": "heat",
-              "detail": "Heat WBGT 85.1-87.1F: 1-hour max activity, significantly increase rest breaks"
+              "detail": "Heat WBGT 82-85F: 2-hour max activity, decrease intensity/duration, provide rest breaks"
             },
+            {
+              "rule": "air_quality",
+              "detail": "AQI Yellow (51-100): check in with air-quality-sensitive athletes; consider reduced duration/intensity for sensitive groups"
+            }
+          ]
+        },
+        {
+          "time_iso": "2026-07-28T16:00",
+          "wbgt_f": 82.2,
+          "wbgt_suspect": null,
+          "aqi_forecast": 71,
+          "precip_pct": 1,
+          "weather_code": "Mostly Sunny",
+          "status": "CAUTION",
+          "reasons": [
+            {
+              "rule": "heat",
+              "detail": "Heat WBGT 82-85F: 2-hour max activity, decrease intensity/duration, provide rest breaks"
+            },
+            {
+              "rule": "air_quality",
+              "detail": "AQI Yellow (51-100): check in with air-quality-sensitive athletes; consider reduced duration/intensity for sensitive groups"
+            }
+          ]
+        },
+        {
+          "time_iso": "2026-07-28T17:00",
+          "wbgt_f": 81.1,
+          "wbgt_suspect": null,
+          "aqi_forecast": 71,
+          "precip_pct": 0,
+          "weather_code": "0",
+          "status": "GO",
+          "reasons": [
             {
               "rule": "air_quality",
               "detail": "AQI Yellow (51-100): check in with air-quality-sensitive athletes; consider reduced duration/intensity for sensitive groups"
@@ -3942,23 +4038,23 @@
           "source": "METAR",
           "station_or_monitor": "KFCM",
           "distance_mi": null,
-          "fetched_at": "2026-07-28T02:18:28-05:00"
+          "fetched_at": "2026-07-28T05:07:09-05:00"
         },
         "rh": {
-          "value": 78.209169794993,
+          "value": 73.461696749353,
           "status": "ok",
           "source": "METAR",
           "station_or_monitor": "KFCM",
           "distance_mi": null,
-          "fetched_at": "2026-07-28T02:18:28-05:00"
+          "fetched_at": "2026-07-28T05:07:09-05:00"
         },
         "wind": {
-          "value": 0.0,
+          "value": 8.05296816,
           "status": "ok",
           "source": "METAR",
           "station_or_monitor": "KFCM",
           "distance_mi": null,
-          "fetched_at": "2026-07-28T02:18:28-05:00"
+          "fetched_at": "2026-07-28T05:07:09-05:00"
         },
         "ghi": {
           "value": 0.0,
@@ -3966,10 +4062,10 @@
           "source": "Open-Meteo HRRR",
           "station_or_monitor": null,
           "distance_mi": null,
-          "fetched_at": "2026-07-28T02:18:26-05:00"
+          "fetched_at": "2026-07-28T05:07:07-05:00"
         },
         "wbgt": {
-          "value": 69.8,
+          "value": 69.0,
           "status": "ok",
           "source": "computed",
           "station_or_monitor": null,
@@ -3977,12 +4073,12 @@
           "fetched_at": null
         },
         "aqi": {
-          "value": 59,
+          "value": 61,
           "status": "ok",
           "source": "AirNow",
           "station_or_monitor": "Southern Twin Cities Metro",
           "distance_mi": 12.0,
-          "fetched_at": "2026-07-28T02:18:30-05:00",
+          "fetched_at": "2026-07-28T05:07:11-05:00",
           "extra": {
             "pollutant": "PM2.5",
             "category": "Moderate"
@@ -4003,58 +4099,13 @@
           "source": "AirNow forecast",
           "station_or_monitor": null,
           "distance_mi": null,
-          "fetched_at": "2026-07-28T02:18:30-05:00",
+          "fetched_at": "2026-07-28T05:07:11-05:00",
           "extra": {
             "label": "forecast \u2014 verify with current reading"
           }
         }
       },
       "hours": [
-        {
-          "time_iso": "2026-07-28T03:00",
-          "wbgt_f": 69.1,
-          "wbgt_suspect": null,
-          "aqi_forecast": 71,
-          "precip_pct": 0,
-          "weather_code": "Partly Cloudy",
-          "status": "GO",
-          "reasons": [
-            {
-              "rule": "air_quality",
-              "detail": "AQI Yellow (51-100): check in with air-quality-sensitive athletes; consider reduced duration/intensity for sensitive groups"
-            }
-          ]
-        },
-        {
-          "time_iso": "2026-07-28T04:00",
-          "wbgt_f": 68.6,
-          "wbgt_suspect": null,
-          "aqi_forecast": 71,
-          "precip_pct": 0,
-          "weather_code": "Partly Cloudy",
-          "status": "GO",
-          "reasons": [
-            {
-              "rule": "air_quality",
-              "detail": "AQI Yellow (51-100): check in with air-quality-sensitive athletes; consider reduced duration/intensity for sensitive groups"
-            }
-          ]
-        },
-        {
-          "time_iso": "2026-07-28T05:00",
-          "wbgt_f": 67.0,
-          "wbgt_suspect": null,
-          "aqi_forecast": 71,
-          "precip_pct": 1,
-          "weather_code": "Partly Cloudy",
-          "status": "GO",
-          "reasons": [
-            {
-              "rule": "air_quality",
-              "detail": "AQI Yellow (51-100): check in with air-quality-sensitive athletes; consider reduced duration/intensity for sensitive groups"
-            }
-          ]
-        },
         {
           "time_iso": "2026-07-28T06:00",
           "wbgt_f": 66.5,
@@ -4087,7 +4138,7 @@
         },
         {
           "time_iso": "2026-07-28T08:00",
-          "wbgt_f": 71.4,
+          "wbgt_f": 71.3,
           "wbgt_suspect": null,
           "aqi_forecast": 71,
           "precip_pct": 0,
@@ -4102,7 +4153,7 @@
         },
         {
           "time_iso": "2026-07-28T09:00",
-          "wbgt_f": 75.6,
+          "wbgt_f": 75.7,
           "wbgt_suspect": null,
           "aqi_forecast": 71,
           "precip_pct": 0,
@@ -4132,7 +4183,7 @@
         },
         {
           "time_iso": "2026-07-28T11:00",
-          "wbgt_f": 77.4,
+          "wbgt_f": 77.3,
           "wbgt_suspect": null,
           "aqi_forecast": 71,
           "precip_pct": 0,
@@ -4166,7 +4217,7 @@
         },
         {
           "time_iso": "2026-07-28T13:00",
-          "wbgt_f": 89.9,
+          "wbgt_f": 89.6,
           "wbgt_suspect": null,
           "aqi_forecast": 71,
           "precip_pct": 0,
@@ -4185,7 +4236,64 @@
         },
         {
           "time_iso": "2026-07-28T14:00",
-          "wbgt_f": 86.3,
+          "wbgt_f": 91.4,
+          "wbgt_suspect": null,
+          "aqi_forecast": 71,
+          "precip_pct": 0,
+          "weather_code": "Sunny",
+          "status": "CANCELLED",
+          "reasons": [
+            {
+              "rule": "heat",
+              "detail": "Heat WBGT >87.1F: practice cancelled"
+            },
+            {
+              "rule": "air_quality",
+              "detail": "AQI Yellow (51-100): check in with air-quality-sensitive athletes; consider reduced duration/intensity for sensitive groups"
+            }
+          ]
+        },
+        {
+          "time_iso": "2026-07-28T15:00",
+          "wbgt_f": 82.8,
+          "wbgt_suspect": null,
+          "aqi_forecast": 71,
+          "precip_pct": 1,
+          "weather_code": "Sunny",
+          "status": "CAUTION",
+          "reasons": [
+            {
+              "rule": "heat",
+              "detail": "Heat WBGT 82-85F: 2-hour max activity, decrease intensity/duration, provide rest breaks"
+            },
+            {
+              "rule": "air_quality",
+              "detail": "AQI Yellow (51-100): check in with air-quality-sensitive athletes; consider reduced duration/intensity for sensitive groups"
+            }
+          ]
+        },
+        {
+          "time_iso": "2026-07-28T16:00",
+          "wbgt_f": 82.7,
+          "wbgt_suspect": null,
+          "aqi_forecast": 71,
+          "precip_pct": 2,
+          "weather_code": "Sunny",
+          "status": "CAUTION",
+          "reasons": [
+            {
+              "rule": "heat",
+              "detail": "Heat WBGT 82-85F: 2-hour max activity, decrease intensity/duration, provide rest breaks"
+            },
+            {
+              "rule": "air_quality",
+              "detail": "AQI Yellow (51-100): check in with air-quality-sensitive athletes; consider reduced duration/intensity for sensitive groups"
+            }
+          ]
+        },
+        {
+          "time_iso": "2026-07-28T17:00",
+          "wbgt_f": 82.8,
           "wbgt_suspect": null,
           "aqi_forecast": 71,
           "precip_pct": 0,
@@ -4194,7 +4302,7 @@
           "reasons": [
             {
               "rule": "heat",
-              "detail": "Heat WBGT 85.1-87.1F: 1-hour max activity, significantly increase rest breaks"
+              "detail": "Heat WBGT 82-85F: 2-hour max activity, decrease intensity/duration, provide rest breaks"
             },
             {
               "rule": "air_quality",
@@ -4221,28 +4329,28 @@
       "practice_reasons": [],
       "current": {
         "temp": {
-          "value": 71.6,
+          "value": 69.8,
           "status": "ok",
           "source": "METAR",
           "station_or_monitor": "KBRD",
           "distance_mi": null,
-          "fetched_at": "2026-07-28T02:18:29-05:00"
+          "fetched_at": "2026-07-28T05:07:10-05:00"
         },
         "rh": {
-          "value": 94.06252427588,
+          "value": 94.018757001038,
           "status": "ok",
           "source": "METAR",
           "station_or_monitor": "KBRD",
           "distance_mi": null,
-          "fetched_at": "2026-07-28T02:18:29-05:00"
+          "fetched_at": "2026-07-28T05:07:10-05:00"
         },
         "wind": {
-          "value": 4.6080873360000005,
+          "value": 6.912131004000001,
           "status": "ok",
           "source": "METAR",
           "station_or_monitor": "KBRD",
           "distance_mi": null,
-          "fetched_at": "2026-07-28T02:18:29-05:00"
+          "fetched_at": "2026-07-28T05:07:10-05:00"
         },
         "ghi": {
           "value": 0.0,
@@ -4250,10 +4358,10 @@
           "source": "Open-Meteo HRRR",
           "station_or_monitor": null,
           "distance_mi": null,
-          "fetched_at": "2026-07-28T02:18:26-05:00"
+          "fetched_at": "2026-07-28T05:07:07-05:00"
         },
         "wbgt": {
-          "value": 70.7,
+          "value": 68.9,
           "status": "ok",
           "source": "computed",
           "station_or_monitor": null,
@@ -4261,12 +4369,12 @@
           "fetched_at": null
         },
         "aqi": {
-          "value": 64,
+          "value": 63,
           "status": "ok",
           "source": "AirNow",
           "station_or_monitor": "Central Minnesota",
           "distance_mi": 5.5,
-          "fetched_at": "2026-07-28T02:18:31-05:00",
+          "fetched_at": "2026-07-28T05:07:11-05:00",
           "extra": {
             "pollutant": "PM2.5",
             "category": "Moderate"
@@ -4287,58 +4395,13 @@
           "source": "AirNow forecast",
           "station_or_monitor": null,
           "distance_mi": null,
-          "fetched_at": "2026-07-28T02:18:31-05:00",
+          "fetched_at": "2026-07-28T05:07:11-05:00",
           "extra": {
             "label": "forecast \u2014 verify with current reading"
           }
         }
       },
       "hours": [
-        {
-          "time_iso": "2026-07-28T03:00",
-          "wbgt_f": 67.0,
-          "wbgt_suspect": null,
-          "aqi_forecast": 58,
-          "precip_pct": 4,
-          "weather_code": "Mostly Cloudy",
-          "status": "GO",
-          "reasons": [
-            {
-              "rule": "air_quality",
-              "detail": "AQI Yellow (51-100): check in with air-quality-sensitive athletes; consider reduced duration/intensity for sensitive groups"
-            }
-          ]
-        },
-        {
-          "time_iso": "2026-07-28T04:00",
-          "wbgt_f": 66.5,
-          "wbgt_suspect": null,
-          "aqi_forecast": 58,
-          "precip_pct": 4,
-          "weather_code": "Mostly Cloudy",
-          "status": "GO",
-          "reasons": [
-            {
-              "rule": "air_quality",
-              "detail": "AQI Yellow (51-100): check in with air-quality-sensitive athletes; consider reduced duration/intensity for sensitive groups"
-            }
-          ]
-        },
-        {
-          "time_iso": "2026-07-28T05:00",
-          "wbgt_f": 65.5,
-          "wbgt_suspect": null,
-          "aqi_forecast": 58,
-          "precip_pct": 4,
-          "weather_code": "Mostly Cloudy",
-          "status": "GO",
-          "reasons": [
-            {
-              "rule": "air_quality",
-              "detail": "AQI Yellow (51-100): check in with air-quality-sensitive athletes; consider reduced duration/intensity for sensitive groups"
-            }
-          ]
-        },
         {
           "time_iso": "2026-07-28T06:00",
           "wbgt_f": 65.0,
@@ -4356,7 +4419,7 @@
         },
         {
           "time_iso": "2026-07-28T07:00",
-          "wbgt_f": 66.3,
+          "wbgt_f": 66.5,
           "wbgt_suspect": null,
           "aqi_forecast": 58,
           "precip_pct": 3,
@@ -4371,7 +4434,7 @@
         },
         {
           "time_iso": "2026-07-28T08:00",
-          "wbgt_f": 69.8,
+          "wbgt_f": 70.2,
           "wbgt_suspect": null,
           "aqi_forecast": 58,
           "precip_pct": 2,
@@ -4386,7 +4449,7 @@
         },
         {
           "time_iso": "2026-07-28T09:00",
-          "wbgt_f": 72.9,
+          "wbgt_f": 72.4,
           "wbgt_suspect": null,
           "aqi_forecast": 58,
           "precip_pct": 2,
@@ -4401,7 +4464,7 @@
         },
         {
           "time_iso": "2026-07-28T10:00",
-          "wbgt_f": 76.3,
+          "wbgt_f": 79.2,
           "wbgt_suspect": null,
           "aqi_forecast": 58,
           "precip_pct": 2,
@@ -4416,7 +4479,7 @@
         },
         {
           "time_iso": "2026-07-28T11:00",
-          "wbgt_f": 82.6,
+          "wbgt_f": 82.3,
           "wbgt_suspect": null,
           "aqi_forecast": 58,
           "precip_pct": 4,
@@ -4435,16 +4498,16 @@
         },
         {
           "time_iso": "2026-07-28T12:00",
-          "wbgt_f": 87.0,
+          "wbgt_f": 87.4,
           "wbgt_suspect": null,
           "aqi_forecast": 58,
           "precip_pct": 7,
           "weather_code": "Partly Sunny",
-          "status": "CAUTION",
+          "status": "CANCELLED",
           "reasons": [
             {
               "rule": "heat",
-              "detail": "Heat WBGT 85.1-87.1F: 1-hour max activity, significantly increase rest breaks"
+              "detail": "Heat WBGT >87.1F: practice cancelled"
             },
             {
               "rule": "air_quality",
@@ -4454,7 +4517,7 @@
         },
         {
           "time_iso": "2026-07-28T13:00",
-          "wbgt_f": 81.1,
+          "wbgt_f": 81.0,
           "wbgt_suspect": null,
           "aqi_forecast": 58,
           "precip_pct": 10,
@@ -4469,17 +4532,70 @@
         },
         {
           "time_iso": "2026-07-28T14:00",
-          "wbgt_f": 85.0,
+          "wbgt_f": 82.1,
           "wbgt_suspect": null,
           "aqi_forecast": 58,
-          "precip_pct": 0,
-          "weather_code": "0",
+          "precip_pct": 10,
+          "weather_code": "Mostly Sunny",
           "status": "CAUTION",
           "reasons": [
             {
               "rule": "heat",
               "detail": "Heat WBGT 82-85F: 2-hour max activity, decrease intensity/duration, provide rest breaks"
             },
+            {
+              "rule": "air_quality",
+              "detail": "AQI Yellow (51-100): check in with air-quality-sensitive athletes; consider reduced duration/intensity for sensitive groups"
+            }
+          ]
+        },
+        {
+          "time_iso": "2026-07-28T15:00",
+          "wbgt_f": 82.2,
+          "wbgt_suspect": null,
+          "aqi_forecast": 58,
+          "precip_pct": 10,
+          "weather_code": "Patchy Smoke",
+          "status": "CAUTION",
+          "reasons": [
+            {
+              "rule": "heat",
+              "detail": "Heat WBGT 82-85F: 2-hour max activity, decrease intensity/duration, provide rest breaks"
+            },
+            {
+              "rule": "air_quality",
+              "detail": "AQI Yellow (51-100): check in with air-quality-sensitive athletes; consider reduced duration/intensity for sensitive groups"
+            }
+          ]
+        },
+        {
+          "time_iso": "2026-07-28T16:00",
+          "wbgt_f": 82.3,
+          "wbgt_suspect": null,
+          "aqi_forecast": 58,
+          "precip_pct": 10,
+          "weather_code": "Patchy Smoke",
+          "status": "CAUTION",
+          "reasons": [
+            {
+              "rule": "heat",
+              "detail": "Heat WBGT 82-85F: 2-hour max activity, decrease intensity/duration, provide rest breaks"
+            },
+            {
+              "rule": "air_quality",
+              "detail": "AQI Yellow (51-100): check in with air-quality-sensitive athletes; consider reduced duration/intensity for sensitive groups"
+            }
+          ]
+        },
+        {
+          "time_iso": "2026-07-28T17:00",
+          "wbgt_f": 80.7,
+          "wbgt_suspect": null,
+          "aqi_forecast": 58,
+          "precip_pct": 2,
+          "weather_code": "0",
+          "status": "GO",
+          "reasons": [
             {
               "rule": "air_quality",
               "detail": "AQI Yellow (51-100): check in with air-quality-sensitive athletes; consider reduced duration/intensity for sensitive groups"
@@ -4494,12 +4610,7 @@
       "venue_id": "redhead",
       "name": "Redhead MTB Park",
       "status": "GO",
-      "reasons": [
-        {
-          "rule": "air_quality",
-          "detail": "AQI Yellow (51-100): check in with air-quality-sensitive athletes; consider reduced duration/intensity for sensitive groups"
-        }
-      ],
+      "reasons": [],
       "practice_hour_iso": null,
       "practice_status": "UNKNOWN",
       "practice_reasons": [],
@@ -4510,7 +4621,7 @@
           "source": "METAR",
           "station_or_monitor": "KHIB",
           "distance_mi": null,
-          "fetched_at": "2026-07-28T02:18:30-05:00"
+          "fetched_at": "2026-07-28T05:07:11-05:00"
         },
         "rh": {
           "value": 100.0,
@@ -4518,7 +4629,7 @@
           "source": "METAR",
           "station_or_monitor": "KHIB",
           "distance_mi": null,
-          "fetched_at": "2026-07-28T02:18:30-05:00"
+          "fetched_at": "2026-07-28T05:07:11-05:00"
         },
         "wind": {
           "value": 0.0,
@@ -4526,7 +4637,7 @@
           "source": "METAR",
           "station_or_monitor": "KHIB",
           "distance_mi": null,
-          "fetched_at": "2026-07-28T02:18:30-05:00"
+          "fetched_at": "2026-07-28T05:07:11-05:00"
         },
         "ghi": {
           "value": 0.0,
@@ -4534,7 +4645,7 @@
           "source": "Open-Meteo HRRR",
           "station_or_monitor": null,
           "distance_mi": null,
-          "fetched_at": "2026-07-28T02:18:26-05:00"
+          "fetched_at": "2026-07-28T05:07:07-05:00"
         },
         "wbgt": {
           "value": 62.6,
@@ -4545,15 +4656,15 @@
           "fetched_at": null
         },
         "aqi": {
-          "value": 51,
+          "value": 46,
           "status": "ok",
           "source": "AirNow",
           "station_or_monitor": "North Central Minnesota",
           "distance_mi": 25.8,
-          "fetched_at": "2026-07-28T02:18:31-05:00",
+          "fetched_at": "2026-07-28T05:07:12-05:00",
           "extra": {
             "pollutant": "PM2.5",
-            "category": "Moderate"
+            "category": "Good"
           }
         },
         "aqi_purpleair": {
@@ -4571,58 +4682,13 @@
           "source": "AirNow forecast",
           "station_or_monitor": null,
           "distance_mi": null,
-          "fetched_at": "2026-07-28T02:18:32-05:00",
+          "fetched_at": "2026-07-28T05:07:13-05:00",
           "extra": {
             "label": "forecast \u2014 verify with current reading"
           }
         }
       },
       "hours": [
-        {
-          "time_iso": "2026-07-28T03:00",
-          "wbgt_f": 61.0,
-          "wbgt_suspect": null,
-          "aqi_forecast": 68,
-          "precip_pct": 7,
-          "weather_code": "Patchy Fog",
-          "status": "GO",
-          "reasons": [
-            {
-              "rule": "air_quality",
-              "detail": "AQI Yellow (51-100): check in with air-quality-sensitive athletes; consider reduced duration/intensity for sensitive groups"
-            }
-          ]
-        },
-        {
-          "time_iso": "2026-07-28T04:00",
-          "wbgt_f": 61.0,
-          "wbgt_suspect": null,
-          "aqi_forecast": 68,
-          "precip_pct": 8,
-          "weather_code": "Patchy Fog",
-          "status": "GO",
-          "reasons": [
-            {
-              "rule": "air_quality",
-              "detail": "AQI Yellow (51-100): check in with air-quality-sensitive athletes; consider reduced duration/intensity for sensitive groups"
-            }
-          ]
-        },
-        {
-          "time_iso": "2026-07-28T05:00",
-          "wbgt_f": 60.0,
-          "wbgt_suspect": null,
-          "aqi_forecast": 68,
-          "precip_pct": 7,
-          "weather_code": "Patchy Fog",
-          "status": "GO",
-          "reasons": [
-            {
-              "rule": "air_quality",
-              "detail": "AQI Yellow (51-100): check in with air-quality-sensitive athletes; consider reduced duration/intensity for sensitive groups"
-            }
-          ]
-        },
         {
           "time_iso": "2026-07-28T06:00",
           "wbgt_f": 59.0,
@@ -4640,7 +4706,7 @@
         },
         {
           "time_iso": "2026-07-28T07:00",
-          "wbgt_f": 61.5,
+          "wbgt_f": 61.8,
           "wbgt_suspect": null,
           "aqi_forecast": 68,
           "precip_pct": 5,
@@ -4655,7 +4721,7 @@
         },
         {
           "time_iso": "2026-07-28T08:00",
-          "wbgt_f": 64.9,
+          "wbgt_f": 65.8,
           "wbgt_suspect": null,
           "aqi_forecast": 68,
           "precip_pct": 5,
@@ -4670,7 +4736,7 @@
         },
         {
           "time_iso": "2026-07-28T09:00",
-          "wbgt_f": 67.8,
+          "wbgt_f": 71.2,
           "wbgt_suspect": null,
           "aqi_forecast": 68,
           "precip_pct": 6,
@@ -4685,7 +4751,7 @@
         },
         {
           "time_iso": "2026-07-28T10:00",
-          "wbgt_f": 75.4,
+          "wbgt_f": 76.4,
           "wbgt_suspect": null,
           "aqi_forecast": 68,
           "precip_pct": 6,
@@ -4700,7 +4766,7 @@
         },
         {
           "time_iso": "2026-07-28T11:00",
-          "wbgt_f": 82.3,
+          "wbgt_f": 83.0,
           "wbgt_suspect": null,
           "aqi_forecast": 68,
           "precip_pct": 8,
@@ -4719,7 +4785,7 @@
         },
         {
           "time_iso": "2026-07-28T12:00",
-          "wbgt_f": 85.4,
+          "wbgt_f": 86.0,
           "wbgt_suspect": null,
           "aqi_forecast": 68,
           "precip_pct": 10,
@@ -4753,10 +4819,55 @@
         },
         {
           "time_iso": "2026-07-28T14:00",
-          "wbgt_f": 80.7,
+          "wbgt_f": 78.9,
           "wbgt_suspect": null,
           "aqi_forecast": 68,
-          "precip_pct": 9,
+          "precip_pct": 11,
+          "weather_code": "Mostly Sunny",
+          "status": "GO",
+          "reasons": [
+            {
+              "rule": "air_quality",
+              "detail": "AQI Yellow (51-100): check in with air-quality-sensitive athletes; consider reduced duration/intensity for sensitive groups"
+            }
+          ]
+        },
+        {
+          "time_iso": "2026-07-28T15:00",
+          "wbgt_f": 78.6,
+          "wbgt_suspect": null,
+          "aqi_forecast": 68,
+          "precip_pct": 10,
+          "weather_code": "Mostly Sunny",
+          "status": "GO",
+          "reasons": [
+            {
+              "rule": "air_quality",
+              "detail": "AQI Yellow (51-100): check in with air-quality-sensitive athletes; consider reduced duration/intensity for sensitive groups"
+            }
+          ]
+        },
+        {
+          "time_iso": "2026-07-28T16:00",
+          "wbgt_f": 79.2,
+          "wbgt_suspect": null,
+          "aqi_forecast": 68,
+          "precip_pct": 10,
+          "weather_code": "Mostly Sunny",
+          "status": "GO",
+          "reasons": [
+            {
+              "rule": "air_quality",
+              "detail": "AQI Yellow (51-100): check in with air-quality-sensitive athletes; consider reduced duration/intensity for sensitive groups"
+            }
+          ]
+        },
+        {
+          "time_iso": "2026-07-28T17:00",
+          "wbgt_f": 76.6,
+          "wbgt_suspect": null,
+          "aqi_forecast": 68,
+          "precip_pct": 1,
           "weather_code": "0",
           "status": "GO",
           "reasons": [
@@ -4768,7 +4879,9 @@
         }
       ],
       "alerts": [],
-      "flags": []
+      "flags": [
+        "Dense Fog Advisory"
+      ]
     },
     {
       "venue_id": "wausau",
@@ -4785,28 +4898,28 @@
       "practice_reasons": [],
       "current": {
         "temp": {
-          "value": 66.2,
+          "value": 62.6,
           "status": "ok",
           "source": "METAR",
           "station_or_monitor": "KAUW",
           "distance_mi": null,
-          "fetched_at": "2026-07-28T02:18:30-05:00"
+          "fetched_at": "2026-07-28T05:07:11-05:00"
         },
         "rh": {
-          "value": 88.185541322848,
+          "value": 88.013838936444,
           "status": "ok",
           "source": "METAR",
           "station_or_monitor": "KAUW",
           "distance_mi": null,
-          "fetched_at": "2026-07-28T02:18:30-05:00"
+          "fetched_at": "2026-07-28T05:07:11-05:00"
         },
         "wind": {
-          "value": 4.6080873360000005,
+          "value": 6.912131004000001,
           "status": "ok",
           "source": "METAR",
           "station_or_monitor": "KAUW",
           "distance_mi": null,
-          "fetched_at": "2026-07-28T02:18:30-05:00"
+          "fetched_at": "2026-07-28T05:07:11-05:00"
         },
         "ghi": {
           "value": 0.0,
@@ -4814,10 +4927,10 @@
           "source": "Open-Meteo HRRR",
           "station_or_monitor": null,
           "distance_mi": null,
-          "fetched_at": "2026-07-28T02:18:26-05:00"
+          "fetched_at": "2026-07-28T05:07:07-05:00"
         },
         "wbgt": {
-          "value": 64.4,
+          "value": 60.8,
           "status": "ok",
           "source": "computed",
           "station_or_monitor": null,
@@ -4825,12 +4938,12 @@
           "fetched_at": null
         },
         "aqi": {
-          "value": 61,
+          "value": 60,
           "status": "ok",
           "source": "AirNow",
           "station_or_monitor": "Central Waters North",
           "distance_mi": 16.4,
-          "fetched_at": "2026-07-28T02:18:31-05:00",
+          "fetched_at": "2026-07-28T05:07:12-05:00",
           "extra": {
             "pollutant": "PM2.5",
             "category": "Moderate"
@@ -4856,51 +4969,6 @@
         }
       },
       "hours": [
-        {
-          "time_iso": "2026-07-28T03:00",
-          "wbgt_f": 61.0,
-          "wbgt_suspect": null,
-          "aqi_forecast": null,
-          "precip_pct": 0,
-          "weather_code": "Partly Cloudy",
-          "status": "GO",
-          "reasons": [
-            {
-              "rule": "air_quality",
-              "detail": "AQI Yellow (51-100): check in with air-quality-sensitive athletes; consider reduced duration/intensity for sensitive groups"
-            }
-          ]
-        },
-        {
-          "time_iso": "2026-07-28T04:00",
-          "wbgt_f": 60.0,
-          "wbgt_suspect": null,
-          "aqi_forecast": null,
-          "precip_pct": 0,
-          "weather_code": "Mostly Clear",
-          "status": "GO",
-          "reasons": [
-            {
-              "rule": "air_quality",
-              "detail": "AQI Yellow (51-100): check in with air-quality-sensitive athletes; consider reduced duration/intensity for sensitive groups"
-            }
-          ]
-        },
-        {
-          "time_iso": "2026-07-28T05:00",
-          "wbgt_f": 59.1,
-          "wbgt_suspect": null,
-          "aqi_forecast": null,
-          "precip_pct": 0,
-          "weather_code": "Clear",
-          "status": "GO",
-          "reasons": [
-            {
-              "rule": "air_quality",
-              "detail": "AQI Yellow (51-100): check in with air-quality-sensitive athletes; consider reduced duration/intensity for sensitive groups"
-            }
-          ]
-        },
         {
           "time_iso": "2026-07-28T06:00",
           "wbgt_f": 58.5,
@@ -5023,10 +5091,55 @@
         },
         {
           "time_iso": "2026-07-28T14:00",
-          "wbgt_f": 76.8,
+          "wbgt_f": 78.9,
           "wbgt_suspect": null,
           "aqi_forecast": null,
           "precip_pct": 0,
+          "weather_code": "Sunny",
+          "status": "GO",
+          "reasons": [
+            {
+              "rule": "air_quality",
+              "detail": "AQI Yellow (51-100): check in with air-quality-sensitive athletes; consider reduced duration/intensity for sensitive groups"
+            }
+          ]
+        },
+        {
+          "time_iso": "2026-07-28T15:00",
+          "wbgt_f": 77.5,
+          "wbgt_suspect": null,
+          "aqi_forecast": null,
+          "precip_pct": 0,
+          "weather_code": "Sunny",
+          "status": "GO",
+          "reasons": [
+            {
+              "rule": "air_quality",
+              "detail": "AQI Yellow (51-100): check in with air-quality-sensitive athletes; consider reduced duration/intensity for sensitive groups"
+            }
+          ]
+        },
+        {
+          "time_iso": "2026-07-28T16:00",
+          "wbgt_f": 76.4,
+          "wbgt_suspect": null,
+          "aqi_forecast": null,
+          "precip_pct": 0,
+          "weather_code": "Sunny",
+          "status": "GO",
+          "reasons": [
+            {
+              "rule": "air_quality",
+              "detail": "AQI Yellow (51-100): check in with air-quality-sensitive athletes; consider reduced duration/intensity for sensitive groups"
+            }
+          ]
+        },
+        {
+          "time_iso": "2026-07-28T17:00",
+          "wbgt_f": 75.6,
+          "wbgt_suspect": null,
+          "aqi_forecast": null,
+          "precip_pct": 1,
           "weather_code": "0",
           "status": "GO",
           "reasons": [

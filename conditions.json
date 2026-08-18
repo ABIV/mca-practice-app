@@ -1,72 +1,64 @@
 {
-  "generated_at": "2026-08-17T18:58:34-05:00",
+  "generated_at": "2026-08-17T20:43:47-05:00",
   "ruleset": "MCA-2025",
   "schedule": [],
   "venues": [
     {
       "venue_id": "wolly",
       "name": "Woolly Trails",
-      "status": "UNKNOWN",
-      "reasons": [
-        {
-          "rule": "unknown",
-          "detail": "Missing safety-critical signal(s): severe-weather alerts \u2014 status capped at UNKNOWN"
-        }
-      ],
+      "status": "GO",
+      "reasons": [],
       "practice_hour_iso": null,
       "practice_status": "UNKNOWN",
       "practice_reasons": [],
       "current": {
         "temp": {
-          "value": 78.98,
+          "value": 74.3,
           "status": "ok",
           "source": "METAR",
           "station_or_monitor": "KOEO",
           "distance_mi": null,
-          "fetched_at": "2026-08-17T18:58:36-05:00"
+          "fetched_at": "2026-08-17T20:43:48-05:00"
         },
         "rh": {
-          "value": 65.785343783625,
+          "value": 73.547478538082,
           "status": "ok",
           "source": "METAR",
           "station_or_monitor": "KOEO",
           "distance_mi": null,
-          "fetched_at": "2026-08-17T18:58:36-05:00"
+          "fetched_at": "2026-08-17T20:43:48-05:00"
         },
         "wind": {
-          "value": 6.93450036,
+          "value": 3.3554034,
           "status": "ok",
           "source": "METAR",
           "station_or_monitor": "KOEO",
           "distance_mi": null,
-          "fetched_at": "2026-08-17T18:58:36-05:00"
+          "fetched_at": "2026-08-17T20:43:48-05:00"
         },
         "ghi": {
-          "value": 303.0,
+          "value": 98.0,
           "status": "ok",
           "source": "Open-Meteo HRRR",
           "station_or_monitor": null,
           "distance_mi": null,
-          "fetched_at": "2026-08-17T18:58:35-05:00"
+          "fetched_at": "2026-08-17T20:43:48-05:00"
         },
         "wbgt": {
-          "value": 74.8,
+          "value": 70.7,
           "status": "ok",
           "source": "computed",
           "station_or_monitor": null,
           "distance_mi": null,
-          "fetched_at": null,
-          "extra": {
-            "wbgt_suspect": 73.3
-          }
+          "fetched_at": null
         },
         "aqi": {
-          "value": 39,
+          "value": 37,
           "status": "ok",
           "source": "AirNow",
           "station_or_monitor": "East Central Minnesota",
           "distance_mi": 32.3,
-          "fetched_at": "2026-08-17T18:58:37-05:00",
+          "fetched_at": "2026-08-17T20:43:49-05:00",
           "extra": {
             "pollutant": "O3",
             "category": "Good"
@@ -87,7 +79,7 @@
           "source": "AirNow forecast",
           "station_or_monitor": null,
           "distance_mi": null,
-          "fetched_at": "2026-08-17T18:58:37-05:00",
+          "fetched_at": "2026-08-17T20:43:52-05:00",
           "extra": {
             "label": "forecast \u2014 verify with current reading"
           }
@@ -95,51 +87,17 @@
       },
       "hours": [
         {
-          "time_iso": "2026-08-17T19:00",
-          "wbgt_f": 72.5,
-          "wbgt_suspect": null,
-          "aqi_forecast": 37,
-          "precip_pct": 8,
-          "weather_code": "Mostly Cloudy",
-          "status": "UNKNOWN",
-          "reasons": [
-            {
-              "rule": "unknown",
-              "detail": "Missing safety-critical signal(s): severe-weather alerts \u2014 status capped at UNKNOWN"
-            }
-          ]
-        },
-        {
-          "time_iso": "2026-08-17T20:00",
-          "wbgt_f": 71.1,
-          "wbgt_suspect": null,
-          "aqi_forecast": 37,
-          "precip_pct": 12,
-          "weather_code": "Mostly Cloudy",
-          "status": "UNKNOWN",
-          "reasons": [
-            {
-              "rule": "unknown",
-              "detail": "Missing safety-critical signal(s): severe-weather alerts \u2014 status capped at UNKNOWN"
-            }
-          ]
-        },
-        {
           "time_iso": "2026-08-17T21:00",
           "wbgt_f": 68.2,
           "wbgt_suspect": null,
           "aqi_forecast": 37,
           "precip_pct": 26,
           "weather_code": "Chance Showers And Thunderstorms",
-          "status": "UNKNOWN",
+          "status": "CAUTION",
           "reasons": [
             {
               "rule": "storm_forecast",
               "detail": "Storms forecast \u2014 lightning within 10 mi cancels; if you hear thunder, clear the trail; wait 30 min after last thunder/lightning"
-            },
-            {
-              "rule": "unknown",
-              "detail": "Missing safety-critical signal(s): severe-weather alerts \u2014 status capped at UNKNOWN"
             }
           ]
         },
@@ -150,15 +108,11 @@
           "aqi_forecast": 37,
           "precip_pct": 35,
           "weather_code": "Chance Showers And Thunderstorms",
-          "status": "UNKNOWN",
+          "status": "CAUTION",
           "reasons": [
             {
               "rule": "storm_forecast",
               "detail": "Storms forecast \u2014 lightning within 10 mi cancels; if you hear thunder, clear the trail; wait 30 min after last thunder/lightning"
-            },
-            {
-              "rule": "unknown",
-              "detail": "Missing safety-critical signal(s): severe-weather alerts \u2014 status capped at UNKNOWN"
             }
           ]
         },
@@ -169,15 +123,11 @@
           "aqi_forecast": 37,
           "precip_pct": 42,
           "weather_code": "Chance Showers And Thunderstorms",
-          "status": "UNKNOWN",
+          "status": "CAUTION",
           "reasons": [
             {
               "rule": "storm_forecast",
               "detail": "Storms forecast \u2014 lightning within 10 mi cancels; if you hear thunder, clear the trail; wait 30 min after last thunder/lightning"
-            },
-            {
-              "rule": "unknown",
-              "detail": "Missing safety-critical signal(s): severe-weather alerts \u2014 status capped at UNKNOWN"
             }
           ]
         },
@@ -188,15 +138,11 @@
           "aqi_forecast": 37,
           "precip_pct": 35,
           "weather_code": "Chance Showers And Thunderstorms",
-          "status": "UNKNOWN",
+          "status": "CAUTION",
           "reasons": [
             {
               "rule": "storm_forecast",
               "detail": "Storms forecast \u2014 lightning within 10 mi cancels; if you hear thunder, clear the trail; wait 30 min after last thunder/lightning"
-            },
-            {
-              "rule": "unknown",
-              "detail": "Missing safety-critical signal(s): severe-weather alerts \u2014 status capped at UNKNOWN"
             }
           ]
         },
@@ -207,15 +153,11 @@
           "aqi_forecast": 37,
           "precip_pct": 21,
           "weather_code": "Slight Chance Showers And Thunderstorms",
-          "status": "UNKNOWN",
+          "status": "CAUTION",
           "reasons": [
             {
               "rule": "storm_forecast",
               "detail": "Storms forecast \u2014 lightning within 10 mi cancels; if you hear thunder, clear the trail; wait 30 min after last thunder/lightning"
-            },
-            {
-              "rule": "unknown",
-              "detail": "Missing safety-critical signal(s): severe-weather alerts \u2014 status capped at UNKNOWN"
             }
           ]
         },
@@ -226,13 +168,8 @@
           "aqi_forecast": 37,
           "precip_pct": 10,
           "weather_code": "Mostly Cloudy",
-          "status": "UNKNOWN",
-          "reasons": [
-            {
-              "rule": "unknown",
-              "detail": "Missing safety-critical signal(s): severe-weather alerts \u2014 status capped at UNKNOWN"
-            }
-          ]
+          "status": "GO",
+          "reasons": []
         },
         {
           "time_iso": "2026-08-18T03:00",
@@ -241,13 +178,8 @@
           "aqi_forecast": 37,
           "precip_pct": 11,
           "weather_code": "Mostly Cloudy",
-          "status": "UNKNOWN",
-          "reasons": [
-            {
-              "rule": "unknown",
-              "detail": "Missing safety-critical signal(s): severe-weather alerts \u2014 status capped at UNKNOWN"
-            }
-          ]
+          "status": "GO",
+          "reasons": []
         },
         {
           "time_iso": "2026-08-18T04:00",
@@ -256,13 +188,8 @@
           "aqi_forecast": 37,
           "precip_pct": 7,
           "weather_code": "Mostly Cloudy",
-          "status": "UNKNOWN",
-          "reasons": [
-            {
-              "rule": "unknown",
-              "detail": "Missing safety-critical signal(s): severe-weather alerts \u2014 status capped at UNKNOWN"
-            }
-          ]
+          "status": "GO",
+          "reasons": []
         },
         {
           "time_iso": "2026-08-18T05:00",
@@ -271,34 +198,42 @@
           "aqi_forecast": 37,
           "precip_pct": 9,
           "weather_code": "Mostly Cloudy",
-          "status": "UNKNOWN",
-          "reasons": [
-            {
-              "rule": "unknown",
-              "detail": "Missing safety-critical signal(s): severe-weather alerts \u2014 status capped at UNKNOWN"
-            }
-          ]
+          "status": "GO",
+          "reasons": []
         },
         {
           "time_iso": "2026-08-18T06:00",
-          "wbgt_f": 61.3,
+          "wbgt_f": 62.0,
+          "wbgt_suspect": null,
+          "aqi_forecast": 37,
+          "precip_pct": 13,
+          "weather_code": "Mostly Cloudy",
+          "status": "GO",
+          "reasons": []
+        },
+        {
+          "time_iso": "2026-08-18T07:00",
+          "wbgt_f": 61.6,
+          "wbgt_suspect": null,
+          "aqi_forecast": 37,
+          "precip_pct": 25,
+          "weather_code": "Chance Rain Showers",
+          "status": "GO",
+          "reasons": []
+        },
+        {
+          "time_iso": "2026-08-18T08:00",
+          "wbgt_f": 64.2,
           "wbgt_suspect": null,
           "aqi_forecast": 37,
           "precip_pct": 11,
-          "weather_code": "3",
-          "status": "UNKNOWN",
-          "reasons": [
-            {
-              "rule": "unknown",
-              "detail": "Missing safety-critical signal(s): severe-weather alerts \u2014 status capped at UNKNOWN"
-            }
-          ]
+          "weather_code": "0",
+          "status": "GO",
+          "reasons": []
         }
       ],
       "alerts": [],
-      "flags": [
-        "\u26a0\ufe0f Severe-weather alert check failed \u2014 verify manually before practice"
-      ]
+      "flags": []
     },
     {
       "venue_id": "elm-creek",
@@ -310,39 +245,39 @@
       "practice_reasons": [],
       "current": {
         "temp": {
-          "value": 78.8,
+          "value": 77.0,
           "status": "ok",
           "source": "METAR",
           "station_or_monitor": "KMIC",
           "distance_mi": null,
-          "fetched_at": "2026-08-17T18:58:36-05:00"
+          "fetched_at": "2026-08-17T20:43:48-05:00"
         },
         "rh": {
-          "value": 50.72618873623,
+          "value": 53.830642264244,
           "status": "ok",
           "source": "METAR",
           "station_or_monitor": "KMIC",
           "distance_mi": null,
-          "fetched_at": "2026-08-17T18:58:36-05:00"
+          "fetched_at": "2026-08-17T20:43:48-05:00"
         },
         "wind": {
-          "value": 13.801892652,
+          "value": 8.05296816,
           "status": "ok",
           "source": "METAR",
           "station_or_monitor": "KMIC",
           "distance_mi": null,
-          "fetched_at": "2026-08-17T18:58:36-05:00"
+          "fetched_at": "2026-08-17T20:43:48-05:00"
         },
         "ghi": {
-          "value": 305.0,
+          "value": 44.0,
           "status": "ok",
           "source": "Open-Meteo HRRR",
           "station_or_monitor": null,
           "distance_mi": null,
-          "fetched_at": "2026-08-17T18:58:35-05:00"
+          "fetched_at": "2026-08-17T20:43:48-05:00"
         },
         "wbgt": {
-          "value": 71.2,
+          "value": 69.2,
           "status": "ok",
           "source": "computed",
           "station_or_monitor": null,
@@ -350,12 +285,12 @@
           "fetched_at": null
         },
         "aqi": {
-          "value": 39,
+          "value": 38,
           "status": "ok",
           "source": "AirNow",
           "station_or_monitor": "Northern Twin Cities Metro",
           "distance_mi": 7.7,
-          "fetched_at": "2026-08-17T18:58:37-05:00",
+          "fetched_at": "2026-08-17T20:43:49-05:00",
           "extra": {
             "pollutant": "O3",
             "category": "Good"
@@ -376,38 +311,13 @@
           "source": "AirNow forecast",
           "station_or_monitor": null,
           "distance_mi": null,
-          "fetched_at": "2026-08-17T18:58:37-05:00",
+          "fetched_at": "2026-08-17T20:43:52-05:00",
           "extra": {
             "label": "forecast \u2014 verify with current reading"
           }
         }
       },
       "hours": [
-        {
-          "time_iso": "2026-08-17T19:00",
-          "wbgt_f": 71.5,
-          "wbgt_suspect": null,
-          "aqi_forecast": 46,
-          "precip_pct": 11,
-          "weather_code": "Mostly Cloudy",
-          "status": "GO",
-          "reasons": []
-        },
-        {
-          "time_iso": "2026-08-17T20:00",
-          "wbgt_f": 70.8,
-          "wbgt_suspect": null,
-          "aqi_forecast": 46,
-          "precip_pct": 16,
-          "weather_code": "Slight Chance Showers And Thunderstorms",
-          "status": "CAUTION",
-          "reasons": [
-            {
-              "rule": "storm_forecast",
-              "detail": "Storms forecast \u2014 lightning within 10 mi cancels; if you hear thunder, clear the trail; wait 30 min after last thunder/lightning"
-            }
-          ]
-        },
         {
           "time_iso": "2026-08-17T21:00",
           "wbgt_f": 68.9,
@@ -525,11 +435,36 @@
         },
         {
           "time_iso": "2026-08-18T06:00",
-          "wbgt_f": 62.5,
+          "wbgt_f": 63.0,
           "wbgt_suspect": null,
           "aqi_forecast": 46,
-          "precip_pct": 12,
-          "weather_code": "3",
+          "precip_pct": 22,
+          "weather_code": "Slight Chance Showers And Thunderstorms",
+          "status": "CAUTION",
+          "reasons": [
+            {
+              "rule": "storm_forecast",
+              "detail": "Storms forecast \u2014 lightning within 10 mi cancels; if you hear thunder, clear the trail; wait 30 min after last thunder/lightning"
+            }
+          ]
+        },
+        {
+          "time_iso": "2026-08-18T07:00",
+          "wbgt_f": 63.2,
+          "wbgt_suspect": null,
+          "aqi_forecast": 46,
+          "precip_pct": 34,
+          "weather_code": "Chance Rain Showers",
+          "status": "GO",
+          "reasons": []
+        },
+        {
+          "time_iso": "2026-08-18T08:00",
+          "wbgt_f": 66.0,
+          "wbgt_suspect": null,
+          "aqi_forecast": 46,
+          "precip_pct": 16,
+          "weather_code": "0",
           "status": "GO",
           "reasons": []
         }
@@ -540,51 +475,46 @@
     {
       "venue_id": "battle-creek",
       "name": "Battle Creek Regional Park",
-      "status": "UNKNOWN",
-      "reasons": [
-        {
-          "rule": "unknown",
-          "detail": "Missing safety-critical signal(s): severe-weather alerts \u2014 status capped at UNKNOWN"
-        }
-      ],
+      "status": "GO",
+      "reasons": [],
       "practice_hour_iso": null,
       "practice_status": "UNKNOWN",
       "practice_reasons": [],
       "current": {
         "temp": {
-          "value": 80.6,
+          "value": 78.8,
           "status": "ok",
           "source": "METAR",
           "station_or_monitor": "KSTP",
           "distance_mi": null,
-          "fetched_at": "2026-08-17T18:58:36-05:00"
+          "fetched_at": "2026-08-17T20:43:48-05:00"
         },
         "rh": {
-          "value": 44.830942359632,
+          "value": 47.553680242908,
           "status": "ok",
           "source": "METAR",
           "station_or_monitor": "KSTP",
           "distance_mi": null,
-          "fetched_at": "2026-08-17T18:58:36-05:00"
+          "fetched_at": "2026-08-17T20:43:48-05:00"
         },
         "wind": {
-          "value": 13.801892652,
+          "value": 5.748924492,
           "status": "ok",
           "source": "METAR",
           "station_or_monitor": "KSTP",
           "distance_mi": null,
-          "fetched_at": "2026-08-17T18:58:36-05:00"
+          "fetched_at": "2026-08-17T20:43:48-05:00"
         },
         "ghi": {
-          "value": 392.0,
+          "value": 27.0,
           "status": "ok",
           "source": "Open-Meteo HRRR",
           "station_or_monitor": null,
           "distance_mi": null,
-          "fetched_at": "2026-08-17T18:58:35-05:00"
+          "fetched_at": "2026-08-17T20:43:48-05:00"
         },
         "wbgt": {
-          "value": 71.9,
+          "value": 69.5,
           "status": "ok",
           "source": "computed",
           "station_or_monitor": null,
@@ -592,12 +522,12 @@
           "fetched_at": null
         },
         "aqi": {
-          "value": 38,
+          "value": 36,
           "status": "ok",
           "source": "AirNow",
           "station_or_monitor": "Twin Cities",
           "distance_mi": 8.6,
-          "fetched_at": "2026-08-17T18:58:37-05:00",
+          "fetched_at": "2026-08-17T20:43:49-05:00",
           "extra": {
             "pollutant": "O3",
             "category": "Good"
@@ -618,7 +548,7 @@
           "source": "AirNow forecast",
           "station_or_monitor": null,
           "distance_mi": null,
-          "fetched_at": "2026-08-17T18:58:37-05:00",
+          "fetched_at": "2026-08-17T20:43:52-05:00",
           "extra": {
             "label": "forecast \u2014 verify with current reading"
           }
@@ -626,49 +556,14 @@
       },
       "hours": [
         {
-          "time_iso": "2026-08-17T19:00",
-          "wbgt_f": 71.7,
-          "wbgt_suspect": null,
-          "aqi_forecast": 46,
-          "precip_pct": 5,
-          "weather_code": "Mostly Cloudy",
-          "status": "UNKNOWN",
-          "reasons": [
-            {
-              "rule": "unknown",
-              "detail": "Missing safety-critical signal(s): severe-weather alerts \u2014 status capped at UNKNOWN"
-            }
-          ]
-        },
-        {
-          "time_iso": "2026-08-17T20:00",
-          "wbgt_f": 70.1,
-          "wbgt_suspect": null,
-          "aqi_forecast": 46,
-          "precip_pct": 7,
-          "weather_code": "Mostly Cloudy",
-          "status": "UNKNOWN",
-          "reasons": [
-            {
-              "rule": "unknown",
-              "detail": "Missing safety-critical signal(s): severe-weather alerts \u2014 status capped at UNKNOWN"
-            }
-          ]
-        },
-        {
           "time_iso": "2026-08-17T21:00",
           "wbgt_f": 68.8,
           "wbgt_suspect": null,
           "aqi_forecast": 46,
           "precip_pct": 12,
           "weather_code": "Mostly Cloudy",
-          "status": "UNKNOWN",
-          "reasons": [
-            {
-              "rule": "unknown",
-              "detail": "Missing safety-critical signal(s): severe-weather alerts \u2014 status capped at UNKNOWN"
-            }
-          ]
+          "status": "GO",
+          "reasons": []
         },
         {
           "time_iso": "2026-08-17T22:00",
@@ -677,15 +572,11 @@
           "aqi_forecast": 46,
           "precip_pct": 32,
           "weather_code": "Chance Showers And Thunderstorms",
-          "status": "UNKNOWN",
+          "status": "CAUTION",
           "reasons": [
             {
               "rule": "storm_forecast",
               "detail": "Storms forecast \u2014 lightning within 10 mi cancels; if you hear thunder, clear the trail; wait 30 min after last thunder/lightning"
-            },
-            {
-              "rule": "unknown",
-              "detail": "Missing safety-critical signal(s): severe-weather alerts \u2014 status capped at UNKNOWN"
             }
           ]
         },
@@ -696,15 +587,11 @@
           "aqi_forecast": 46,
           "precip_pct": 36,
           "weather_code": "Chance Showers And Thunderstorms",
-          "status": "UNKNOWN",
+          "status": "CAUTION",
           "reasons": [
             {
               "rule": "storm_forecast",
               "detail": "Storms forecast \u2014 lightning within 10 mi cancels; if you hear thunder, clear the trail; wait 30 min after last thunder/lightning"
-            },
-            {
-              "rule": "unknown",
-              "detail": "Missing safety-critical signal(s): severe-weather alerts \u2014 status capped at UNKNOWN"
             }
           ]
         },
@@ -715,15 +602,11 @@
           "aqi_forecast": 46,
           "precip_pct": 28,
           "weather_code": "Chance Showers And Thunderstorms",
-          "status": "UNKNOWN",
+          "status": "CAUTION",
           "reasons": [
             {
               "rule": "storm_forecast",
               "detail": "Storms forecast \u2014 lightning within 10 mi cancels; if you hear thunder, clear the trail; wait 30 min after last thunder/lightning"
-            },
-            {
-              "rule": "unknown",
-              "detail": "Missing safety-critical signal(s): severe-weather alerts \u2014 status capped at UNKNOWN"
             }
           ]
         },
@@ -734,15 +617,11 @@
           "aqi_forecast": 46,
           "precip_pct": 19,
           "weather_code": "Slight Chance Showers And Thunderstorms",
-          "status": "UNKNOWN",
+          "status": "CAUTION",
           "reasons": [
             {
               "rule": "storm_forecast",
               "detail": "Storms forecast \u2014 lightning within 10 mi cancels; if you hear thunder, clear the trail; wait 30 min after last thunder/lightning"
-            },
-            {
-              "rule": "unknown",
-              "detail": "Missing safety-critical signal(s): severe-weather alerts \u2014 status capped at UNKNOWN"
             }
           ]
         },
@@ -753,13 +632,8 @@
           "aqi_forecast": 46,
           "precip_pct": 12,
           "weather_code": "Mostly Cloudy",
-          "status": "UNKNOWN",
-          "reasons": [
-            {
-              "rule": "unknown",
-              "detail": "Missing safety-critical signal(s): severe-weather alerts \u2014 status capped at UNKNOWN"
-            }
-          ]
+          "status": "GO",
+          "reasons": []
         },
         {
           "time_iso": "2026-08-18T03:00",
@@ -768,13 +642,8 @@
           "aqi_forecast": 46,
           "precip_pct": 7,
           "weather_code": "Mostly Cloudy",
-          "status": "UNKNOWN",
-          "reasons": [
-            {
-              "rule": "unknown",
-              "detail": "Missing safety-critical signal(s): severe-weather alerts \u2014 status capped at UNKNOWN"
-            }
-          ]
+          "status": "GO",
+          "reasons": []
         },
         {
           "time_iso": "2026-08-18T04:00",
@@ -783,13 +652,8 @@
           "aqi_forecast": 46,
           "precip_pct": 7,
           "weather_code": "Mostly Cloudy",
-          "status": "UNKNOWN",
-          "reasons": [
-            {
-              "rule": "unknown",
-              "detail": "Missing safety-critical signal(s): severe-weather alerts \u2014 status capped at UNKNOWN"
-            }
-          ]
+          "status": "GO",
+          "reasons": []
         },
         {
           "time_iso": "2026-08-18T05:00",
@@ -798,34 +662,42 @@
           "aqi_forecast": 46,
           "precip_pct": 13,
           "weather_code": "Mostly Cloudy",
-          "status": "UNKNOWN",
-          "reasons": [
-            {
-              "rule": "unknown",
-              "detail": "Missing safety-critical signal(s): severe-weather alerts \u2014 status capped at UNKNOWN"
-            }
-          ]
+          "status": "GO",
+          "reasons": []
         },
         {
           "time_iso": "2026-08-18T06:00",
-          "wbgt_f": 62.6,
+          "wbgt_f": 63.9,
           "wbgt_suspect": null,
           "aqi_forecast": 46,
-          "precip_pct": 9,
+          "precip_pct": 19,
+          "weather_code": "Slight Chance Rain Showers",
+          "status": "GO",
+          "reasons": []
+        },
+        {
+          "time_iso": "2026-08-18T07:00",
+          "wbgt_f": 64.8,
+          "wbgt_suspect": null,
+          "aqi_forecast": 46,
+          "precip_pct": 32,
+          "weather_code": "Chance Rain Showers",
+          "status": "GO",
+          "reasons": []
+        },
+        {
+          "time_iso": "2026-08-18T08:00",
+          "wbgt_f": 65.3,
+          "wbgt_suspect": null,
+          "aqi_forecast": 46,
+          "precip_pct": 14,
           "weather_code": "3",
-          "status": "UNKNOWN",
-          "reasons": [
-            {
-              "rule": "unknown",
-              "detail": "Missing safety-critical signal(s): severe-weather alerts \u2014 status capped at UNKNOWN"
-            }
-          ]
+          "status": "GO",
+          "reasons": []
         }
       ],
       "alerts": [],
-      "flags": [
-        "\u26a0\ufe0f Severe-weather alert check failed \u2014 verify manually before practice"
-      ]
+      "flags": []
     },
     {
       "venue_id": "theo-wirth",
@@ -837,39 +709,39 @@
       "practice_reasons": [],
       "current": {
         "temp": {
-          "value": 78.8,
+          "value": 77.0,
           "status": "ok",
           "source": "METAR",
           "station_or_monitor": "KMIC",
           "distance_mi": null,
-          "fetched_at": "2026-08-17T18:58:36-05:00"
+          "fetched_at": "2026-08-17T20:43:48-05:00"
         },
         "rh": {
-          "value": 50.72618873623,
+          "value": 53.830642264244,
           "status": "ok",
           "source": "METAR",
           "station_or_monitor": "KMIC",
           "distance_mi": null,
-          "fetched_at": "2026-08-17T18:58:36-05:00"
+          "fetched_at": "2026-08-17T20:43:48-05:00"
         },
         "wind": {
-          "value": 13.801892652,
+          "value": 8.05296816,
           "status": "ok",
           "source": "METAR",
           "station_or_monitor": "KMIC",
           "distance_mi": null,
-          "fetched_at": "2026-08-17T18:58:36-05:00"
+          "fetched_at": "2026-08-17T20:43:48-05:00"
         },
         "ghi": {
-          "value": 395.0,
+          "value": 25.0,
           "status": "ok",
           "source": "Open-Meteo HRRR",
           "station_or_monitor": null,
           "distance_mi": null,
-          "fetched_at": "2026-08-17T18:58:35-05:00"
+          "fetched_at": "2026-08-17T20:43:48-05:00"
         },
         "wbgt": {
-          "value": 71.6,
+          "value": 69.1,
           "status": "ok",
           "source": "computed",
           "station_or_monitor": null,
@@ -877,12 +749,12 @@
           "fetched_at": null
         },
         "aqi": {
-          "value": 38,
+          "value": 36,
           "status": "ok",
           "source": "AirNow",
           "station_or_monitor": "Twin Cities",
           "distance_mi": 7.2,
-          "fetched_at": "2026-08-17T18:58:37-05:00",
+          "fetched_at": "2026-08-17T20:43:49-05:00",
           "extra": {
             "pollutant": "O3",
             "category": "Good"
@@ -903,33 +775,13 @@
           "source": "AirNow forecast",
           "station_or_monitor": null,
           "distance_mi": null,
-          "fetched_at": "2026-08-17T18:58:37-05:00",
+          "fetched_at": "2026-08-17T20:43:52-05:00",
           "extra": {
             "label": "forecast \u2014 verify with current reading"
           }
         }
       },
       "hours": [
-        {
-          "time_iso": "2026-08-17T19:00",
-          "wbgt_f": 72.4,
-          "wbgt_suspect": null,
-          "aqi_forecast": 46,
-          "precip_pct": 8,
-          "weather_code": "Mostly Cloudy",
-          "status": "GO",
-          "reasons": []
-        },
-        {
-          "time_iso": "2026-08-17T20:00",
-          "wbgt_f": 70.9,
-          "wbgt_suspect": null,
-          "aqi_forecast": 46,
-          "precip_pct": 9,
-          "weather_code": "Mostly Cloudy",
-          "status": "GO",
-          "reasons": []
-        },
         {
           "time_iso": "2026-08-17T21:00",
           "wbgt_f": 69.1,
@@ -1052,10 +904,35 @@
         },
         {
           "time_iso": "2026-08-18T06:00",
-          "wbgt_f": 62.9,
+          "wbgt_f": 64.9,
           "wbgt_suspect": null,
           "aqi_forecast": 46,
-          "precip_pct": 10,
+          "precip_pct": 22,
+          "weather_code": "Slight Chance Showers And Thunderstorms",
+          "status": "CAUTION",
+          "reasons": [
+            {
+              "rule": "storm_forecast",
+              "detail": "Storms forecast \u2014 lightning within 10 mi cancels; if you hear thunder, clear the trail; wait 30 min after last thunder/lightning"
+            }
+          ]
+        },
+        {
+          "time_iso": "2026-08-18T07:00",
+          "wbgt_f": 64.8,
+          "wbgt_suspect": null,
+          "aqi_forecast": 46,
+          "precip_pct": 37,
+          "weather_code": "Chance Rain Showers",
+          "status": "GO",
+          "reasons": []
+        },
+        {
+          "time_iso": "2026-08-18T08:00",
+          "wbgt_f": 65.5,
+          "wbgt_suspect": null,
+          "aqi_forecast": 46,
+          "precip_pct": 18,
           "weather_code": "3",
           "status": "GO",
           "reasons": []
@@ -1074,39 +951,39 @@
       "practice_reasons": [],
       "current": {
         "temp": {
-          "value": 78.8,
+          "value": 77.0,
           "status": "ok",
           "source": "METAR",
           "station_or_monitor": "K21D",
           "distance_mi": null,
-          "fetched_at": "2026-08-17T18:58:36-05:00"
+          "fetched_at": "2026-08-17T20:43:48-05:00"
         },
         "rh": {
-          "value": 44.557102524017,
+          "value": 47.284006665151,
           "status": "ok",
           "source": "METAR",
           "station_or_monitor": "K21D",
           "distance_mi": null,
-          "fetched_at": "2026-08-17T18:58:36-05:00"
+          "fetched_at": "2026-08-17T20:43:48-05:00"
         },
         "wind": {
-          "value": 5.81603256,
+          "value": 6.912131004000001,
           "status": "ok",
           "source": "METAR",
           "station_or_monitor": "K21D",
           "distance_mi": null,
-          "fetched_at": "2026-08-17T18:58:36-05:00"
+          "fetched_at": "2026-08-17T20:43:48-05:00"
         },
         "ghi": {
-          "value": 391.0,
+          "value": 43.0,
           "status": "ok",
           "source": "Open-Meteo HRRR",
           "station_or_monitor": null,
           "distance_mi": null,
-          "fetched_at": "2026-08-17T18:58:35-05:00"
+          "fetched_at": "2026-08-17T20:43:48-05:00"
         },
         "wbgt": {
-          "value": 71.2,
+          "value": 67.9,
           "status": "ok",
           "source": "computed",
           "station_or_monitor": null,
@@ -1114,12 +991,12 @@
           "fetched_at": null
         },
         "aqi": {
-          "value": 38,
+          "value": 36,
           "status": "ok",
           "source": "AirNow",
           "station_or_monitor": "Twin Cities",
           "distance_mi": 13.6,
-          "fetched_at": "2026-08-17T18:58:37-05:00",
+          "fetched_at": "2026-08-17T20:43:49-05:00",
           "extra": {
             "pollutant": "O3",
             "category": "Good"
@@ -1140,7 +1017,7 @@
           "source": "AirNow forecast",
           "station_or_monitor": null,
           "distance_mi": null,
-          "fetched_at": "2026-08-17T18:58:37-05:00",
+          "fetched_at": "2026-08-17T20:43:52-05:00",
           "extra": {
             "label": "forecast \u2014 verify with current reading"
           }
@@ -1148,130 +1025,153 @@
       },
       "hours": [
         {
-          "time_iso": "2026-08-17T19:00",
-          "wbgt_f": 71.2,
-          "wbgt_suspect": null,
-          "aqi_forecast": 46,
-          "precip_pct": 3,
-          "weather_code": "0",
-          "status": "GO",
-          "reasons": []
-        },
-        {
-          "time_iso": "2026-08-17T20:00",
-          "wbgt_f": 68.1,
-          "wbgt_suspect": null,
-          "aqi_forecast": 46,
-          "precip_pct": 5,
-          "weather_code": "1",
-          "status": "GO",
-          "reasons": []
-        },
-        {
           "time_iso": "2026-08-17T21:00",
-          "wbgt_f": 66.4,
+          "wbgt_f": 68.3,
           "wbgt_suspect": null,
           "aqi_forecast": 46,
-          "precip_pct": 3,
-          "weather_code": "3",
+          "precip_pct": 11,
+          "weather_code": "Mostly Cloudy",
           "status": "GO",
           "reasons": []
         },
         {
           "time_iso": "2026-08-17T22:00",
-          "wbgt_f": 65.5,
+          "wbgt_f": 67.3,
           "wbgt_suspect": null,
           "aqi_forecast": 46,
-          "precip_pct": 5,
-          "weather_code": "1",
-          "status": "GO",
-          "reasons": []
+          "precip_pct": 31,
+          "weather_code": "Chance Showers And Thunderstorms",
+          "status": "CAUTION",
+          "reasons": [
+            {
+              "rule": "storm_forecast",
+              "detail": "Storms forecast \u2014 lightning within 10 mi cancels; if you hear thunder, clear the trail; wait 30 min after last thunder/lightning"
+            }
+          ]
         },
         {
           "time_iso": "2026-08-17T23:00",
-          "wbgt_f": 65.1,
+          "wbgt_f": 66.2,
           "wbgt_suspect": null,
           "aqi_forecast": 46,
-          "precip_pct": 13,
-          "weather_code": "3",
-          "status": "GO",
-          "reasons": []
+          "precip_pct": 36,
+          "weather_code": "Chance Showers And Thunderstorms",
+          "status": "CAUTION",
+          "reasons": [
+            {
+              "rule": "storm_forecast",
+              "detail": "Storms forecast \u2014 lightning within 10 mi cancels; if you hear thunder, clear the trail; wait 30 min after last thunder/lightning"
+            }
+          ]
         },
         {
           "time_iso": "2026-08-18T00:00",
-          "wbgt_f": 65.6,
+          "wbgt_f": 66.5,
           "wbgt_suspect": null,
           "aqi_forecast": 46,
-          "precip_pct": 13,
-          "weather_code": "51",
-          "status": "GO",
-          "reasons": []
+          "precip_pct": 29,
+          "weather_code": "Chance Showers And Thunderstorms",
+          "status": "CAUTION",
+          "reasons": [
+            {
+              "rule": "storm_forecast",
+              "detail": "Storms forecast \u2014 lightning within 10 mi cancels; if you hear thunder, clear the trail; wait 30 min after last thunder/lightning"
+            }
+          ]
         },
         {
           "time_iso": "2026-08-18T01:00",
-          "wbgt_f": 65.3,
+          "wbgt_f": 65.0,
           "wbgt_suspect": null,
           "aqi_forecast": 46,
-          "precip_pct": 17,
-          "weather_code": "61",
-          "status": "GO",
-          "reasons": []
+          "precip_pct": 18,
+          "weather_code": "Slight Chance Showers And Thunderstorms",
+          "status": "CAUTION",
+          "reasons": [
+            {
+              "rule": "storm_forecast",
+              "detail": "Storms forecast \u2014 lightning within 10 mi cancels; if you hear thunder, clear the trail; wait 30 min after last thunder/lightning"
+            }
+          ]
         },
         {
           "time_iso": "2026-08-18T02:00",
-          "wbgt_f": 64.6,
+          "wbgt_f": 64.5,
           "wbgt_suspect": null,
           "aqi_forecast": 46,
-          "precip_pct": 11,
-          "weather_code": "3",
+          "precip_pct": 12,
+          "weather_code": "Mostly Cloudy",
           "status": "GO",
           "reasons": []
         },
         {
           "time_iso": "2026-08-18T03:00",
-          "wbgt_f": 64.0,
+          "wbgt_f": 64.9,
           "wbgt_suspect": null,
           "aqi_forecast": 46,
           "precip_pct": 7,
-          "weather_code": "3",
+          "weather_code": "Mostly Cloudy",
           "status": "GO",
           "reasons": []
         },
         {
           "time_iso": "2026-08-18T04:00",
-          "wbgt_f": 63.6,
+          "wbgt_f": 63.9,
           "wbgt_suspect": null,
           "aqi_forecast": 46,
           "precip_pct": 6,
-          "weather_code": "3",
+          "weather_code": "Mostly Cloudy",
           "status": "GO",
           "reasons": []
         },
         {
           "time_iso": "2026-08-18T05:00",
-          "wbgt_f": 62.2,
+          "wbgt_f": 63.9,
           "wbgt_suspect": null,
           "aqi_forecast": 46,
-          "precip_pct": 3,
-          "weather_code": "3",
+          "precip_pct": 11,
+          "weather_code": "Mostly Cloudy",
           "status": "GO",
           "reasons": []
         },
         {
           "time_iso": "2026-08-18T06:00",
-          "wbgt_f": 62.0,
+          "wbgt_f": 63.5,
           "wbgt_suspect": null,
           "aqi_forecast": 46,
-          "precip_pct": 10,
+          "precip_pct": 17,
+          "weather_code": "Slight Chance Showers And Thunderstorms",
+          "status": "CAUTION",
+          "reasons": [
+            {
+              "rule": "storm_forecast",
+              "detail": "Storms forecast \u2014 lightning within 10 mi cancels; if you hear thunder, clear the trail; wait 30 min after last thunder/lightning"
+            }
+          ]
+        },
+        {
+          "time_iso": "2026-08-18T07:00",
+          "wbgt_f": 63.2,
+          "wbgt_suspect": null,
+          "aqi_forecast": 46,
+          "precip_pct": 31,
+          "weather_code": "Chance Rain Showers",
+          "status": "GO",
+          "reasons": []
+        },
+        {
+          "time_iso": "2026-08-18T08:00",
+          "wbgt_f": 64.2,
+          "wbgt_suspect": null,
+          "aqi_forecast": 46,
+          "precip_pct": 14,
           "weather_code": "3",
           "status": "GO",
           "reasons": []
         }
       ],
       "alerts": [],
-      "flags": [
-        "\u26a0\ufe0f NWS hourly forecast unavailable \u2014 forecast temp/wind from HRRR model; storm flags unavailable"
-      ]
+      "flags": []
     },
     {
       "venue_id": "carver-lake",
@@ -1283,39 +1183,39 @@
       "practice_reasons": [],
       "current": {
         "temp": {
-          "value": 80.6,
+          "value": 78.8,
           "status": "ok",
           "source": "METAR",
           "station_or_monitor": "KSTP",
           "distance_mi": null,
-          "fetched_at": "2026-08-17T18:58:36-05:00"
+          "fetched_at": "2026-08-17T20:43:48-05:00"
         },
         "rh": {
-          "value": 44.830942359632,
+          "value": 47.553680242908,
           "status": "ok",
           "source": "METAR",
           "station_or_monitor": "KSTP",
           "distance_mi": null,
-          "fetched_at": "2026-08-17T18:58:36-05:00"
+          "fetched_at": "2026-08-17T20:43:48-05:00"
         },
         "wind": {
-          "value": 13.801892652,
+          "value": 5.748924492,
           "status": "ok",
           "source": "METAR",
           "station_or_monitor": "KSTP",
           "distance_mi": null,
-          "fetched_at": "2026-08-17T18:58:36-05:00"
+          "fetched_at": "2026-08-17T20:43:48-05:00"
         },
         "ghi": {
-          "value": 392.0,
+          "value": 31.0,
           "status": "ok",
           "source": "Open-Meteo HRRR",
           "station_or_monitor": null,
           "distance_mi": null,
-          "fetched_at": "2026-08-17T18:58:35-05:00"
+          "fetched_at": "2026-08-17T20:43:48-05:00"
         },
         "wbgt": {
-          "value": 71.9,
+          "value": 69.5,
           "status": "ok",
           "source": "computed",
           "station_or_monitor": null,
@@ -1323,12 +1223,12 @@
           "fetched_at": null
         },
         "aqi": {
-          "value": 38,
+          "value": 36,
           "status": "ok",
           "source": "AirNow",
           "station_or_monitor": "Twin Cities",
           "distance_mi": 10.7,
-          "fetched_at": "2026-08-17T18:58:37-05:00",
+          "fetched_at": "2026-08-17T20:43:49-05:00",
           "extra": {
             "pollutant": "O3",
             "category": "Good"
@@ -1349,33 +1249,13 @@
           "source": "AirNow forecast",
           "station_or_monitor": null,
           "distance_mi": null,
-          "fetched_at": "2026-08-17T18:58:38-05:00",
+          "fetched_at": "2026-08-17T20:43:52-05:00",
           "extra": {
             "label": "forecast \u2014 verify with current reading"
           }
         }
       },
       "hours": [
-        {
-          "time_iso": "2026-08-17T19:00",
-          "wbgt_f": 71.8,
-          "wbgt_suspect": null,
-          "aqi_forecast": 46,
-          "precip_pct": 4,
-          "weather_code": "Mostly Cloudy",
-          "status": "GO",
-          "reasons": []
-        },
-        {
-          "time_iso": "2026-08-17T20:00",
-          "wbgt_f": 69.5,
-          "wbgt_suspect": null,
-          "aqi_forecast": 46,
-          "precip_pct": 6,
-          "weather_code": "Mostly Cloudy",
-          "status": "GO",
-          "reasons": []
-        },
         {
           "time_iso": "2026-08-17T21:00",
           "wbgt_f": 68.2,
@@ -1488,10 +1368,30 @@
         },
         {
           "time_iso": "2026-08-18T06:00",
-          "wbgt_f": 62.5,
+          "wbgt_f": 63.9,
           "wbgt_suspect": null,
           "aqi_forecast": 46,
-          "precip_pct": 9,
+          "precip_pct": 18,
+          "weather_code": "Slight Chance Rain Showers",
+          "status": "GO",
+          "reasons": []
+        },
+        {
+          "time_iso": "2026-08-18T07:00",
+          "wbgt_f": 64.0,
+          "wbgt_suspect": null,
+          "aqi_forecast": 46,
+          "precip_pct": 32,
+          "weather_code": "Chance Rain Showers",
+          "status": "GO",
+          "reasons": []
+        },
+        {
+          "time_iso": "2026-08-18T08:00",
+          "wbgt_f": 65.2,
+          "wbgt_suspect": null,
+          "aqi_forecast": 46,
+          "precip_pct": 15,
           "weather_code": "3",
           "status": "GO",
           "reasons": []
@@ -1510,39 +1410,276 @@
       "practice_reasons": [],
       "current": {
         "temp": {
-          "value": 80.6,
+          "value": 77.0,
           "status": "ok",
           "source": "METAR",
           "station_or_monitor": "KANE",
           "distance_mi": null,
-          "fetched_at": "2026-08-17T18:58:36-05:00"
+          "fetched_at": "2026-08-17T20:43:48-05:00"
         },
         "rh": {
-          "value": 44.830942359632,
+          "value": 53.830642264244,
           "status": "ok",
           "source": "METAR",
           "station_or_monitor": "KANE",
           "distance_mi": null,
-          "fetched_at": "2026-08-17T18:58:36-05:00"
+          "fetched_at": "2026-08-17T20:43:48-05:00"
         },
         "wind": {
-          "value": 11.408371559999999,
+          "value": 8.05296816,
           "status": "ok",
           "source": "METAR",
           "station_or_monitor": "KANE",
           "distance_mi": null,
-          "fetched_at": "2026-08-17T18:58:36-05:00"
+          "fetched_at": "2026-08-17T20:43:48-05:00"
         },
         "ghi": {
-          "value": 389.0,
+          "value": 46.0,
           "status": "ok",
           "source": "Open-Meteo HRRR",
           "station_or_monitor": null,
           "distance_mi": null,
-          "fetched_at": "2026-08-17T18:58:35-05:00"
+          "fetched_at": "2026-08-17T20:43:48-05:00"
         },
         "wbgt": {
-          "value": 72.1,
+          "value": 69.2,
+          "status": "ok",
+          "source": "computed",
+          "station_or_monitor": null,
+          "distance_mi": null,
+          "fetched_at": null
+        },
+        "aqi": {
+          "value": 36,
+          "status": "ok",
+          "source": "AirNow",
+          "station_or_monitor": "Twin Cities",
+          "distance_mi": 8.5,
+          "fetched_at": "2026-08-17T20:43:49-05:00",
+          "extra": {
+            "pollutant": "O3",
+            "category": "Good"
+          }
+        },
+        "aqi_purpleair": {
+          "value": null,
+          "status": "unknown",
+          "source": "PurpleAir",
+          "station_or_monitor": null,
+          "distance_mi": null,
+          "fetched_at": null,
+          "reason": "PurpleAir failed"
+        },
+        "aqi_forecast": {
+          "value": 46,
+          "status": "ok",
+          "source": "AirNow forecast",
+          "station_or_monitor": null,
+          "distance_mi": null,
+          "fetched_at": "2026-08-17T20:43:52-05:00",
+          "extra": {
+            "label": "forecast \u2014 verify with current reading"
+          }
+        }
+      },
+      "hours": [
+        {
+          "time_iso": "2026-08-17T21:00",
+          "wbgt_f": 69.3,
+          "wbgt_suspect": null,
+          "aqi_forecast": 46,
+          "precip_pct": 17,
+          "weather_code": "Slight Chance Showers And Thunderstorms",
+          "status": "CAUTION",
+          "reasons": [
+            {
+              "rule": "storm_forecast",
+              "detail": "Storms forecast \u2014 lightning within 10 mi cancels; if you hear thunder, clear the trail; wait 30 min after last thunder/lightning"
+            }
+          ]
+        },
+        {
+          "time_iso": "2026-08-17T22:00",
+          "wbgt_f": 68.2,
+          "wbgt_suspect": null,
+          "aqi_forecast": 46,
+          "precip_pct": 35,
+          "weather_code": "Chance Showers And Thunderstorms",
+          "status": "CAUTION",
+          "reasons": [
+            {
+              "rule": "storm_forecast",
+              "detail": "Storms forecast \u2014 lightning within 10 mi cancels; if you hear thunder, clear the trail; wait 30 min after last thunder/lightning"
+            }
+          ]
+        },
+        {
+          "time_iso": "2026-08-17T23:00",
+          "wbgt_f": 67.2,
+          "wbgt_suspect": null,
+          "aqi_forecast": 46,
+          "precip_pct": 37,
+          "weather_code": "Chance Showers And Thunderstorms",
+          "status": "CAUTION",
+          "reasons": [
+            {
+              "rule": "storm_forecast",
+              "detail": "Storms forecast \u2014 lightning within 10 mi cancels; if you hear thunder, clear the trail; wait 30 min after last thunder/lightning"
+            }
+          ]
+        },
+        {
+          "time_iso": "2026-08-18T00:00",
+          "wbgt_f": 66.5,
+          "wbgt_suspect": null,
+          "aqi_forecast": 46,
+          "precip_pct": 28,
+          "weather_code": "Chance Showers And Thunderstorms",
+          "status": "CAUTION",
+          "reasons": [
+            {
+              "rule": "storm_forecast",
+              "detail": "Storms forecast \u2014 lightning within 10 mi cancels; if you hear thunder, clear the trail; wait 30 min after last thunder/lightning"
+            }
+          ]
+        },
+        {
+          "time_iso": "2026-08-18T01:00",
+          "wbgt_f": 66.0,
+          "wbgt_suspect": null,
+          "aqi_forecast": 46,
+          "precip_pct": 19,
+          "weather_code": "Slight Chance Showers And Thunderstorms",
+          "status": "CAUTION",
+          "reasons": [
+            {
+              "rule": "storm_forecast",
+              "detail": "Storms forecast \u2014 lightning within 10 mi cancels; if you hear thunder, clear the trail; wait 30 min after last thunder/lightning"
+            }
+          ]
+        },
+        {
+          "time_iso": "2026-08-18T02:00",
+          "wbgt_f": 66.4,
+          "wbgt_suspect": null,
+          "aqi_forecast": 46,
+          "precip_pct": 11,
+          "weather_code": "Partly Cloudy",
+          "status": "GO",
+          "reasons": []
+        },
+        {
+          "time_iso": "2026-08-18T03:00",
+          "wbgt_f": 65.5,
+          "wbgt_suspect": null,
+          "aqi_forecast": 46,
+          "precip_pct": 6,
+          "weather_code": "Mostly Cloudy",
+          "status": "GO",
+          "reasons": []
+        },
+        {
+          "time_iso": "2026-08-18T04:00",
+          "wbgt_f": 64.5,
+          "wbgt_suspect": null,
+          "aqi_forecast": 46,
+          "precip_pct": 7,
+          "weather_code": "Mostly Cloudy",
+          "status": "GO",
+          "reasons": []
+        },
+        {
+          "time_iso": "2026-08-18T05:00",
+          "wbgt_f": 64.5,
+          "wbgt_suspect": null,
+          "aqi_forecast": 46,
+          "precip_pct": 13,
+          "weather_code": "Mostly Cloudy",
+          "status": "GO",
+          "reasons": []
+        },
+        {
+          "time_iso": "2026-08-18T06:00",
+          "wbgt_f": 63.9,
+          "wbgt_suspect": null,
+          "aqi_forecast": 46,
+          "precip_pct": 19,
+          "weather_code": "Slight Chance Showers And Thunderstorms",
+          "status": "CAUTION",
+          "reasons": [
+            {
+              "rule": "storm_forecast",
+              "detail": "Storms forecast \u2014 lightning within 10 mi cancels; if you hear thunder, clear the trail; wait 30 min after last thunder/lightning"
+            }
+          ]
+        },
+        {
+          "time_iso": "2026-08-18T07:00",
+          "wbgt_f": 64.2,
+          "wbgt_suspect": null,
+          "aqi_forecast": 46,
+          "precip_pct": 32,
+          "weather_code": "Chance Rain Showers",
+          "status": "GO",
+          "reasons": []
+        },
+        {
+          "time_iso": "2026-08-18T08:00",
+          "wbgt_f": 65.3,
+          "wbgt_suspect": null,
+          "aqi_forecast": 46,
+          "precip_pct": 17,
+          "weather_code": "3",
+          "status": "GO",
+          "reasons": []
+        }
+      ],
+      "alerts": [],
+      "flags": []
+    },
+    {
+      "venue_id": "lino-lakes",
+      "name": "Lino Lakes",
+      "status": "GO",
+      "reasons": [],
+      "practice_hour_iso": null,
+      "practice_status": "UNKNOWN",
+      "practice_reasons": [],
+      "current": {
+        "temp": {
+          "value": 77.0,
+          "status": "ok",
+          "source": "METAR",
+          "station_or_monitor": "KANE",
+          "distance_mi": null,
+          "fetched_at": "2026-08-17T20:43:48-05:00"
+        },
+        "rh": {
+          "value": 53.830642264244,
+          "status": "ok",
+          "source": "METAR",
+          "station_or_monitor": "KANE",
+          "distance_mi": null,
+          "fetched_at": "2026-08-17T20:43:48-05:00"
+        },
+        "wind": {
+          "value": 8.05296816,
+          "status": "ok",
+          "source": "METAR",
+          "station_or_monitor": "KANE",
+          "distance_mi": null,
+          "fetched_at": "2026-08-17T20:43:48-05:00"
+        },
+        "ghi": {
+          "value": 3.0,
+          "status": "ok",
+          "source": "Open-Meteo HRRR",
+          "station_or_monitor": null,
+          "distance_mi": null,
+          "fetched_at": "2026-08-17T20:43:48-05:00"
+        },
+        "wbgt": {
+          "value": 68.9,
           "status": "ok",
           "source": "computed",
           "station_or_monitor": null,
@@ -1553,226 +1690,9 @@
           "value": 38,
           "status": "ok",
           "source": "AirNow",
-          "station_or_monitor": "Twin Cities",
-          "distance_mi": 8.5,
-          "fetched_at": "2026-08-17T18:58:37-05:00",
-          "extra": {
-            "pollutant": "O3",
-            "category": "Good"
-          }
-        },
-        "aqi_purpleair": {
-          "value": null,
-          "status": "unknown",
-          "source": "PurpleAir",
-          "station_or_monitor": null,
-          "distance_mi": null,
-          "fetched_at": null,
-          "reason": "PurpleAir failed"
-        },
-        "aqi_forecast": {
-          "value": 46,
-          "status": "ok",
-          "source": "AirNow forecast",
-          "station_or_monitor": null,
-          "distance_mi": null,
-          "fetched_at": "2026-08-17T18:58:37-05:00",
-          "extra": {
-            "label": "forecast \u2014 verify with current reading"
-          }
-        }
-      },
-      "hours": [
-        {
-          "time_iso": "2026-08-17T19:00",
-          "wbgt_f": 70.1,
-          "wbgt_suspect": null,
-          "aqi_forecast": 46,
-          "precip_pct": 3,
-          "weather_code": "2",
-          "status": "GO",
-          "reasons": []
-        },
-        {
-          "time_iso": "2026-08-17T20:00",
-          "wbgt_f": 68.3,
-          "wbgt_suspect": 68.0,
-          "aqi_forecast": 46,
-          "precip_pct": 5,
-          "weather_code": "3",
-          "status": "GO",
-          "reasons": []
-        },
-        {
-          "time_iso": "2026-08-17T21:00",
-          "wbgt_f": 66.7,
-          "wbgt_suspect": null,
-          "aqi_forecast": 46,
-          "precip_pct": 4,
-          "weather_code": "3",
-          "status": "GO",
-          "reasons": []
-        },
-        {
-          "time_iso": "2026-08-17T22:00",
-          "wbgt_f": 65.7,
-          "wbgt_suspect": null,
-          "aqi_forecast": 46,
-          "precip_pct": 7,
-          "weather_code": "3",
-          "status": "GO",
-          "reasons": []
-        },
-        {
-          "time_iso": "2026-08-17T23:00",
-          "wbgt_f": 65.0,
-          "wbgt_suspect": null,
-          "aqi_forecast": 46,
-          "precip_pct": 14,
-          "weather_code": "3",
-          "status": "GO",
-          "reasons": []
-        },
-        {
-          "time_iso": "2026-08-18T00:00",
-          "wbgt_f": 65.5,
-          "wbgt_suspect": null,
-          "aqi_forecast": 46,
-          "precip_pct": 17,
-          "weather_code": "55",
-          "status": "GO",
-          "reasons": []
-        },
-        {
-          "time_iso": "2026-08-18T01:00",
-          "wbgt_f": 65.1,
-          "wbgt_suspect": null,
-          "aqi_forecast": 46,
-          "precip_pct": 9,
-          "weather_code": "65",
-          "status": "GO",
-          "reasons": []
-        },
-        {
-          "time_iso": "2026-08-18T02:00",
-          "wbgt_f": 64.6,
-          "wbgt_suspect": null,
-          "aqi_forecast": 46,
-          "precip_pct": 9,
-          "weather_code": "3",
-          "status": "GO",
-          "reasons": []
-        },
-        {
-          "time_iso": "2026-08-18T03:00",
-          "wbgt_f": 64.3,
-          "wbgt_suspect": null,
-          "aqi_forecast": 46,
-          "precip_pct": 7,
-          "weather_code": "3",
-          "status": "GO",
-          "reasons": []
-        },
-        {
-          "time_iso": "2026-08-18T04:00",
-          "wbgt_f": 63.5,
-          "wbgt_suspect": null,
-          "aqi_forecast": 46,
-          "precip_pct": 5,
-          "weather_code": "3",
-          "status": "GO",
-          "reasons": []
-        },
-        {
-          "time_iso": "2026-08-18T05:00",
-          "wbgt_f": 62.3,
-          "wbgt_suspect": null,
-          "aqi_forecast": 46,
-          "precip_pct": 3,
-          "weather_code": "3",
-          "status": "GO",
-          "reasons": []
-        },
-        {
-          "time_iso": "2026-08-18T06:00",
-          "wbgt_f": 62.7,
-          "wbgt_suspect": null,
-          "aqi_forecast": 46,
-          "precip_pct": 11,
-          "weather_code": "3",
-          "status": "GO",
-          "reasons": []
-        }
-      ],
-      "alerts": [],
-      "flags": [
-        "\u26a0\ufe0f NWS hourly forecast unavailable \u2014 forecast temp/wind from HRRR model; storm flags unavailable"
-      ]
-    },
-    {
-      "venue_id": "lino-lakes",
-      "name": "Lino Lakes",
-      "status": "UNKNOWN",
-      "reasons": [
-        {
-          "rule": "unknown",
-          "detail": "Missing safety-critical signal(s): severe-weather alerts \u2014 status capped at UNKNOWN"
-        }
-      ],
-      "practice_hour_iso": null,
-      "practice_status": "UNKNOWN",
-      "practice_reasons": [],
-      "current": {
-        "temp": {
-          "value": 80.6,
-          "status": "ok",
-          "source": "METAR",
-          "station_or_monitor": "KANE",
-          "distance_mi": null,
-          "fetched_at": "2026-08-17T18:58:36-05:00"
-        },
-        "rh": {
-          "value": 44.830942359632,
-          "status": "ok",
-          "source": "METAR",
-          "station_or_monitor": "KANE",
-          "distance_mi": null,
-          "fetched_at": "2026-08-17T18:58:36-05:00"
-        },
-        "wind": {
-          "value": 11.408371559999999,
-          "status": "ok",
-          "source": "METAR",
-          "station_or_monitor": "KANE",
-          "distance_mi": null,
-          "fetched_at": "2026-08-17T18:58:36-05:00"
-        },
-        "ghi": {
-          "value": 273.0,
-          "status": "ok",
-          "source": "Open-Meteo HRRR",
-          "station_or_monitor": null,
-          "distance_mi": null,
-          "fetched_at": "2026-08-17T18:58:35-05:00"
-        },
-        "wbgt": {
-          "value": 71.6,
-          "status": "ok",
-          "source": "computed",
-          "station_or_monitor": null,
-          "distance_mi": null,
-          "fetched_at": null,
-          "extra": {
-            "wbgt_suspect": 70.5
-          }
-        },
-        "aqi": {
-          "value": 39,
-          "status": "ok",
-          "source": "AirNow",
           "station_or_monitor": "Northern Twin Cities Metro",
           "distance_mi": 9.5,
-          "fetched_at": "2026-08-17T18:58:37-05:00",
+          "fetched_at": "2026-08-17T20:43:49-05:00",
           "extra": {
             "pollutant": "O3",
             "category": "Good"
@@ -1793,43 +1713,13 @@
           "source": "AirNow forecast",
           "station_or_monitor": null,
           "distance_mi": null,
-          "fetched_at": "2026-08-17T18:58:37-05:00",
+          "fetched_at": "2026-08-17T20:43:52-05:00",
           "extra": {
             "label": "forecast \u2014 verify with current reading"
           }
         }
       },
       "hours": [
-        {
-          "time_iso": "2026-08-17T19:00",
-          "wbgt_f": 72.6,
-          "wbgt_suspect": 71.9,
-          "aqi_forecast": 46,
-          "precip_pct": 8,
-          "weather_code": "Mostly Cloudy",
-          "status": "UNKNOWN",
-          "reasons": [
-            {
-              "rule": "unknown",
-              "detail": "Missing safety-critical signal(s): severe-weather alerts \u2014 status capped at UNKNOWN"
-            }
-          ]
-        },
-        {
-          "time_iso": "2026-08-17T20:00",
-          "wbgt_f": 70.6,
-          "wbgt_suspect": null,
-          "aqi_forecast": 46,
-          "precip_pct": 10,
-          "weather_code": "Mostly Cloudy",
-          "status": "UNKNOWN",
-          "reasons": [
-            {
-              "rule": "unknown",
-              "detail": "Missing safety-critical signal(s): severe-weather alerts \u2014 status capped at UNKNOWN"
-            }
-          ]
-        },
         {
           "time_iso": "2026-08-17T21:00",
           "wbgt_f": 68.9,
@@ -1837,15 +1727,11 @@
           "aqi_forecast": 46,
           "precip_pct": 20,
           "weather_code": "Slight Chance Showers And Thunderstorms",
-          "status": "UNKNOWN",
+          "status": "CAUTION",
           "reasons": [
             {
               "rule": "storm_forecast",
               "detail": "Storms forecast \u2014 lightning within 10 mi cancels; if you hear thunder, clear the trail; wait 30 min after last thunder/lightning"
-            },
-            {
-              "rule": "unknown",
-              "detail": "Missing safety-critical signal(s): severe-weather alerts \u2014 status capped at UNKNOWN"
             }
           ]
         },
@@ -1856,15 +1742,11 @@
           "aqi_forecast": 46,
           "precip_pct": 35,
           "weather_code": "Chance Showers And Thunderstorms",
-          "status": "UNKNOWN",
+          "status": "CAUTION",
           "reasons": [
             {
               "rule": "storm_forecast",
               "detail": "Storms forecast \u2014 lightning within 10 mi cancels; if you hear thunder, clear the trail; wait 30 min after last thunder/lightning"
-            },
-            {
-              "rule": "unknown",
-              "detail": "Missing safety-critical signal(s): severe-weather alerts \u2014 status capped at UNKNOWN"
             }
           ]
         },
@@ -1875,15 +1757,11 @@
           "aqi_forecast": 46,
           "precip_pct": 37,
           "weather_code": "Chance Showers And Thunderstorms",
-          "status": "UNKNOWN",
+          "status": "CAUTION",
           "reasons": [
             {
               "rule": "storm_forecast",
               "detail": "Storms forecast \u2014 lightning within 10 mi cancels; if you hear thunder, clear the trail; wait 30 min after last thunder/lightning"
-            },
-            {
-              "rule": "unknown",
-              "detail": "Missing safety-critical signal(s): severe-weather alerts \u2014 status capped at UNKNOWN"
             }
           ]
         },
@@ -1894,15 +1772,11 @@
           "aqi_forecast": 46,
           "precip_pct": 28,
           "weather_code": "Chance Showers And Thunderstorms",
-          "status": "UNKNOWN",
+          "status": "CAUTION",
           "reasons": [
             {
               "rule": "storm_forecast",
               "detail": "Storms forecast \u2014 lightning within 10 mi cancels; if you hear thunder, clear the trail; wait 30 min after last thunder/lightning"
-            },
-            {
-              "rule": "unknown",
-              "detail": "Missing safety-critical signal(s): severe-weather alerts \u2014 status capped at UNKNOWN"
             }
           ]
         },
@@ -1913,15 +1787,11 @@
           "aqi_forecast": 46,
           "precip_pct": 19,
           "weather_code": "Slight Chance Showers And Thunderstorms",
-          "status": "UNKNOWN",
+          "status": "CAUTION",
           "reasons": [
             {
               "rule": "storm_forecast",
               "detail": "Storms forecast \u2014 lightning within 10 mi cancels; if you hear thunder, clear the trail; wait 30 min after last thunder/lightning"
-            },
-            {
-              "rule": "unknown",
-              "detail": "Missing safety-critical signal(s): severe-weather alerts \u2014 status capped at UNKNOWN"
             }
           ]
         },
@@ -1932,13 +1802,8 @@
           "aqi_forecast": 46,
           "precip_pct": 11,
           "weather_code": "Partly Cloudy",
-          "status": "UNKNOWN",
-          "reasons": [
-            {
-              "rule": "unknown",
-              "detail": "Missing safety-critical signal(s): severe-weather alerts \u2014 status capped at UNKNOWN"
-            }
-          ]
+          "status": "GO",
+          "reasons": []
         },
         {
           "time_iso": "2026-08-18T03:00",
@@ -1947,13 +1812,8 @@
           "aqi_forecast": 46,
           "precip_pct": 6,
           "weather_code": "Mostly Cloudy",
-          "status": "UNKNOWN",
-          "reasons": [
-            {
-              "rule": "unknown",
-              "detail": "Missing safety-critical signal(s): severe-weather alerts \u2014 status capped at UNKNOWN"
-            }
-          ]
+          "status": "GO",
+          "reasons": []
         },
         {
           "time_iso": "2026-08-18T04:00",
@@ -1962,13 +1822,8 @@
           "aqi_forecast": 46,
           "precip_pct": 7,
           "weather_code": "Mostly Cloudy",
-          "status": "UNKNOWN",
-          "reasons": [
-            {
-              "rule": "unknown",
-              "detail": "Missing safety-critical signal(s): severe-weather alerts \u2014 status capped at UNKNOWN"
-            }
-          ]
+          "status": "GO",
+          "reasons": []
         },
         {
           "time_iso": "2026-08-18T05:00",
@@ -1977,100 +1832,104 @@
           "aqi_forecast": 46,
           "precip_pct": 13,
           "weather_code": "Mostly Cloudy",
-          "status": "UNKNOWN",
+          "status": "GO",
+          "reasons": []
+        },
+        {
+          "time_iso": "2026-08-18T06:00",
+          "wbgt_f": 63.5,
+          "wbgt_suspect": null,
+          "aqi_forecast": 46,
+          "precip_pct": 19,
+          "weather_code": "Slight Chance Showers And Thunderstorms",
+          "status": "CAUTION",
           "reasons": [
             {
-              "rule": "unknown",
-              "detail": "Missing safety-critical signal(s): severe-weather alerts \u2014 status capped at UNKNOWN"
+              "rule": "storm_forecast",
+              "detail": "Storms forecast \u2014 lightning within 10 mi cancels; if you hear thunder, clear the trail; wait 30 min after last thunder/lightning"
             }
           ]
         },
         {
-          "time_iso": "2026-08-18T06:00",
-          "wbgt_f": 62.2,
+          "time_iso": "2026-08-18T07:00",
+          "wbgt_f": 63.3,
           "wbgt_suspect": null,
           "aqi_forecast": 46,
-          "precip_pct": 12,
+          "precip_pct": 31,
+          "weather_code": "Chance Rain Showers",
+          "status": "GO",
+          "reasons": []
+        },
+        {
+          "time_iso": "2026-08-18T08:00",
+          "wbgt_f": 65.2,
+          "wbgt_suspect": null,
+          "aqi_forecast": 46,
+          "precip_pct": 15,
           "weather_code": "3",
-          "status": "UNKNOWN",
-          "reasons": [
-            {
-              "rule": "unknown",
-              "detail": "Missing safety-critical signal(s): severe-weather alerts \u2014 status capped at UNKNOWN"
-            }
-          ]
+          "status": "GO",
+          "reasons": []
         }
       ],
       "alerts": [],
-      "flags": [
-        "\u26a0\ufe0f Severe-weather alert check failed \u2014 verify manually before practice"
-      ]
+      "flags": []
     },
     {
       "venue_id": "lebanon-hills",
       "name": "Lebanon Hills Regional Park",
-      "status": "UNKNOWN",
-      "reasons": [
-        {
-          "rule": "unknown",
-          "detail": "Missing safety-critical signal(s): WBGT \u2014 status capped at UNKNOWN"
-        }
-      ],
+      "status": "GO",
+      "reasons": [],
       "practice_hour_iso": null,
       "practice_status": "UNKNOWN",
       "practice_reasons": [],
       "current": {
         "temp": {
-          "value": null,
-          "status": "unknown",
+          "value": 78.8,
+          "status": "ok",
           "source": "METAR",
-          "station_or_monitor": null,
+          "station_or_monitor": "KMSP",
           "distance_mi": null,
-          "fetched_at": null,
-          "reason": "METAR failed"
+          "fetched_at": "2026-08-17T20:43:52-05:00"
         },
         "rh": {
-          "value": null,
-          "status": "unknown",
+          "value": 50.72618873623,
+          "status": "ok",
           "source": "METAR",
-          "station_or_monitor": null,
+          "station_or_monitor": "KMSP",
           "distance_mi": null,
-          "fetched_at": null,
-          "reason": "METAR failed"
+          "fetched_at": "2026-08-17T20:43:52-05:00"
         },
         "wind": {
-          "value": null,
-          "status": "unknown",
+          "value": 9.216174672000001,
+          "status": "ok",
           "source": "METAR",
-          "station_or_monitor": null,
+          "station_or_monitor": "KMSP",
           "distance_mi": null,
-          "fetched_at": null,
-          "reason": "METAR failed"
+          "fetched_at": "2026-08-17T20:43:52-05:00"
         },
         "ghi": {
-          "value": 401.0,
+          "value": 34.0,
           "status": "ok",
           "source": "Open-Meteo HRRR",
           "station_or_monitor": null,
           "distance_mi": null,
-          "fetched_at": "2026-08-17T18:58:35-05:00"
+          "fetched_at": "2026-08-17T20:43:48-05:00"
         },
         "wbgt": {
-          "value": null,
-          "status": "unknown",
+          "value": 70.1,
+          "status": "ok",
           "source": "computed",
           "station_or_monitor": null,
           "distance_mi": null,
-          "fetched_at": null,
-          "reason": "WBGT inputs missing"
+          "fetched_at": null
         },
         "aqi": {
-          "value": 32,
+          "value": 31,
           "status": "ok",
           "source": "AirNow",
           "station_or_monitor": "Southern Twin Cities Metro",
           "distance_mi": 5.9,
-          "fetched_at": "2026-08-17T18:58:38-05:00",
+          "fetched_at": "2026-08-17T20:43:53-05:00",
           "extra": {
             "pollutant": "O3",
             "category": "Good"
@@ -2091,7 +1950,7 @@
           "source": "AirNow forecast",
           "station_or_monitor": null,
           "distance_mi": null,
-          "fetched_at": "2026-08-17T18:58:39-05:00",
+          "fetched_at": "2026-08-17T20:43:53-05:00",
           "extra": {
             "label": "forecast \u2014 verify with current reading"
           }
@@ -2099,130 +1958,148 @@
       },
       "hours": [
         {
-          "time_iso": "2026-08-17T19:00",
-          "wbgt_f": 71.6,
-          "wbgt_suspect": null,
-          "aqi_forecast": 46,
-          "precip_pct": 1,
-          "weather_code": "0",
-          "status": "GO",
-          "reasons": []
-        },
-        {
-          "time_iso": "2026-08-17T20:00",
-          "wbgt_f": 69.0,
-          "wbgt_suspect": null,
-          "aqi_forecast": 46,
-          "precip_pct": 3,
-          "weather_code": "1",
-          "status": "GO",
-          "reasons": []
-        },
-        {
           "time_iso": "2026-08-17T21:00",
-          "wbgt_f": 66.9,
+          "wbgt_f": 69.1,
           "wbgt_suspect": null,
           "aqi_forecast": 46,
-          "precip_pct": 3,
-          "weather_code": "2",
+          "precip_pct": 12,
+          "weather_code": "Mostly Cloudy",
           "status": "GO",
           "reasons": []
         },
         {
           "time_iso": "2026-08-17T22:00",
-          "wbgt_f": 65.5,
+          "wbgt_f": 68.3,
           "wbgt_suspect": null,
           "aqi_forecast": 46,
-          "precip_pct": 4,
-          "weather_code": "3",
-          "status": "GO",
-          "reasons": []
+          "precip_pct": 33,
+          "weather_code": "Chance Showers And Thunderstorms",
+          "status": "CAUTION",
+          "reasons": [
+            {
+              "rule": "storm_forecast",
+              "detail": "Storms forecast \u2014 lightning within 10 mi cancels; if you hear thunder, clear the trail; wait 30 min after last thunder/lightning"
+            }
+          ]
         },
         {
           "time_iso": "2026-08-17T23:00",
-          "wbgt_f": 64.6,
+          "wbgt_f": 67.6,
           "wbgt_suspect": null,
           "aqi_forecast": 46,
-          "precip_pct": 14,
-          "weather_code": "3",
-          "status": "GO",
-          "reasons": []
+          "precip_pct": 36,
+          "weather_code": "Chance Showers And Thunderstorms",
+          "status": "CAUTION",
+          "reasons": [
+            {
+              "rule": "storm_forecast",
+              "detail": "Storms forecast \u2014 lightning within 10 mi cancels; if you hear thunder, clear the trail; wait 30 min after last thunder/lightning"
+            }
+          ]
         },
         {
           "time_iso": "2026-08-18T00:00",
-          "wbgt_f": 64.4,
+          "wbgt_f": 67.6,
           "wbgt_suspect": null,
           "aqi_forecast": 46,
-          "precip_pct": 16,
-          "weather_code": "3",
-          "status": "GO",
-          "reasons": []
+          "precip_pct": 28,
+          "weather_code": "Chance Showers And Thunderstorms",
+          "status": "CAUTION",
+          "reasons": [
+            {
+              "rule": "storm_forecast",
+              "detail": "Storms forecast \u2014 lightning within 10 mi cancels; if you hear thunder, clear the trail; wait 30 min after last thunder/lightning"
+            }
+          ]
         },
         {
           "time_iso": "2026-08-18T01:00",
-          "wbgt_f": 63.6,
+          "wbgt_f": 66.5,
           "wbgt_suspect": null,
           "aqi_forecast": 46,
-          "precip_pct": 11,
-          "weather_code": "3",
-          "status": "GO",
-          "reasons": []
+          "precip_pct": 20,
+          "weather_code": "Slight Chance Showers And Thunderstorms",
+          "status": "CAUTION",
+          "reasons": [
+            {
+              "rule": "storm_forecast",
+              "detail": "Storms forecast \u2014 lightning within 10 mi cancels; if you hear thunder, clear the trail; wait 30 min after last thunder/lightning"
+            }
+          ]
         },
         {
           "time_iso": "2026-08-18T02:00",
-          "wbgt_f": 63.4,
+          "wbgt_f": 67.0,
           "wbgt_suspect": null,
           "aqi_forecast": 46,
-          "precip_pct": 9,
-          "weather_code": "3",
+          "precip_pct": 13,
+          "weather_code": "Mostly Cloudy",
           "status": "GO",
           "reasons": []
         },
         {
           "time_iso": "2026-08-18T03:00",
-          "wbgt_f": 63.6,
+          "wbgt_f": 66.4,
           "wbgt_suspect": null,
           "aqi_forecast": 46,
           "precip_pct": 7,
-          "weather_code": "3",
+          "weather_code": "Partly Cloudy",
           "status": "GO",
           "reasons": []
         },
         {
           "time_iso": "2026-08-18T04:00",
-          "wbgt_f": 61.1,
+          "wbgt_f": 65.5,
           "wbgt_suspect": null,
           "aqi_forecast": 46,
-          "precip_pct": 7,
-          "weather_code": "51",
+          "precip_pct": 9,
+          "weather_code": "Partly Cloudy",
           "status": "GO",
           "reasons": []
         },
         {
           "time_iso": "2026-08-18T05:00",
-          "wbgt_f": 61.4,
+          "wbgt_f": 65.5,
           "wbgt_suspect": null,
           "aqi_forecast": 46,
-          "precip_pct": 3,
-          "weather_code": "2",
+          "precip_pct": 15,
+          "weather_code": "Slight Chance Rain Showers",
           "status": "GO",
           "reasons": []
         },
         {
           "time_iso": "2026-08-18T06:00",
-          "wbgt_f": 61.3,
+          "wbgt_f": 64.5,
           "wbgt_suspect": null,
           "aqi_forecast": 46,
-          "precip_pct": 8,
+          "precip_pct": 22,
+          "weather_code": "Slight Chance Rain Showers",
+          "status": "GO",
+          "reasons": []
+        },
+        {
+          "time_iso": "2026-08-18T07:00",
+          "wbgt_f": 64.6,
+          "wbgt_suspect": null,
+          "aqi_forecast": 46,
+          "precip_pct": 36,
+          "weather_code": "Chance Rain Showers",
+          "status": "GO",
+          "reasons": []
+        },
+        {
+          "time_iso": "2026-08-18T08:00",
+          "wbgt_f": 65.5,
+          "wbgt_suspect": null,
+          "aqi_forecast": 46,
+          "precip_pct": 21,
           "weather_code": "3",
           "status": "GO",
           "reasons": []
         }
       ],
       "alerts": [],
-      "flags": [
-        "\u26a0\ufe0f NWS hourly forecast unavailable \u2014 forecast temp/wind from HRRR model; storm flags unavailable"
-      ]
+      "flags": []
     },
     {
       "venue_id": "murphy",
@@ -2234,39 +2111,39 @@
       "practice_reasons": [],
       "current": {
         "temp": {
-          "value": 78.8,
+          "value": 73.4,
           "status": "ok",
           "source": "METAR",
           "station_or_monitor": "KLVN",
           "distance_mi": null,
-          "fetched_at": "2026-08-17T18:58:37-05:00"
+          "fetched_at": "2026-08-17T20:43:52-05:00"
         },
         "rh": {
-          "value": 50.72618873623,
+          "value": 64.719860273836,
           "status": "ok",
           "source": "METAR",
           "station_or_monitor": "KLVN",
           "distance_mi": null,
-          "fetched_at": "2026-08-17T18:58:37-05:00"
+          "fetched_at": "2026-08-17T20:43:52-05:00"
         },
         "wind": {
-          "value": 3.3554034,
+          "value": 0.0,
           "status": "ok",
           "source": "METAR",
           "station_or_monitor": "KLVN",
           "distance_mi": null,
-          "fetched_at": "2026-08-17T18:58:37-05:00"
+          "fetched_at": "2026-08-17T20:43:52-05:00"
         },
         "ghi": {
-          "value": 397.0,
+          "value": 35.0,
           "status": "ok",
           "source": "Open-Meteo HRRR",
           "station_or_monitor": null,
           "distance_mi": null,
-          "fetched_at": "2026-08-17T18:58:35-05:00"
+          "fetched_at": "2026-08-17T20:43:48-05:00"
         },
         "wbgt": {
-          "value": 73.3,
+          "value": 68.2,
           "status": "ok",
           "source": "computed",
           "station_or_monitor": null,
@@ -2274,12 +2151,12 @@
           "fetched_at": null
         },
         "aqi": {
-          "value": 32,
+          "value": 31,
           "status": "ok",
           "source": "AirNow",
           "station_or_monitor": "Southern Twin Cities Metro",
           "distance_mi": 4.8,
-          "fetched_at": "2026-08-17T18:58:38-05:00",
+          "fetched_at": "2026-08-17T20:43:53-05:00",
           "extra": {
             "pollutant": "O3",
             "category": "Good"
@@ -2300,33 +2177,13 @@
           "source": "AirNow forecast",
           "station_or_monitor": null,
           "distance_mi": null,
-          "fetched_at": "2026-08-17T18:58:39-05:00",
+          "fetched_at": "2026-08-17T20:43:54-05:00",
           "extra": {
             "label": "forecast \u2014 verify with current reading"
           }
         }
       },
       "hours": [
-        {
-          "time_iso": "2026-08-17T19:00",
-          "wbgt_f": 72.6,
-          "wbgt_suspect": null,
-          "aqi_forecast": 46,
-          "precip_pct": 6,
-          "weather_code": "Mostly Cloudy",
-          "status": "GO",
-          "reasons": []
-        },
-        {
-          "time_iso": "2026-08-17T20:00",
-          "wbgt_f": 70.5,
-          "wbgt_suspect": null,
-          "aqi_forecast": 46,
-          "precip_pct": 8,
-          "weather_code": "Mostly Cloudy",
-          "status": "GO",
-          "reasons": []
-        },
         {
           "time_iso": "2026-08-17T21:00",
           "wbgt_f": 68.6,
@@ -2439,10 +2296,30 @@
         },
         {
           "time_iso": "2026-08-18T06:00",
-          "wbgt_f": 61.9,
+          "wbgt_f": 64.5,
           "wbgt_suspect": null,
           "aqi_forecast": 46,
-          "precip_pct": 9,
+          "precip_pct": 24,
+          "weather_code": "Slight Chance Rain Showers",
+          "status": "GO",
+          "reasons": []
+        },
+        {
+          "time_iso": "2026-08-18T07:00",
+          "wbgt_f": 64.1,
+          "wbgt_suspect": null,
+          "aqi_forecast": 46,
+          "precip_pct": 39,
+          "weather_code": "Chance Rain Showers",
+          "status": "GO",
+          "reasons": []
+        },
+        {
+          "time_iso": "2026-08-18T08:00",
+          "wbgt_f": 65.5,
+          "wbgt_suspect": null,
+          "aqi_forecast": 46,
+          "precip_pct": 21,
           "weather_code": "3",
           "status": "GO",
           "reasons": []
@@ -2454,68 +2331,59 @@
     {
       "venue_id": "monarch",
       "name": "Monarch Singletrack (Carver Park Reserve)",
-      "status": "UNKNOWN",
-      "reasons": [
-        {
-          "rule": "unknown",
-          "detail": "Missing safety-critical signal(s): WBGT \u2014 status capped at UNKNOWN"
-        }
-      ],
+      "status": "GO",
+      "reasons": [],
       "practice_hour_iso": null,
       "practice_status": "UNKNOWN",
       "practice_reasons": [],
       "current": {
         "temp": {
-          "value": null,
-          "status": "unknown",
+          "value": 75.2,
+          "status": "ok",
           "source": "METAR",
-          "station_or_monitor": null,
+          "station_or_monitor": "KFCM",
           "distance_mi": null,
-          "fetched_at": null,
-          "reason": "METAR failed"
+          "fetched_at": "2026-08-17T20:43:52-05:00"
         },
         "rh": {
-          "value": null,
-          "status": "unknown",
+          "value": 60.932871508219,
+          "status": "ok",
           "source": "METAR",
-          "station_or_monitor": null,
+          "station_or_monitor": "KFCM",
           "distance_mi": null,
-          "fetched_at": null,
-          "reason": "METAR failed"
+          "fetched_at": "2026-08-17T20:43:52-05:00"
         },
         "wind": {
-          "value": null,
-          "status": "unknown",
+          "value": 6.912131004000001,
+          "status": "ok",
           "source": "METAR",
-          "station_or_monitor": null,
+          "station_or_monitor": "KFCM",
           "distance_mi": null,
-          "fetched_at": null,
-          "reason": "METAR failed"
+          "fetched_at": "2026-08-17T20:43:52-05:00"
         },
         "ghi": {
-          "value": 397.0,
+          "value": 39.0,
           "status": "ok",
           "source": "Open-Meteo HRRR",
           "station_or_monitor": null,
           "distance_mi": null,
-          "fetched_at": "2026-08-17T18:58:35-05:00"
+          "fetched_at": "2026-08-17T20:43:48-05:00"
         },
         "wbgt": {
-          "value": null,
-          "status": "unknown",
+          "value": 68.8,
+          "status": "ok",
           "source": "computed",
           "station_or_monitor": null,
           "distance_mi": null,
-          "fetched_at": null,
-          "reason": "WBGT inputs missing"
+          "fetched_at": null
         },
         "aqi": {
-          "value": 32,
+          "value": 31,
           "status": "ok",
           "source": "AirNow",
           "station_or_monitor": "Southern Twin Cities Metro",
           "distance_mi": 25.8,
-          "fetched_at": "2026-08-17T18:58:39-05:00",
+          "fetched_at": "2026-08-17T20:43:53-05:00",
           "extra": {
             "pollutant": "O3",
             "category": "Good"
@@ -2536,33 +2404,13 @@
           "source": "AirNow forecast",
           "station_or_monitor": null,
           "distance_mi": null,
-          "fetched_at": "2026-08-17T18:58:39-05:00",
+          "fetched_at": "2026-08-17T20:43:54-05:00",
           "extra": {
             "label": "forecast \u2014 verify with current reading"
           }
         }
       },
       "hours": [
-        {
-          "time_iso": "2026-08-17T19:00",
-          "wbgt_f": 71.6,
-          "wbgt_suspect": null,
-          "aqi_forecast": 46,
-          "precip_pct": 12,
-          "weather_code": "Mostly Cloudy",
-          "status": "GO",
-          "reasons": []
-        },
-        {
-          "time_iso": "2026-08-17T20:00",
-          "wbgt_f": 69.2,
-          "wbgt_suspect": 69.0,
-          "aqi_forecast": 46,
-          "precip_pct": 14,
-          "weather_code": "Mostly Cloudy",
-          "status": "GO",
-          "reasons": []
-        },
         {
           "time_iso": "2026-08-17T21:00",
           "wbgt_f": 68.2,
@@ -2685,10 +2533,35 @@
         },
         {
           "time_iso": "2026-08-18T06:00",
-          "wbgt_f": 61.5,
+          "wbgt_f": 63.5,
           "wbgt_suspect": null,
           "aqi_forecast": 46,
-          "precip_pct": 13,
+          "precip_pct": 26,
+          "weather_code": "Chance Showers And Thunderstorms",
+          "status": "CAUTION",
+          "reasons": [
+            {
+              "rule": "storm_forecast",
+              "detail": "Storms forecast \u2014 lightning within 10 mi cancels; if you hear thunder, clear the trail; wait 30 min after last thunder/lightning"
+            }
+          ]
+        },
+        {
+          "time_iso": "2026-08-18T07:00",
+          "wbgt_f": 63.2,
+          "wbgt_suspect": null,
+          "aqi_forecast": 46,
+          "precip_pct": 43,
+          "weather_code": "Chance Rain Showers",
+          "status": "GO",
+          "reasons": []
+        },
+        {
+          "time_iso": "2026-08-18T08:00",
+          "wbgt_f": 65.4,
+          "wbgt_suspect": null,
+          "aqi_forecast": 46,
+          "precip_pct": 22,
           "weather_code": "3",
           "status": "GO",
           "reasons": []
@@ -2707,39 +2580,39 @@
       "practice_reasons": [],
       "current": {
         "temp": {
-          "value": 78.8,
+          "value": 77.0,
           "status": "ok",
           "source": "METAR",
           "station_or_monitor": "K21D",
           "distance_mi": null,
-          "fetched_at": "2026-08-17T18:58:38-05:00"
+          "fetched_at": "2026-08-17T20:43:52-05:00"
         },
         "rh": {
-          "value": 44.557102524017,
+          "value": 47.284006665151,
           "status": "ok",
           "source": "METAR",
           "station_or_monitor": "K21D",
           "distance_mi": null,
-          "fetched_at": "2026-08-17T18:58:38-05:00"
+          "fetched_at": "2026-08-17T20:43:52-05:00"
         },
         "wind": {
-          "value": 5.81603256,
+          "value": 6.912131004000001,
           "status": "ok",
           "source": "METAR",
           "station_or_monitor": "K21D",
           "distance_mi": null,
-          "fetched_at": "2026-08-17T18:58:38-05:00"
+          "fetched_at": "2026-08-17T20:43:52-05:00"
         },
         "ghi": {
-          "value": 390.0,
+          "value": 28.0,
           "status": "ok",
           "source": "Open-Meteo HRRR",
           "station_or_monitor": null,
           "distance_mi": null,
-          "fetched_at": "2026-08-17T18:58:35-05:00"
+          "fetched_at": "2026-08-17T20:43:48-05:00"
         },
         "wbgt": {
-          "value": 71.2,
+          "value": 67.8,
           "status": "ok",
           "source": "computed",
           "station_or_monitor": null,
@@ -2747,12 +2620,12 @@
           "fetched_at": null
         },
         "aqi": {
-          "value": 38,
+          "value": 36,
           "status": "ok",
           "source": "AirNow",
           "station_or_monitor": "Twin Cities",
           "distance_mi": 27.3,
-          "fetched_at": "2026-08-17T18:58:39-05:00",
+          "fetched_at": "2026-08-17T20:43:53-05:00",
           "extra": {
             "pollutant": "O3",
             "category": "Good"
@@ -2773,33 +2646,13 @@
           "source": "AirNow forecast",
           "station_or_monitor": null,
           "distance_mi": null,
-          "fetched_at": "2026-08-17T18:58:39-05:00",
+          "fetched_at": "2026-08-17T20:43:54-05:00",
           "extra": {
             "label": "forecast \u2014 verify with current reading"
           }
         }
       },
       "hours": [
-        {
-          "time_iso": "2026-08-17T19:00",
-          "wbgt_f": 71.2,
-          "wbgt_suspect": null,
-          "aqi_forecast": 46,
-          "precip_pct": 3,
-          "weather_code": "Mostly Cloudy",
-          "status": "GO",
-          "reasons": []
-        },
-        {
-          "time_iso": "2026-08-17T20:00",
-          "wbgt_f": 68.6,
-          "wbgt_suspect": null,
-          "aqi_forecast": 46,
-          "precip_pct": 5,
-          "weather_code": "Mostly Cloudy",
-          "status": "GO",
-          "reasons": []
-        },
         {
           "time_iso": "2026-08-17T21:00",
           "wbgt_f": 67.1,
@@ -2912,10 +2765,35 @@
         },
         {
           "time_iso": "2026-08-18T06:00",
-          "wbgt_f": 62.2,
+          "wbgt_f": 62.5,
           "wbgt_suspect": null,
           "aqi_forecast": 46,
-          "precip_pct": 7,
+          "precip_pct": 16,
+          "weather_code": "Slight Chance Rain Showers",
+          "status": "GO",
+          "reasons": []
+        },
+        {
+          "time_iso": "2026-08-18T07:00",
+          "wbgt_f": 63.2,
+          "wbgt_suspect": null,
+          "aqi_forecast": 46,
+          "precip_pct": 27,
+          "weather_code": "Chance Showers And Thunderstorms",
+          "status": "CAUTION",
+          "reasons": [
+            {
+              "rule": "storm_forecast",
+              "detail": "Storms forecast \u2014 lightning within 10 mi cancels; if you hear thunder, clear the trail; wait 30 min after last thunder/lightning"
+            }
+          ]
+        },
+        {
+          "time_iso": "2026-08-18T08:00",
+          "wbgt_f": 65.6,
+          "wbgt_suspect": null,
+          "aqi_forecast": 46,
+          "precip_pct": 13,
           "weather_code": "3",
           "status": "GO",
           "reasons": []
@@ -2934,39 +2812,39 @@
       "practice_reasons": [],
       "current": {
         "temp": {
-          "value": 78.8,
+          "value": 77.0,
           "status": "ok",
           "source": "METAR",
           "station_or_monitor": "K21D",
           "distance_mi": null,
-          "fetched_at": "2026-08-17T18:58:38-05:00"
+          "fetched_at": "2026-08-17T20:43:52-05:00"
         },
         "rh": {
-          "value": 44.557102524017,
+          "value": 47.284006665151,
           "status": "ok",
           "source": "METAR",
           "station_or_monitor": "K21D",
           "distance_mi": null,
-          "fetched_at": "2026-08-17T18:58:38-05:00"
+          "fetched_at": "2026-08-17T20:43:52-05:00"
         },
         "wind": {
-          "value": 5.81603256,
+          "value": 6.912131004000001,
           "status": "ok",
           "source": "METAR",
           "station_or_monitor": "K21D",
           "distance_mi": null,
-          "fetched_at": "2026-08-17T18:58:38-05:00"
+          "fetched_at": "2026-08-17T20:43:52-05:00"
         },
         "ghi": {
-          "value": 386.0,
+          "value": 28.0,
           "status": "ok",
           "source": "Open-Meteo HRRR",
           "station_or_monitor": null,
           "distance_mi": null,
-          "fetched_at": "2026-08-17T18:58:35-05:00"
+          "fetched_at": "2026-08-17T20:43:48-05:00"
         },
         "wbgt": {
-          "value": 71.2,
+          "value": 67.8,
           "status": "ok",
           "source": "computed",
           "station_or_monitor": null,
@@ -2974,12 +2852,12 @@
           "fetched_at": null
         },
         "aqi": {
-          "value": 38,
+          "value": 36,
           "status": "ok",
           "source": "AirNow",
           "station_or_monitor": "Twin Cities",
           "distance_mi": 25.1,
-          "fetched_at": "2026-08-17T18:58:39-05:00",
+          "fetched_at": "2026-08-17T20:43:53-05:00",
           "extra": {
             "pollutant": "O3",
             "category": "Good"
@@ -3000,33 +2878,13 @@
           "source": "AirNow forecast",
           "station_or_monitor": null,
           "distance_mi": null,
-          "fetched_at": "2026-08-17T18:58:39-05:00",
+          "fetched_at": "2026-08-17T20:43:54-05:00",
           "extra": {
             "label": "forecast \u2014 verify with current reading"
           }
         }
       },
       "hours": [
-        {
-          "time_iso": "2026-08-17T19:00",
-          "wbgt_f": 72.5,
-          "wbgt_suspect": null,
-          "aqi_forecast": 46,
-          "precip_pct": 3,
-          "weather_code": "Mostly Cloudy",
-          "status": "GO",
-          "reasons": []
-        },
-        {
-          "time_iso": "2026-08-17T20:00",
-          "wbgt_f": 69.5,
-          "wbgt_suspect": 69.3,
-          "aqi_forecast": 46,
-          "precip_pct": 5,
-          "weather_code": "Mostly Cloudy",
-          "status": "GO",
-          "reasons": []
-        },
         {
           "time_iso": "2026-08-17T21:00",
           "wbgt_f": 67.6,
@@ -3139,10 +2997,40 @@
         },
         {
           "time_iso": "2026-08-18T06:00",
-          "wbgt_f": 62.1,
+          "wbgt_f": 62.5,
           "wbgt_suspect": null,
           "aqi_forecast": 46,
-          "precip_pct": 9,
+          "precip_pct": 16,
+          "weather_code": "Slight Chance Showers And Thunderstorms",
+          "status": "CAUTION",
+          "reasons": [
+            {
+              "rule": "storm_forecast",
+              "detail": "Storms forecast \u2014 lightning within 10 mi cancels; if you hear thunder, clear the trail; wait 30 min after last thunder/lightning"
+            }
+          ]
+        },
+        {
+          "time_iso": "2026-08-18T07:00",
+          "wbgt_f": 63.4,
+          "wbgt_suspect": null,
+          "aqi_forecast": 46,
+          "precip_pct": 28,
+          "weather_code": "Chance Showers And Thunderstorms",
+          "status": "CAUTION",
+          "reasons": [
+            {
+              "rule": "storm_forecast",
+              "detail": "Storms forecast \u2014 lightning within 10 mi cancels; if you hear thunder, clear the trail; wait 30 min after last thunder/lightning"
+            }
+          ]
+        },
+        {
+          "time_iso": "2026-08-18T08:00",
+          "wbgt_f": 65.4,
+          "wbgt_suspect": null,
+          "aqi_forecast": 46,
+          "precip_pct": 11,
           "weather_code": "3",
           "status": "GO",
           "reasons": []
@@ -3161,39 +3049,39 @@
       "practice_reasons": [],
       "current": {
         "temp": {
-          "value": 80.6,
+          "value": 78.8,
           "status": "ok",
           "source": "METAR",
           "station_or_monitor": "KSTP",
           "distance_mi": null,
-          "fetched_at": "2026-08-17T18:58:38-05:00"
+          "fetched_at": "2026-08-17T20:43:52-05:00"
         },
         "rh": {
-          "value": 44.830942359632,
+          "value": 47.553680242908,
           "status": "ok",
           "source": "METAR",
           "station_or_monitor": "KSTP",
           "distance_mi": null,
-          "fetched_at": "2026-08-17T18:58:38-05:00"
+          "fetched_at": "2026-08-17T20:43:52-05:00"
         },
         "wind": {
-          "value": 13.801892652,
+          "value": 5.748924492,
           "status": "ok",
           "source": "METAR",
           "station_or_monitor": "KSTP",
           "distance_mi": null,
-          "fetched_at": "2026-08-17T18:58:38-05:00"
+          "fetched_at": "2026-08-17T20:43:52-05:00"
         },
         "ghi": {
-          "value": 392.0,
+          "value": 33.0,
           "status": "ok",
           "source": "Open-Meteo HRRR",
           "station_or_monitor": null,
           "distance_mi": null,
-          "fetched_at": "2026-08-17T18:58:35-05:00"
+          "fetched_at": "2026-08-17T20:43:48-05:00"
         },
         "wbgt": {
-          "value": 71.9,
+          "value": 69.5,
           "status": "ok",
           "source": "computed",
           "station_or_monitor": null,
@@ -3201,12 +3089,12 @@
           "fetched_at": null
         },
         "aqi": {
-          "value": 38,
+          "value": 36,
           "status": "ok",
           "source": "AirNow",
           "station_or_monitor": "Twin Cities",
           "distance_mi": 5.2,
-          "fetched_at": "2026-08-17T18:58:38-05:00",
+          "fetched_at": "2026-08-17T20:43:53-05:00",
           "extra": {
             "pollutant": "O3",
             "category": "Good"
@@ -3227,7 +3115,7 @@
           "source": "AirNow forecast",
           "station_or_monitor": null,
           "distance_mi": null,
-          "fetched_at": "2026-08-17T18:58:39-05:00",
+          "fetched_at": "2026-08-17T20:43:54-05:00",
           "extra": {
             "label": "forecast \u2014 verify with current reading"
           }
@@ -3235,196 +3123,215 @@
       },
       "hours": [
         {
-          "time_iso": "2026-08-17T19:00",
-          "wbgt_f": 71.0,
-          "wbgt_suspect": null,
-          "aqi_forecast": 46,
-          "precip_pct": 3,
-          "weather_code": "0",
-          "status": "GO",
-          "reasons": []
-        },
-        {
-          "time_iso": "2026-08-17T20:00",
-          "wbgt_f": 68.8,
-          "wbgt_suspect": null,
-          "aqi_forecast": 46,
-          "precip_pct": 4,
-          "weather_code": "1",
-          "status": "GO",
-          "reasons": []
-        },
-        {
           "time_iso": "2026-08-17T21:00",
-          "wbgt_f": 67.2,
+          "wbgt_f": 69.5,
           "wbgt_suspect": null,
           "aqi_forecast": 46,
-          "precip_pct": 4,
-          "weather_code": "3",
-          "status": "GO",
-          "reasons": []
+          "precip_pct": 15,
+          "weather_code": "Slight Chance Showers And Thunderstorms",
+          "status": "CAUTION",
+          "reasons": [
+            {
+              "rule": "storm_forecast",
+              "detail": "Storms forecast \u2014 lightning within 10 mi cancels; if you hear thunder, clear the trail; wait 30 min after last thunder/lightning"
+            }
+          ]
         },
         {
           "time_iso": "2026-08-17T22:00",
-          "wbgt_f": 66.3,
+          "wbgt_f": 68.9,
           "wbgt_suspect": null,
           "aqi_forecast": 46,
-          "precip_pct": 6,
-          "weather_code": "1",
-          "status": "GO",
-          "reasons": []
+          "precip_pct": 34,
+          "weather_code": "Chance Showers And Thunderstorms",
+          "status": "CAUTION",
+          "reasons": [
+            {
+              "rule": "storm_forecast",
+              "detail": "Storms forecast \u2014 lightning within 10 mi cancels; if you hear thunder, clear the trail; wait 30 min after last thunder/lightning"
+            }
+          ]
         },
         {
           "time_iso": "2026-08-17T23:00",
-          "wbgt_f": 65.9,
+          "wbgt_f": 67.6,
           "wbgt_suspect": null,
           "aqi_forecast": 46,
-          "precip_pct": 14,
-          "weather_code": "3",
-          "status": "GO",
-          "reasons": []
+          "precip_pct": 37,
+          "weather_code": "Chance Showers And Thunderstorms",
+          "status": "CAUTION",
+          "reasons": [
+            {
+              "rule": "storm_forecast",
+              "detail": "Storms forecast \u2014 lightning within 10 mi cancels; if you hear thunder, clear the trail; wait 30 min after last thunder/lightning"
+            }
+          ]
         },
         {
           "time_iso": "2026-08-18T00:00",
-          "wbgt_f": 66.3,
+          "wbgt_f": 67.6,
           "wbgt_suspect": null,
           "aqi_forecast": 46,
-          "precip_pct": 14,
-          "weather_code": "63",
-          "status": "GO",
-          "reasons": []
+          "precip_pct": 28,
+          "weather_code": "Chance Showers And Thunderstorms",
+          "status": "CAUTION",
+          "reasons": [
+            {
+              "rule": "storm_forecast",
+              "detail": "Storms forecast \u2014 lightning within 10 mi cancels; if you hear thunder, clear the trail; wait 30 min after last thunder/lightning"
+            }
+          ]
         },
         {
           "time_iso": "2026-08-18T01:00",
-          "wbgt_f": 65.4,
+          "wbgt_f": 66.5,
           "wbgt_suspect": null,
           "aqi_forecast": 46,
-          "precip_pct": 11,
-          "weather_code": "53",
-          "status": "GO",
-          "reasons": []
+          "precip_pct": 19,
+          "weather_code": "Slight Chance Showers And Thunderstorms",
+          "status": "CAUTION",
+          "reasons": [
+            {
+              "rule": "storm_forecast",
+              "detail": "Storms forecast \u2014 lightning within 10 mi cancels; if you hear thunder, clear the trail; wait 30 min after last thunder/lightning"
+            }
+          ]
         },
         {
           "time_iso": "2026-08-18T02:00",
-          "wbgt_f": 65.1,
+          "wbgt_f": 67.0,
           "wbgt_suspect": null,
           "aqi_forecast": 46,
-          "precip_pct": 9,
-          "weather_code": "3",
+          "precip_pct": 12,
+          "weather_code": "Partly Cloudy",
           "status": "GO",
           "reasons": []
         },
         {
           "time_iso": "2026-08-18T03:00",
-          "wbgt_f": 64.5,
+          "wbgt_f": 66.4,
           "wbgt_suspect": null,
           "aqi_forecast": 46,
           "precip_pct": 6,
-          "weather_code": "3",
+          "weather_code": "Mostly Cloudy",
           "status": "GO",
           "reasons": []
         },
         {
           "time_iso": "2026-08-18T04:00",
-          "wbgt_f": 63.9,
+          "wbgt_f": 64.9,
           "wbgt_suspect": null,
           "aqi_forecast": 46,
-          "precip_pct": 5,
-          "weather_code": "3",
+          "precip_pct": 7,
+          "weather_code": "Mostly Cloudy",
           "status": "GO",
           "reasons": []
         },
         {
           "time_iso": "2026-08-18T05:00",
-          "wbgt_f": 62.7,
+          "wbgt_f": 64.9,
           "wbgt_suspect": null,
           "aqi_forecast": 46,
-          "precip_pct": 3,
-          "weather_code": "3",
+          "precip_pct": 13,
+          "weather_code": "Mostly Cloudy",
           "status": "GO",
           "reasons": []
         },
         {
           "time_iso": "2026-08-18T06:00",
-          "wbgt_f": 62.7,
+          "wbgt_f": 64.5,
           "wbgt_suspect": null,
           "aqi_forecast": 46,
-          "precip_pct": 10,
+          "precip_pct": 19,
+          "weather_code": "Slight Chance Showers And Thunderstorms",
+          "status": "CAUTION",
+          "reasons": [
+            {
+              "rule": "storm_forecast",
+              "detail": "Storms forecast \u2014 lightning within 10 mi cancels; if you hear thunder, clear the trail; wait 30 min after last thunder/lightning"
+            }
+          ]
+        },
+        {
+          "time_iso": "2026-08-18T07:00",
+          "wbgt_f": 64.8,
+          "wbgt_suspect": null,
+          "aqi_forecast": 46,
+          "precip_pct": 33,
+          "weather_code": "Chance Rain Showers",
+          "status": "GO",
+          "reasons": []
+        },
+        {
+          "time_iso": "2026-08-18T08:00",
+          "wbgt_f": 65.3,
+          "wbgt_suspect": null,
+          "aqi_forecast": 46,
+          "precip_pct": 14,
           "weather_code": "3",
           "status": "GO",
           "reasons": []
         }
       ],
       "alerts": [],
-      "flags": [
-        "\u26a0\ufe0f NWS hourly forecast unavailable \u2014 forecast temp/wind from HRRR model; storm flags unavailable"
-      ]
+      "flags": []
     },
     {
       "venue_id": "xcel-shakopee",
       "name": "Xcel Energy Park Shakopee",
-      "status": "UNKNOWN",
-      "reasons": [
-        {
-          "rule": "unknown",
-          "detail": "Missing safety-critical signal(s): WBGT \u2014 status capped at UNKNOWN"
-        }
-      ],
+      "status": "GO",
+      "reasons": [],
       "practice_hour_iso": null,
       "practice_status": "UNKNOWN",
       "practice_reasons": [],
       "current": {
         "temp": {
-          "value": null,
-          "status": "unknown",
+          "value": 75.2,
+          "status": "ok",
           "source": "METAR",
-          "station_or_monitor": null,
+          "station_or_monitor": "KFCM",
           "distance_mi": null,
-          "fetched_at": null,
-          "reason": "METAR failed"
+          "fetched_at": "2026-08-17T20:43:52-05:00"
         },
         "rh": {
-          "value": null,
-          "status": "unknown",
+          "value": 60.932871508219,
+          "status": "ok",
           "source": "METAR",
-          "station_or_monitor": null,
+          "station_or_monitor": "KFCM",
           "distance_mi": null,
-          "fetched_at": null,
-          "reason": "METAR failed"
+          "fetched_at": "2026-08-17T20:43:52-05:00"
         },
         "wind": {
-          "value": null,
-          "status": "unknown",
+          "value": 6.912131004000001,
+          "status": "ok",
           "source": "METAR",
-          "station_or_monitor": null,
+          "station_or_monitor": "KFCM",
           "distance_mi": null,
-          "fetched_at": null,
-          "reason": "METAR failed"
+          "fetched_at": "2026-08-17T20:43:52-05:00"
         },
         "ghi": {
-          "value": 397.0,
+          "value": 37.0,
           "status": "ok",
           "source": "Open-Meteo HRRR",
           "station_or_monitor": null,
           "distance_mi": null,
-          "fetched_at": "2026-08-17T18:58:35-05:00"
+          "fetched_at": "2026-08-17T20:43:48-05:00"
         },
         "wbgt": {
-          "value": null,
-          "status": "unknown",
+          "value": 68.8,
+          "status": "ok",
           "source": "computed",
           "station_or_monitor": null,
           "distance_mi": null,
-          "fetched_at": null,
-          "reason": "WBGT inputs missing"
+          "fetched_at": null
         },
         "aqi": {
-          "value": 32,
+          "value": 31,
           "status": "ok",
           "source": "AirNow",
           "station_or_monitor": "Southern Twin Cities Metro",
           "distance_mi": 12.0,
-          "fetched_at": "2026-08-17T18:58:40-05:00",
+          "fetched_at": "2026-08-17T20:43:53-05:00",
           "extra": {
             "pollutant": "O3",
             "category": "Good"
@@ -3445,33 +3352,13 @@
           "source": "AirNow forecast",
           "station_or_monitor": null,
           "distance_mi": null,
-          "fetched_at": "2026-08-17T18:58:40-05:00",
+          "fetched_at": "2026-08-17T20:43:54-05:00",
           "extra": {
             "label": "forecast \u2014 verify with current reading"
           }
         }
       },
       "hours": [
-        {
-          "time_iso": "2026-08-17T19:00",
-          "wbgt_f": 71.8,
-          "wbgt_suspect": null,
-          "aqi_forecast": 46,
-          "precip_pct": 8,
-          "weather_code": "Mostly Cloudy",
-          "status": "GO",
-          "reasons": []
-        },
-        {
-          "time_iso": "2026-08-17T20:00",
-          "wbgt_f": 70.5,
-          "wbgt_suspect": null,
-          "aqi_forecast": 46,
-          "precip_pct": 10,
-          "weather_code": "Mostly Cloudy",
-          "status": "GO",
-          "reasons": []
-        },
         {
           "time_iso": "2026-08-17T21:00",
           "wbgt_f": 68.6,
@@ -3594,10 +3481,35 @@
         },
         {
           "time_iso": "2026-08-18T06:00",
-          "wbgt_f": 62.2,
+          "wbgt_f": 63.9,
           "wbgt_suspect": null,
           "aqi_forecast": 46,
-          "precip_pct": 9,
+          "precip_pct": 25,
+          "weather_code": "Chance Showers And Thunderstorms",
+          "status": "CAUTION",
+          "reasons": [
+            {
+              "rule": "storm_forecast",
+              "detail": "Storms forecast \u2014 lightning within 10 mi cancels; if you hear thunder, clear the trail; wait 30 min after last thunder/lightning"
+            }
+          ]
+        },
+        {
+          "time_iso": "2026-08-18T07:00",
+          "wbgt_f": 64.2,
+          "wbgt_suspect": null,
+          "aqi_forecast": 46,
+          "precip_pct": 42,
+          "weather_code": "Chance Rain Showers",
+          "status": "GO",
+          "reasons": []
+        },
+        {
+          "time_iso": "2026-08-18T08:00",
+          "wbgt_f": 66.1,
+          "wbgt_suspect": null,
+          "aqi_forecast": 46,
+          "precip_pct": 18,
           "weather_code": "3",
           "status": "GO",
           "reasons": []
@@ -3609,60 +3521,51 @@
     {
       "venue_id": "cuyuna",
       "name": "Cuyuna Lakes",
-      "status": "UNKNOWN",
-      "reasons": [
-        {
-          "rule": "unknown",
-          "detail": "Missing safety-critical signal(s): WBGT \u2014 status capped at UNKNOWN"
-        }
-      ],
+      "status": "GO",
+      "reasons": [],
       "practice_hour_iso": null,
       "practice_status": "UNKNOWN",
       "practice_reasons": [],
       "current": {
         "temp": {
-          "value": null,
-          "status": "unknown",
+          "value": 66.2,
+          "status": "ok",
           "source": "METAR",
-          "station_or_monitor": null,
+          "station_or_monitor": "KBRD",
           "distance_mi": null,
-          "fetched_at": null,
-          "reason": "METAR failed"
+          "fetched_at": "2026-08-17T20:43:52-05:00"
         },
         "rh": {
-          "value": null,
-          "status": "unknown",
+          "value": 88.185541322848,
+          "status": "ok",
           "source": "METAR",
-          "station_or_monitor": null,
+          "station_or_monitor": "KBRD",
           "distance_mi": null,
-          "fetched_at": null,
-          "reason": "METAR failed"
+          "fetched_at": "2026-08-17T20:43:52-05:00"
         },
         "wind": {
-          "value": null,
-          "status": "unknown",
+          "value": 12.661055496000001,
+          "status": "ok",
           "source": "METAR",
-          "station_or_monitor": null,
+          "station_or_monitor": "KBRD",
           "distance_mi": null,
-          "fetched_at": null,
-          "reason": "METAR failed"
+          "fetched_at": "2026-08-17T20:43:52-05:00"
         },
         "ghi": {
-          "value": 214.0,
+          "value": 45.0,
           "status": "ok",
           "source": "Open-Meteo HRRR",
           "station_or_monitor": null,
           "distance_mi": null,
-          "fetched_at": "2026-08-17T18:58:35-05:00"
+          "fetched_at": "2026-08-17T20:43:48-05:00"
         },
         "wbgt": {
-          "value": null,
-          "status": "unknown",
+          "value": 64.6,
+          "status": "ok",
           "source": "computed",
           "station_or_monitor": null,
           "distance_mi": null,
-          "fetched_at": null,
-          "reason": "WBGT inputs missing"
+          "fetched_at": null
         },
         "aqi": {
           "value": 45,
@@ -3670,7 +3573,7 @@
           "source": "AirNow",
           "station_or_monitor": "Central Minnesota",
           "distance_mi": 5.5,
-          "fetched_at": "2026-08-17T18:58:40-05:00",
+          "fetched_at": "2026-08-17T20:43:53-05:00",
           "extra": {
             "pollutant": "PM2.5",
             "category": "Good"
@@ -3691,7 +3594,7 @@
           "source": "AirNow forecast",
           "station_or_monitor": null,
           "distance_mi": null,
-          "fetched_at": "2026-08-17T18:58:40-05:00",
+          "fetched_at": "2026-08-17T20:43:54-05:00",
           "extra": {
             "label": "forecast \u2014 verify with current reading"
           }
@@ -3699,41 +3602,11 @@
       },
       "hours": [
         {
-          "time_iso": "2026-08-17T19:00",
-          "wbgt_f": 69.6,
-          "wbgt_suspect": null,
-          "aqi_forecast": 41,
-          "precip_pct": 46,
-          "weather_code": "Chance Showers And Thunderstorms",
-          "status": "CAUTION",
-          "reasons": [
-            {
-              "rule": "storm_forecast",
-              "detail": "Storms forecast \u2014 lightning within 10 mi cancels; if you hear thunder, clear the trail; wait 30 min after last thunder/lightning"
-            }
-          ]
-        },
-        {
-          "time_iso": "2026-08-17T20:00",
-          "wbgt_f": 68.4,
-          "wbgt_suspect": 68.2,
-          "aqi_forecast": 41,
-          "precip_pct": 37,
-          "weather_code": "Chance Showers And Thunderstorms",
-          "status": "CAUTION",
-          "reasons": [
-            {
-              "rule": "storm_forecast",
-              "detail": "Storms forecast \u2014 lightning within 10 mi cancels; if you hear thunder, clear the trail; wait 30 min after last thunder/lightning"
-            }
-          ]
-        },
-        {
           "time_iso": "2026-08-17T21:00",
-          "wbgt_f": 66.0,
+          "wbgt_f": 64.7,
           "wbgt_suspect": null,
           "aqi_forecast": 41,
-          "precip_pct": 28,
+          "precip_pct": 34,
           "weather_code": "Chance Showers And Thunderstorms",
           "status": "CAUTION",
           "reasons": [
@@ -3745,7 +3618,7 @@
         },
         {
           "time_iso": "2026-08-17T22:00",
-          "wbgt_f": 64.5,
+          "wbgt_f": 63.0,
           "wbgt_suspect": null,
           "aqi_forecast": 41,
           "precip_pct": 20,
@@ -3758,8 +3631,8 @@
           "wbgt_f": 62.0,
           "wbgt_suspect": null,
           "aqi_forecast": 41,
-          "precip_pct": 15,
-          "weather_code": "Slight Chance Rain Showers",
+          "precip_pct": 13,
+          "weather_code": "Mostly Cloudy",
           "status": "GO",
           "reasons": []
         },
@@ -3778,7 +3651,7 @@
           "wbgt_f": 61.0,
           "wbgt_suspect": null,
           "aqi_forecast": 41,
-          "precip_pct": 3,
+          "precip_pct": 6,
           "weather_code": "Mostly Cloudy",
           "status": "GO",
           "reasons": []
@@ -3788,7 +3661,7 @@
           "wbgt_f": 60.0,
           "wbgt_suspect": null,
           "aqi_forecast": 41,
-          "precip_pct": 3,
+          "precip_pct": 7,
           "weather_code": "Mostly Cloudy",
           "status": "GO",
           "reasons": []
@@ -3798,7 +3671,7 @@
           "wbgt_f": 58.0,
           "wbgt_suspect": null,
           "aqi_forecast": 41,
-          "precip_pct": 3,
+          "precip_pct": 4,
           "weather_code": "Mostly Cloudy",
           "status": "GO",
           "reasons": []
@@ -3825,10 +3698,30 @@
         },
         {
           "time_iso": "2026-08-18T06:00",
-          "wbgt_f": 58.1,
+          "wbgt_f": 53.9,
           "wbgt_suspect": null,
           "aqi_forecast": 41,
-          "precip_pct": 6,
+          "precip_pct": 7,
+          "weather_code": "Mostly Cloudy",
+          "status": "GO",
+          "reasons": []
+        },
+        {
+          "time_iso": "2026-08-18T07:00",
+          "wbgt_f": 56.2,
+          "wbgt_suspect": null,
+          "aqi_forecast": 41,
+          "precip_pct": 8,
+          "weather_code": "Mostly Cloudy",
+          "status": "GO",
+          "reasons": []
+        },
+        {
+          "time_iso": "2026-08-18T08:00",
+          "wbgt_f": 60.3,
+          "wbgt_suspect": null,
+          "aqi_forecast": 41,
+          "precip_pct": 2,
           "weather_code": "3",
           "status": "GO",
           "reasons": []
@@ -3847,20 +3740,20 @@
       "practice_reasons": [],
       "current": {
         "temp": {
-          "value": 69.8,
+          "value": 62.6,
           "status": "ok",
           "source": "METAR",
           "station_or_monitor": "KHIB",
           "distance_mi": null,
-          "fetched_at": "2026-08-17T18:58:39-05:00"
+          "fetched_at": "2026-08-17T20:43:54-05:00"
         },
         "rh": {
-          "value": 68.576121925976,
+          "value": 93.838813960785,
           "status": "ok",
           "source": "METAR",
           "station_or_monitor": "KHIB",
           "distance_mi": null,
-          "fetched_at": "2026-08-17T18:58:39-05:00"
+          "fetched_at": "2026-08-17T20:43:54-05:00"
         },
         "wind": {
           "value": 0.0,
@@ -3868,18 +3761,18 @@
           "source": "METAR",
           "station_or_monitor": "KHIB",
           "distance_mi": null,
-          "fetched_at": "2026-08-17T18:58:39-05:00"
+          "fetched_at": "2026-08-17T20:43:54-05:00"
         },
         "ghi": {
-          "value": 262.0,
+          "value": 41.0,
           "status": "ok",
           "source": "Open-Meteo HRRR",
           "station_or_monitor": null,
           "distance_mi": null,
-          "fetched_at": "2026-08-17T18:58:35-05:00"
+          "fetched_at": "2026-08-17T20:43:48-05:00"
         },
         "wbgt": {
-          "value": 69.8,
+          "value": 62.5,
           "status": "ok",
           "source": "computed",
           "station_or_monitor": null,
@@ -3887,14 +3780,14 @@
           "fetched_at": null
         },
         "aqi": {
-          "value": 31,
+          "value": 34,
           "status": "ok",
           "source": "AirNow",
           "station_or_monitor": "North Central Minnesota",
           "distance_mi": 25.8,
-          "fetched_at": "2026-08-17T18:58:40-05:00",
+          "fetched_at": "2026-08-17T20:43:55-05:00",
           "extra": {
-            "pollutant": "O3",
+            "pollutant": "PM2.5",
             "category": "Good"
           }
         },
@@ -3908,12 +3801,12 @@
           "reason": "PurpleAir failed"
         },
         "aqi_forecast": {
-          "value": 44,
+          "value": 39,
           "status": "ok",
           "source": "AirNow forecast",
           "station_or_monitor": null,
           "distance_mi": null,
-          "fetched_at": "2026-08-17T18:58:41-05:00",
+          "fetched_at": "2026-08-17T20:43:55-05:00",
           "extra": {
             "label": "forecast \u2014 verify with current reading"
           }
@@ -3921,130 +3814,133 @@
       },
       "hours": [
         {
-          "time_iso": "2026-08-17T19:00",
-          "wbgt_f": 69.6,
-          "wbgt_suspect": 68.7,
-          "aqi_forecast": 44,
-          "precip_pct": 29,
-          "weather_code": "3",
-          "status": "GO",
-          "reasons": []
-        },
-        {
-          "time_iso": "2026-08-17T20:00",
-          "wbgt_f": 66.7,
-          "wbgt_suspect": 66.5,
-          "aqi_forecast": 44,
-          "precip_pct": 20,
-          "weather_code": "3",
-          "status": "GO",
-          "reasons": []
-        },
-        {
           "time_iso": "2026-08-17T21:00",
-          "wbgt_f": 62.7,
+          "wbgt_f": 61.5,
           "wbgt_suspect": null,
-          "aqi_forecast": 44,
-          "precip_pct": 28,
-          "weather_code": "3",
-          "status": "GO",
-          "reasons": []
+          "aqi_forecast": 39,
+          "precip_pct": 26,
+          "weather_code": "Chance Showers And Thunderstorms",
+          "status": "CAUTION",
+          "reasons": [
+            {
+              "rule": "storm_forecast",
+              "detail": "Storms forecast \u2014 lightning within 10 mi cancels; if you hear thunder, clear the trail; wait 30 min after last thunder/lightning"
+            }
+          ]
         },
         {
           "time_iso": "2026-08-17T22:00",
-          "wbgt_f": 61.4,
+          "wbgt_f": 60.5,
           "wbgt_suspect": null,
-          "aqi_forecast": 44,
-          "precip_pct": 10,
-          "weather_code": "0",
+          "aqi_forecast": 39,
+          "precip_pct": 17,
+          "weather_code": "Slight Chance Rain Showers",
           "status": "GO",
           "reasons": []
         },
         {
           "time_iso": "2026-08-17T23:00",
-          "wbgt_f": 61.7,
+          "wbgt_f": 60.0,
           "wbgt_suspect": null,
-          "aqi_forecast": 44,
-          "precip_pct": 9,
-          "weather_code": "3",
+          "aqi_forecast": 39,
+          "precip_pct": 15,
+          "weather_code": "Slight Chance Rain Showers",
           "status": "GO",
           "reasons": []
         },
         {
           "time_iso": "2026-08-18T00:00",
-          "wbgt_f": 61.4,
+          "wbgt_f": 59.0,
           "wbgt_suspect": null,
-          "aqi_forecast": 44,
-          "precip_pct": 3,
-          "weather_code": "0",
+          "aqi_forecast": 39,
+          "precip_pct": 13,
+          "weather_code": "Mostly Cloudy",
           "status": "GO",
           "reasons": []
         },
         {
           "time_iso": "2026-08-18T01:00",
-          "wbgt_f": 61.3,
+          "wbgt_f": 58.0,
           "wbgt_suspect": null,
-          "aqi_forecast": 44,
+          "aqi_forecast": 39,
           "precip_pct": 5,
-          "weather_code": "2",
+          "weather_code": "Mostly Cloudy",
           "status": "GO",
           "reasons": []
         },
         {
           "time_iso": "2026-08-18T02:00",
-          "wbgt_f": 59.9,
+          "wbgt_f": 56.0,
           "wbgt_suspect": null,
-          "aqi_forecast": 44,
-          "precip_pct": 7,
-          "weather_code": "3",
+          "aqi_forecast": 39,
+          "precip_pct": 4,
+          "weather_code": "Mostly Cloudy",
           "status": "GO",
           "reasons": []
         },
         {
           "time_iso": "2026-08-18T03:00",
-          "wbgt_f": 57.8,
+          "wbgt_f": 53.9,
           "wbgt_suspect": null,
-          "aqi_forecast": 44,
-          "precip_pct": 6,
-          "weather_code": "3",
+          "aqi_forecast": 39,
+          "precip_pct": 2,
+          "weather_code": "Mostly Cloudy",
           "status": "GO",
           "reasons": []
         },
         {
           "time_iso": "2026-08-18T04:00",
-          "wbgt_f": 57.8,
+          "wbgt_f": 51.9,
           "wbgt_suspect": null,
-          "aqi_forecast": 44,
-          "precip_pct": 5,
-          "weather_code": "3",
+          "aqi_forecast": 39,
+          "precip_pct": 1,
+          "weather_code": "Mostly Cloudy",
           "status": "GO",
           "reasons": []
         },
         {
           "time_iso": "2026-08-18T05:00",
-          "wbgt_f": 56.2,
+          "wbgt_f": 49.9,
           "wbgt_suspect": null,
-          "aqi_forecast": 44,
-          "precip_pct": 2,
-          "weather_code": "0",
+          "aqi_forecast": 39,
+          "precip_pct": 1,
+          "weather_code": "Patchy Fog",
           "status": "GO",
           "reasons": []
         },
         {
           "time_iso": "2026-08-18T06:00",
-          "wbgt_f": 54.9,
+          "wbgt_f": 48.9,
           "wbgt_suspect": null,
-          "aqi_forecast": 44,
+          "aqi_forecast": 39,
           "precip_pct": 1,
+          "weather_code": "Patchy Fog",
+          "status": "GO",
+          "reasons": []
+        },
+        {
+          "time_iso": "2026-08-18T07:00",
+          "wbgt_f": 50.4,
+          "wbgt_suspect": null,
+          "aqi_forecast": 39,
+          "precip_pct": 0,
+          "weather_code": "Patchy Fog",
+          "status": "GO",
+          "reasons": []
+        },
+        {
+          "time_iso": "2026-08-18T08:00",
+          "wbgt_f": 57.6,
+          "wbgt_suspect": null,
+          "aqi_forecast": 39,
+          "precip_pct": 0,
           "weather_code": "0",
           "status": "GO",
           "reasons": []
         }
       ],
       "alerts": [],
-      "flags": [
-        "\u26a0\ufe0f NWS hourly forecast unavailable \u2014 forecast temp/wind from HRRR model; storm flags unavailable"
-      ]
+      "flags": []
     },
     {
       "venue_id": "wausau",
@@ -4056,39 +3952,39 @@
       "practice_reasons": [],
       "current": {
         "temp": {
-          "value": 78.8,
+          "value": 73.4,
           "status": "ok",
           "source": "METAR",
           "station_or_monitor": "KAUW",
           "distance_mi": null,
-          "fetched_at": "2026-08-17T18:58:39-05:00"
+          "fetched_at": "2026-08-17T20:43:54-05:00"
         },
         "rh": {
-          "value": 41.728049158235,
+          "value": 56.905982387402,
           "status": "ok",
           "source": "METAR",
           "station_or_monitor": "KAUW",
           "distance_mi": null,
-          "fetched_at": "2026-08-17T18:58:39-05:00"
+          "fetched_at": "2026-08-17T20:43:54-05:00"
         },
         "wind": {
-          "value": 11.497848984,
+          "value": 4.6080873360000005,
           "status": "ok",
           "source": "METAR",
           "station_or_monitor": "KAUW",
           "distance_mi": null,
-          "fetched_at": "2026-08-17T18:58:39-05:00"
+          "fetched_at": "2026-08-17T20:43:54-05:00"
         },
         "ghi": {
-          "value": 365.0,
+          "value": 0.0,
           "status": "ok",
           "source": "Open-Meteo HRRR",
           "station_or_monitor": null,
           "distance_mi": null,
-          "fetched_at": "2026-08-17T18:58:35-05:00"
+          "fetched_at": "2026-08-17T20:43:48-05:00"
         },
         "wbgt": {
-          "value": 69.7,
+          "value": 66.2,
           "status": "ok",
           "source": "computed",
           "station_or_monitor": null,
@@ -4096,12 +3992,12 @@
           "fetched_at": null
         },
         "aqi": {
-          "value": 30,
+          "value": 29,
           "status": "ok",
           "source": "AirNow",
           "station_or_monitor": "Central Waters North",
           "distance_mi": 16.4,
-          "fetched_at": "2026-08-17T18:58:40-05:00",
+          "fetched_at": "2026-08-17T20:43:55-05:00",
           "extra": {
             "pollutant": "O3",
             "category": "Good"
@@ -4128,118 +4024,138 @@
       },
       "hours": [
         {
-          "time_iso": "2026-08-17T19:00",
-          "wbgt_f": 68.0,
-          "wbgt_suspect": null,
-          "aqi_forecast": null,
-          "precip_pct": 1,
-          "weather_code": "0",
-          "status": "GO",
-          "reasons": []
-        },
-        {
-          "time_iso": "2026-08-17T20:00",
-          "wbgt_f": 64.2,
-          "wbgt_suspect": null,
-          "aqi_forecast": null,
-          "precip_pct": 1,
-          "weather_code": "0",
-          "status": "GO",
-          "reasons": []
-        },
-        {
           "time_iso": "2026-08-17T21:00",
-          "wbgt_f": 62.7,
+          "wbgt_f": 63.1,
           "wbgt_suspect": null,
           "aqi_forecast": null,
           "precip_pct": 1,
-          "weather_code": "1",
+          "weather_code": "Partly Cloudy",
           "status": "GO",
           "reasons": []
         },
         {
           "time_iso": "2026-08-17T22:00",
-          "wbgt_f": 61.7,
+          "wbgt_f": 62.0,
           "wbgt_suspect": null,
           "aqi_forecast": null,
-          "precip_pct": 1,
-          "weather_code": "0",
+          "precip_pct": 2,
+          "weather_code": "Partly Cloudy",
           "status": "GO",
           "reasons": []
         },
         {
           "time_iso": "2026-08-17T23:00",
-          "wbgt_f": 60.7,
+          "wbgt_f": 61.9,
           "wbgt_suspect": null,
           "aqi_forecast": null,
-          "precip_pct": 2,
-          "weather_code": "0",
+          "precip_pct": 4,
+          "weather_code": "Mostly Cloudy",
           "status": "GO",
           "reasons": []
         },
         {
           "time_iso": "2026-08-18T00:00",
-          "wbgt_f": 59.8,
+          "wbgt_f": 61.2,
           "wbgt_suspect": null,
           "aqi_forecast": null,
-          "precip_pct": 3,
-          "weather_code": "1",
+          "precip_pct": 4,
+          "weather_code": "Mostly Cloudy",
           "status": "GO",
           "reasons": []
         },
         {
           "time_iso": "2026-08-18T01:00",
-          "wbgt_f": 59.9,
+          "wbgt_f": 60.7,
           "wbgt_suspect": null,
           "aqi_forecast": null,
-          "precip_pct": 5,
-          "weather_code": "2",
+          "precip_pct": 14,
+          "weather_code": "Mostly Cloudy",
           "status": "GO",
           "reasons": []
         },
         {
           "time_iso": "2026-08-18T02:00",
-          "wbgt_f": 60.5,
+          "wbgt_f": 61.1,
           "wbgt_suspect": null,
           "aqi_forecast": null,
-          "precip_pct": 14,
-          "weather_code": "3",
+          "precip_pct": 18,
+          "weather_code": "Slight Chance Rain Showers",
           "status": "GO",
           "reasons": []
         },
         {
           "time_iso": "2026-08-18T03:00",
-          "wbgt_f": 60.5,
+          "wbgt_f": 59.3,
           "wbgt_suspect": null,
           "aqi_forecast": null,
-          "precip_pct": 22,
-          "weather_code": "3",
+          "precip_pct": 23,
+          "weather_code": "Slight Chance Rain Showers",
           "status": "GO",
           "reasons": []
         },
         {
           "time_iso": "2026-08-18T04:00",
-          "wbgt_f": 60.5,
+          "wbgt_f": 59.9,
           "wbgt_suspect": null,
           "aqi_forecast": null,
-          "precip_pct": 19,
-          "weather_code": "3",
-          "status": "GO",
-          "reasons": []
+          "precip_pct": 21,
+          "weather_code": "Slight Chance Showers And Thunderstorms",
+          "status": "CAUTION",
+          "reasons": [
+            {
+              "rule": "storm_forecast",
+              "detail": "Storms forecast \u2014 lightning within 10 mi cancels; if you hear thunder, clear the trail; wait 30 min after last thunder/lightning"
+            }
+          ]
         },
         {
           "time_iso": "2026-08-18T05:00",
-          "wbgt_f": 61.2,
+          "wbgt_f": 60.2,
           "wbgt_suspect": null,
           "aqi_forecast": null,
-          "precip_pct": 15,
-          "weather_code": "3",
-          "status": "GO",
-          "reasons": []
+          "precip_pct": 19,
+          "weather_code": "Slight Chance Showers And Thunderstorms",
+          "status": "CAUTION",
+          "reasons": [
+            {
+              "rule": "storm_forecast",
+              "detail": "Storms forecast \u2014 lightning within 10 mi cancels; if you hear thunder, clear the trail; wait 30 min after last thunder/lightning"
+            }
+          ]
         },
         {
           "time_iso": "2026-08-18T06:00",
-          "wbgt_f": 59.6,
+          "wbgt_f": 58.8,
+          "wbgt_suspect": null,
+          "aqi_forecast": null,
+          "precip_pct": 17,
+          "weather_code": "Slight Chance Showers And Thunderstorms",
+          "status": "CAUTION",
+          "reasons": [
+            {
+              "rule": "storm_forecast",
+              "detail": "Storms forecast \u2014 lightning within 10 mi cancels; if you hear thunder, clear the trail; wait 30 min after last thunder/lightning"
+            }
+          ]
+        },
+        {
+          "time_iso": "2026-08-18T07:00",
+          "wbgt_f": 60.4,
+          "wbgt_suspect": null,
+          "aqi_forecast": null,
+          "precip_pct": 20,
+          "weather_code": "Slight Chance Showers And Thunderstorms",
+          "status": "CAUTION",
+          "reasons": [
+            {
+              "rule": "storm_forecast",
+              "detail": "Storms forecast \u2014 lightning within 10 mi cancels; if you hear thunder, clear the trail; wait 30 min after last thunder/lightning"
+            }
+          ]
+        },
+        {
+          "time_iso": "2026-08-18T08:00",
+          "wbgt_f": 63.6,
           "wbgt_suspect": null,
           "aqi_forecast": null,
           "precip_pct": 11,
@@ -4249,9 +4165,7 @@
         }
       ],
       "alerts": [],
-      "flags": [
-        "\u26a0\ufe0f NWS hourly forecast unavailable \u2014 forecast temp/wind from HRRR model; storm flags unavailable"
-      ]
+      "flags": []
     }
   ]
 }
